@@ -12,3 +12,8 @@ const alertText = () => {
 // Multiple listeners can be added to the same event and element
 button.addEventListener("click", changeText);
 button.addEventListener("click", alertText);
+
+//huy lang nghe
+setTimeout(function () {
+  button.removeEventListener("click", changeText);
+}, 3000);
