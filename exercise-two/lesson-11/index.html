@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 11</title>
+    <style>
+        body {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="imgRandom()">Random Image</button>
+
+    <script>
+        imgRandom = () => {
+            const imgs = [{
+                src: 'http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg',
+                width: '240',
+                height: '160'
+            },
+            {
+                src: 'http://farm1.staticflickr.com/33/45336904_1aef569b30_n.jpg',
+                width: '320',
+                height: '195'
+            },
+            {
+                src: 'http://farm6.staticflickr.com/5211/5384592886_80a512e2c9.jpg',
+                width: '500',
+                height: '343'
+            }]
+
+            const preBuffer = []
+            imgs.forEach((image) => {
+                const img = new Image()
+                img.src = image.src
+                img.width = image.width
+                img.height = image.height
+                preBuffer.push(img)
+            });
+
+            // create random image number
+            const getRandomInt = (min, max) => {
+                return Math.floor(Math.random() * (max - min + 1)) + min
+            }
+
+            // 0 is first image,   preBuffer.length - 1) is  last image
+            const randomImg = getRandomInt(0, preBuffer.length - 1)
+            const newImage = preBuffer[randomImg]
+
+            // remove the previous images
+            const images = document.getElementsByTagName('img')
+            Array.from(images).forEach((image) => {
+                image.parentNode.removeChild(image)
+            });
+
+            document.body.appendChild(newImage)
+        }
+    </script>
+</body>
+
+</html>
