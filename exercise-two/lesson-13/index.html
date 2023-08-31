@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 13</title>
+</head>
+
+<body onload="getSize()" onresize="getSize()">
+    <div id="widthHeight"></div>
+
+    <script>
+        getSize = () => {
+            const width = document.documentElement.clientWidth
+            const height = document.documentElement.clientHeight
+
+            document.getElementById('widthHeight').innerHTML = '<h1>Width: ' + width + '<br>Height: ' + height + '</h1>'
+        }
+    </script>
+</body>
+
+</html>

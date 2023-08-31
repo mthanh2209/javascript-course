@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7</title>
+</head>
+
+<body>
+    <table id="myTable" border="1">
+    </table>
+    <form>
+        <input type="button" onclick="createTable()" value="Create the table">
+    </form>
+
+    <script>
+        createTable = () => {
+            const inputRow = prompt('Input number of Row', '1')
+            const inputColumn = prompt('Input number of Column', '1')
+
+            const table = document.getElementById('myTable')
+
+            // để tạo một mảng có độ dài tương ứng với số hàng và cột do người dùng nhập vào
+            const rows = Array.from({ length: inputRow })
+            rows.forEach((row, rowIndex) => {
+                const newRow = table.insertRow(rowIndex)
+
+                const cells = Array.from({ length: inputColumn })
+                cells.forEach((cell, columnIndex) => {
+                    const newCell = newRow.insertCell(columnIndex)
+                    newCell.innerHTML = `Row-${rowIndex} Column-${columnIndex}`
+                });
+            })
+        }
+    </script>
+</body>
+
+</html>

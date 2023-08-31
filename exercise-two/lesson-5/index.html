@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5</title>
+</head>
+
+<body>
+    <table id="simpleTable" border="1">
+        <tr>
+            <td>Name</td>
+            <td>Mong Thanh</td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td>20</td>
+        </tr>
+    </table><br>
+    <input type="button" onclick="insert_Row()" value="Insert row">
+
+    <script>
+        insert_Row = () => {
+            const newRow = document.getElementById('simpleTable').insertRow()
+            const cell1 = newRow.insertCell(0).innerHTML = 'Hometown'
+            const cell2 = newRow.insertCell(1).innerHTML = 'Da Nang'
+        }
+    </script>
+</body>
+
+</html>
