@@ -106,3 +106,9 @@ html {
 .form-submit:hover {
   background-color: #1ac7b6;
 }
+
+#display-data {
+  margin-top: 32px;
+  font-size: 15px;
+  text-align: left;
+}

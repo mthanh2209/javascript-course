@@ -9,9 +9,9 @@ const Validator = (options) => {
         }
     }
 
-    let selectorRules = {}
+    var selectorRules = {}
 
-    const validate = (inputElement, rule) => {
+    var validate = (inputElement, rule) => {
         let errorMessage
         const errorElement = getParent(inputElement, options.formGroupSelector).querySelector(options.errorSelector)
 
@@ -34,7 +34,7 @@ const Validator = (options) => {
             getParent(inputElement, options.formGroupSelector).classList.remove('invalid')
         }
 
-        return !errorMessage //!!: boolean
+        return !errorMessage
     }
 
     //lay element cua form can validate
@@ -97,16 +97,21 @@ const Validator = (options) => {
             }
         });
     }
+    options.onsubmit = (data) => {
+        const dataOutput = document.getElementById('display-data')
+        dataOutput.innerHTML = `
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Username:</strong> ${data.username}</p>
+        <p><strong>Password:</strong> ${data.password}</p>
+        <p><strong>Confirm password:</strong> ${data.password_confirm}</p>`
+    }
 }
-//Dinh nghia Rules
-//Nguyen tac cua rules:
-//1. Khi co loi tra ra message loi
-//2. Khi hop le => kh tra ra cai gi ca (undefined)
-Validator.isRequired = (selector) => {
+
+Validator.isUsername = (selector) => {
     return {
         selector,
         test: (value) => {
-            return value.trim() ? undefined : 'Vui lòng nhập trường này'
+            return value.trim() ? undefined : 'Please enter the correct format for Username. (No leading or trailing spaces)'
         }
     }
 }
@@ -116,7 +121,7 @@ Validator.isEmail = (selector) => {
         selector,
         test: (value) => {
             const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
-            return regex.test(value) ? undefined : 'Trường này phải là email'
+            return regex.test(value) ? undefined : 'Email address empty or wrong format. <br>example: username@somewhere.sth'
         }
     }
 }
@@ -125,7 +130,7 @@ Validator.minLength = (selector, min) => {
     return {
         selector,
         test: (value) => {
-            return value.length >= min ? undefined : `Vui lòng nhập tối thiểu ${min} kí tự`
+            return value.length >= min ? undefined : `Please enter the correct format for password. <br>(${min} characters, at least one non-letter)`
         }
     }
 }
@@ -134,7 +139,9 @@ Validator.isConfirmed = (selector, getConfirmValue) => {
     return {
         selector,
         test: (value) => {
-            return value === getConfirmValue() ? undefined : 'Mật khẩu nhập lại không chính xác'
+            return value === getConfirmValue() ? undefined : 'Make sure password and confirm passwords match'
         }
     }
 }
+
+
