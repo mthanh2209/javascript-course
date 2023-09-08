@@ -4,6 +4,4 @@ package-lock.json
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 .parcel-cache
-
-# Nuxt.js build / generate output
 dist
