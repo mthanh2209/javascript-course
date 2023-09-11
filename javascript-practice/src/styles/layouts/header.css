@@ -1,0 +1,172 @@
+.header {
+	margin: 0 auto;
+	width: 88%;
+}
+
+.top-nav {
+	margin: 1.5rem 0;
+}
+
+.header-search {
+	cursor: pointer;
+}
+
+.search-icon {
+	position: absolute;
+	right: 3.5rem;
+	transition: 0.5s ease-in-out;
+}
+
+.search-icon.active {
+	right: 0;
+}
+
+.close-icon {
+	position: absolute;
+	right: 1.375rem;
+	top: 1.19rem;
+	transform: 0.5s;
+	scale: 0;
+	z-index: 1;
+	display: none;
+}
+
+.close-icon.active {
+	display: block;
+	scale: 1;
+}
+
+.search-box {
+	position: absolute;
+	width: 100%;
+	right: -100%;
+	transition: 0.5s ease-in-out;
+	display: flex;
+	align-items: center;
+	padding-left: 1.875rem;
+	padding-right: 3.44rem;
+}
+
+.search-box.active {
+	right: 0;
+}
+
+.search-input {
+	width: 100%;
+	height: 3.125rem;
+	outline: none;
+	color: var(--dark-primary-color);
+	font-size: 1.125rem;
+	font-family: var(--primary-font);
+	border: none;
+	border-bottom: 1px solid var(--dark-primary-color);
+}
+
+.nav-text {
+	color: var(--logo-color);
+	font-family: var(--secondary-font);
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+.menu-text {
+	display: none;
+	color: var(--dark-primary-color);
+	font-family: var(--secondary-font);
+}
+
+header.open .menu-text {
+	position: absolute;
+	top: 29%;
+	left: 5%;
+	z-index: 1;
+	transition: 0.5s ease-in-out;
+	display: block;
+}
+
+.menu-icon {
+	position: absolute;
+	right: 1.25rem;
+	top: 1.44rem;
+	cursor: pointer;
+}
+
+.menu-toggle {
+	display: none;
+	cursor: pointer;
+}
+
+header.open .menu-toggle{
+	position: absolute;
+	top: 20%;
+	right: 5%;
+	height: 50%;
+	width: 100%;
+	display: block;
+	padding-top: 1.44rem;
+	background-color: var(--light-grey);
+	transition: 0.5s ease-in-out;
+}
+
+header.open .cart-icon{
+	position: absolute;
+	right: 17%;
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+header.open .avatar-icon {
+	position: absolute;
+	right: 5%;
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+.nav-categories {
+	display: none;
+}
+
+@media (min-width: 1200px) {
+	.header {
+		width: 96%;
+	}
+
+	.top-nav {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.search-icon {
+		position: static;
+	}
+
+	.nav-menu {
+		gap: 1rem;
+	}
+
+	.menu-icon {
+		display: none;
+	}
+
+	.menu-toggle {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.nav-categories {
+		display: flex;
+		justify-content: center;
+		gap: 2.75rem;
+		margin-top: 2.9rem;
+	}
+
+	.item-link {
+		text-decoration: none;
+		color: var(--categories-color);
+		font-family: var(--primary-font);
+	}
+
+	.item-link:hover {
+		color: var(--dark-primary-color);
+	}
+}
