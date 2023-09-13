@@ -32,6 +32,7 @@
 		<div class="header-line"></div>
 		<nav>
 			<ul class="list-categories">
+				<!-- TODO: dynamic UI -->
 				<li>
 					<a class="item-categories" href="javascript:void(0)">Plant pots</a>
 				</li>
@@ -82,6 +83,34 @@
 	<!-- START FOOTER SECTION -->
 	<footer></footer>
 	<!-- END FOOTER SECTION -->
+
+	<script>
+		let searchEl = document.querySelector('.search-icon')
+		let closeEl = document.querySelector('.close-icon')
+		let inputEl = document.querySelector('.search-box')
+
+		console.log(inputEl)
+
+		searchEl.onclick = () => {
+			inputEl.classList.add('active')
+			closeEl.classList.add('active')
+			searchEl.classList.add('active')
+		}
+
+		closeEl.onclick = () => {
+			inputEl.classList.remove('active')
+			closeEl.classList.remove('active')
+			searchEl.classList.remove('active')
+		}
+
+		let menu = document.querySelector('.menu-toggle')
+		let menuEl = document.querySelector('.menu-icon')
+		let header = document.querySelector('header')
+
+		menuEl.onclick = () => {
+			header.classList.toggle('open')
+		}
+	</script>
 </body>
 
 </html>
