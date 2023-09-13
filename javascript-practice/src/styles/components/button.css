@@ -1,0 +1,29 @@
+.btn {
+	border: none;
+	cursor: pointer;
+	font-family: var(--primary-font);
+	background-color: var(--light-grey);
+	font-size: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn:hover {
+	background-color: var(--dark-primary-color);
+	color: var(--secondary-color);
+}
+
+.primary-btn {
+	padding: 1rem 7.375rem;
+}
+
+.secondary-btn {
+	padding: 1rem 2rem;
+}
+
+@media (min-width: 1200px) {
+	.primary-btn {
+		padding: 1rem 2rem;
+	}
+}
