@@ -122,7 +122,7 @@ header.open .avatar-icon {
 	height: 1.5rem;
 }
 
-.nav-categories {
+.list-categories {
 	display: none;
 }
 
@@ -153,20 +153,20 @@ header.open .avatar-icon {
 		gap: 1rem;
 	}
 
-	.nav-categories {
+	.list-categories {
 		display: flex;
 		justify-content: center;
 		gap: 2.75rem;
 		margin-top: 2.9rem;
 	}
 
-	.item-link {
+	.item-categories {
 		text-decoration: none;
 		color: var(--categories-color);
 		font-family: var(--primary-font);
 	}
 
-	.item-link:hover {
+	.item-categories:hover {
 		color: var(--dark-primary-color);
 	}
 }
