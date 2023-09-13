@@ -1,0 +1,135 @@
+.footer {
+	background-color: var(--dark-primary-color);
+}
+
+.footer-wrapper {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	column-gap: 1.375rem;
+}
+
+
+.footer-link {
+	display: flex;
+	flex-direction: column;
+	gap: 0.875rem;
+}
+
+.title-link {
+	margin-top: 2.44rem;
+	color: var(--secondary-color);
+	font-family: var(--secondary-font);
+	line-height: normal;
+}
+
+.list-link {
+	display: flex;
+	flex-direction: column;
+	gap: 0.8125rem;
+}
+
+.item-link {
+	color: var(--secondary-color);
+	font-family: var(--primary-font);
+	font-size: 0.875rem;
+	line-height: normal;
+	cursor: pointer;
+}
+
+.footer-input {
+	margin-bottom: 1rem;
+}
+
+.title-input {
+	margin-top: 0.56rem;
+	padding-bottom: 1rem;
+	color: var(--secondary-color);
+	font-family: var(--secondary-font);
+	line-height: normal;
+}
+
+.btn-input {
+	display: flex;
+	flex-direction: row;
+}
+
+.text-input {
+	border: none;
+	background: var(--light-grey);
+	display: flex;
+	padding: 1rem 1.4375rem 1rem 2rem;
+}
+
+.text-input::-webkit-input-placeholder {
+	color: var(--dark-primary-color);
+	font-family: var(--primary-font);
+	font-size: 1rem;
+	line-height: normal;
+	opacity: 0.2;
+}
+
+.sign-up-btn:hover {
+	background-color: var(--primary-color);
+}
+
+.copyright-text {
+	padding: 1.375rem 0;
+	color: var(--secondary-color);
+	font-family: var(--primary-font);
+	font-size: 0.875rem;
+	line-height: normal;
+	text-align: center;
+}
+
+.footer-line {
+	height: 1px;
+	background: var(--primary-color);
+}
+
+.social-icon {
+	display: none;
+	cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+	.footer-main {
+		display: flex;
+		gap: 6.8125rem;
+	}
+	.footer-wrapper {
+		display: flex;
+		flex-direction: row;
+		gap: 6.8125rem;
+		margin-top: 1rem;
+		margin-bottom: 2.875rem;
+	}
+
+	.footer-link:nth-child(2) {
+    order: -1;
+	}
+
+	.footer-link:nth-child(3) {
+    margin-left: 1.6875rem;
+	}
+
+	.footer-input {
+		margin-top: 2.875rem;
+	}
+
+	.text-input {
+		padding: 1rem 19.375rem 1rem 2rem;
+	}
+
+	.footer-copyright {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.social-icon {
+		display: flex;
+		flex-direction: row;
+		gap: 1.5rem;
+	}
+}
