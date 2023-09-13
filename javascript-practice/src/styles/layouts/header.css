@@ -122,6 +122,10 @@ header.open .avatar-icon {
 	height: 1.5rem;
 }
 
+.header-line {
+	display: none;
+}
+
 .list-categories {
 	display: none;
 }
@@ -151,6 +155,12 @@ header.open .avatar-icon {
 	.menu-toggle {
 		display: flex;
 		gap: 1rem;
+	}
+
+	.header-line {
+		display: block;
+		height: 1px;
+		background: rgba(0, 0, 0, 0.10);
 	}
 
 	.list-categories {
