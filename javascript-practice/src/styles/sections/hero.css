@@ -1,6 +1,14 @@
+.hero {
+	text-align: center;
+}
+
+.hero-text {
+	text-align: left;
+}
+
 .hero-title {
 	margin-top: 4.375rem;
-	margin-bottom: 0.81rem;
+	margin-bottom: 0.8125rem;
 	color: var(--dark-primary-color);
 	font-family: var(--secondary-font);
 	font-size: 1.5rem;
@@ -20,7 +28,8 @@
 
 .hero-img {
 	margin-top: 2.06rem;
-	width: 100%;
+	width: 24.375rem;
+	height: 19rem;
 }
 
 .hero-btn {
@@ -31,24 +40,23 @@
 @media (min-width: 1200px) {
 	.hero-content {
 		position: absolute;
-		right: 5rem;
-		top: 16.44rem;
-		width: 39.37rem;
+		transform: translate(116%, 35%);
+		width: 39.375rem;
 		background-color: var(--secondary-color);
 		display: flex;
+		padding: 2.875rem 3.8125rem;
 		flex-direction: column;
 		justify-content: center;
 		align-items: flex-start;
-		gap: 157px;
-		padding: 48px 61px;
+		gap: 9.8125rem;
 	}
 
 	.hero-title {
-		margin-top: 0;
-		margin-bottom: 9.81rem;
 		color: var(--dark-primary-color);
-		font-size: 32px;
-		line-height: 44.8px;
+		font-size: 2rem;
+		line-height: 2.8rem;
+		margin-top: 0;
+		margin-bottom: 1.1875rem;
 	}
 
 	.hero-desc-mobile {
