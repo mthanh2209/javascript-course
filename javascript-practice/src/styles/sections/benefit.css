@@ -1,0 +1,114 @@
+.benefit {
+	margin-top: 2rem;
+	text-align: center;
+}
+
+.benefit-img {
+	width: 24.375rem;
+	height: 23.125rem;
+}
+
+.benefit-content {
+	position: absolute;
+	transform: translateY(-111.5%);
+	padding: 0 1.5rem;
+	text-align: left;
+}
+
+.benefit-title {
+	color: var(--secondary-color);
+	font-family: var(--secondary-font);
+	font-size: 1.5rem;
+	line-height: 2.1rem;
+}
+
+.benefit-desc {
+	padding-top: 0.6875rem;
+	padding-bottom: 1.25rem;
+	color: var(--secondary-color);
+	font-family: var(--primary-font);
+	font-size: 0.875rem;
+	line-height: 1.3125rem;
+}
+
+.benefit-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	margin-bottom: 1.8125rem;
+}
+
+.benefit-item {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.item-text {
+	color: var(--secondary-color);
+	font-family: var(--primary-font);
+	line-height: 1.5rem;
+}
+
+.benefit-btn {
+	display: flex;
+	flex-direction: row;
+}
+
+.benefit-input {
+	border: none;
+	background: var(--light-grey);
+	display: flex;
+	padding: 1rem 1.4375rem 1rem 2rem;
+}
+
+.benefit-input::-webkit-input-placeholder {
+	color: var(--dark-primary-color);
+	font-family: var(--primary-font);
+	font-size: 1rem;
+	line-height: normal;
+	opacity: 0.2;
+}
+
+@media (min-width: 1200px) {
+	.benefit {
+		margin-top: 3.75rem;
+	}
+
+	.benefit-img {
+		width: 90rem;
+		height: 27.69rem;
+	}
+
+	.benefit-content {
+		transform: translate(83%, -136%);
+		text-align: center;
+	}
+
+	.benefit-title {
+		font-size: 2rem;
+		line-height: 2.8rem;
+	}
+
+	.benefit-desc {
+		width: 29.375rem;
+		margin: 0 auto;
+		font-size: 1.125rem;
+		line-height: 1.6875rem;
+		padding-bottom: 1.6875rem;
+	}
+
+	.benefit-list {
+		flex-direction: row;
+		gap: 2.25rem;
+		justify-content: center;
+		padding-bottom: 0.5625rem;
+	}
+
+	.benefit-btn {
+		justify-content: center;
+	}
+
+	.benefit-input {
+		padding-right: 9.4375rem;
+	}
+}
