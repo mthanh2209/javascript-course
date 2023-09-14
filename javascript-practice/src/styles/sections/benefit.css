@@ -4,13 +4,13 @@
 }
 
 .benefit-img {
-	width: 24.375rem;
-	height: 23.125rem;
+	width: 100%;
+	height: 23rem;
 }
 
 .benefit-content {
 	position: absolute;
-	transform: translateY(-111.5%);
+	transform: translateY(-111%);
 	padding: 0 1.5rem;
 	text-align: left;
 }
@@ -23,19 +23,19 @@
 }
 
 .benefit-desc {
-	padding-top: 0.6875rem;
-	padding-bottom: 1.25rem;
+	margin-top: 0.7rem;
+	margin-bottom: 1.75rem;
 	color: var(--secondary-color);
 	font-family: var(--primary-font);
 	font-size: 0.875rem;
-	line-height: 1.3125rem;
+	line-height: 150%;
 }
 
 .benefit-list {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
-	margin-bottom: 1.8125rem;
+	margin-bottom: 2rem;
 }
 
 .benefit-item {
@@ -46,7 +46,7 @@
 .item-text {
 	color: var(--secondary-color);
 	font-family: var(--primary-font);
-	line-height: 1.5rem;
+	line-height: 150%;
 }
 
 .benefit-btn {
@@ -58,7 +58,7 @@
 	border: none;
 	background: var(--light-grey);
 	display: flex;
-	padding: 1rem 1.4375rem 1rem 2rem;
+	padding: 1rem 1.5rem 1rem 2rem;
 }
 
 .benefit-input::-webkit-input-placeholder {
@@ -75,40 +75,34 @@
 	}
 
 	.benefit-img {
-		width: 90rem;
-		height: 27.69rem;
+		height: 28rem;
 	}
 
 	.benefit-content {
-		transform: translate(83%, -136%);
+		transform: translate(83%, -140%);
 		text-align: center;
 	}
 
 	.benefit-title {
 		font-size: 2rem;
-		line-height: 2.8rem;
+		line-height: 140%;
 	}
 
 	.benefit-desc {
-		width: 29.375rem;
-		margin: 0 auto;
+		width: 29rem;
+		margin: 12px auto 30px;
 		font-size: 1.125rem;
-		line-height: 1.6875rem;
-		padding-bottom: 1.6875rem;
+		line-height: 150%;
 	}
 
 	.benefit-list {
 		flex-direction: row;
-		gap: 2.25rem;
+		gap: 2.2rem;
 		justify-content: center;
-		padding-bottom: 0.5625rem;
-	}
-
-	.benefit-btn {
-		justify-content: center;
+		margin-bottom: 2.5rem;
 	}
 
 	.benefit-input {
-		padding-right: 9.4375rem;
+		padding-right: 10rem;
 	}
 }
