@@ -7,7 +7,7 @@
 	margin-bottom: 2rem;
 }
 
-.hero-text {
+.hero-topic {
 	text-align: left;
 }
 
@@ -36,34 +36,29 @@
 	height: 19rem;
 }
 
-.hero-btn {
-	display: flex;
-	justify-content: center;
-}
-
 @media (min-width: 1200px) {
 	.hero {
 		margin-top: 1.4375rem;
 	}
 	.hero-content {
 		position: absolute;
-		transform: translate(117%, 32%);
-		width: 39rem;
-		background-color: var(--secondary-color);
 		display: flex;
-		padding: 3rem 3.5rem;
 		flex-direction: column;
 		justify-content: center;
 		align-items: flex-start;
 		gap: 10rem;
+		transform: translate(117%, 32%);
+		width: 39rem;
+		padding: 3rem 3.5rem;
+		background-color: var(--secondary-color);
 	}
 
 	.hero-title {
+		margin-top: 0;
+		margin-bottom: 1.2rem;
 		color: var(--dark-primary-color);
 		font-size: 2rem;
 		line-height: 2.8rem;
-		margin-top: 0;
-		margin-bottom: 1.2rem;
 	}
 
 	.hero-desc-mobile {
