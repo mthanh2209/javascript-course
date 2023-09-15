@@ -10,12 +10,12 @@
 
 <body>
 	<!-- START HEADER SECTION -->
-	<header class="header">
+	<header class="main-header">
 		<div class="top-nav">
-			<span class="header-search">
+			<div class="header-search">
 				<img class="search-icon" src="assets/icons/search.svg" alt="icon search" />
 				<img class="close-icon" src="assets/icons/close.svg" alt="icon close" />
-			</span>
+			</div>
 			<div class="search-box">
 				<input class="search-input" type="text" placeholder="Search here ">
 			</div>
@@ -83,34 +83,6 @@
 	<!-- START FOOTER SECTION -->
 	<footer></footer>
 	<!-- END FOOTER SECTION -->
-
-	<script>
-		let searchEl = document.querySelector('.search-icon')
-		let closeEl = document.querySelector('.close-icon')
-		let inputEl = document.querySelector('.search-box')
-
-		console.log(inputEl)
-
-		searchEl.onclick = () => {
-			inputEl.classList.add('active')
-			closeEl.classList.add('active')
-			searchEl.classList.add('active')
-		}
-
-		closeEl.onclick = () => {
-			inputEl.classList.remove('active')
-			closeEl.classList.remove('active')
-			searchEl.classList.remove('active')
-		}
-
-		let menu = document.querySelector('.menu-toggle')
-		let menuEl = document.querySelector('.menu-icon')
-		let header = document.querySelector('header')
-
-		menuEl.onclick = () => {
-			header.classList.toggle('open')
-		}
-	</script>
 </body>
 
 </html>

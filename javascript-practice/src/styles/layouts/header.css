@@ -1,4 +1,4 @@
-.header {
+.main-header {
 	margin: 0 auto;
 	width: 88%;
 }
@@ -23,12 +23,12 @@
 
 .close-icon {
 	position: absolute;
-	right: 1.3rem;
 	top: 1.3rem;
-	transform: 0.5s;
-	scale: 0;
+	right: 1.3rem;
 	z-index: 1;
 	display: none;
+	transform: 0.5s;
+	scale: 0;
 }
 
 .close-icon.active {
@@ -38,12 +38,12 @@
 
 .search-box {
 	position: absolute;
-	width: 100%;
 	right: -100%;
-	transition: 0.5s ease-in-out;
 	display: flex;
-	align-items: center;
+	transition: 0.5s ease-in-out;
+	width: 100%;
 	padding: 0 1.4rem;
+	align-items: center;
 }
 
 .search-box.active {
@@ -79,8 +79,8 @@ header.open .menu-text {
 	top: 29%;
 	left: 5%;
 	z-index: 1;
-	transition: 0.5s ease-in-out;
 	display: block;
+	transition: 0.5s ease-in-out;
 }
 
 .menu-icon {
@@ -99,10 +99,10 @@ header.open .menu-toggle{
 	position: absolute;
 	top: 20%;
 	right: 5%;
-	height: 50%;
-	width: 100%;
 	display: block;
 	padding-top: 1.44rem;
+	height: 50%;
+	width: 100%;
 	background-color: var(--light-grey);
 	transition: 0.5s ease-in-out;
 }
@@ -130,7 +130,7 @@ header.open .avatar-icon {
 }
 
 @media (min-width: 1200px) {
-	.header {
+	.main-header {
 		width: 96%;
 	}
 
