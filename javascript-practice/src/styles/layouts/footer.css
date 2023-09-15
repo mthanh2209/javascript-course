@@ -1,8 +1,8 @@
-.footer {
+.main-footer {
 	background-color: var(--dark-primary-color);
 }
 
-.footer-wrapper {
+.footer-nav {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(2, 1fr);
@@ -32,16 +32,16 @@
 .item-link {
 	color: var(--secondary-color);
 	font-family: var(--primary-font);
-	font-size: 0.875rem;
+	font-size: var(--font-xs);
 	line-height: normal;
 	cursor: pointer;
 }
 
-.footer-input {
+.footer-register {
 	margin-bottom: 1rem;
 }
 
-.title-input {
+.title-register {
 	margin-top: 0.5rem;
 	padding-bottom: 1rem;
 	color: var(--secondary-color);
@@ -49,35 +49,35 @@
 	line-height: normal;
 }
 
-.btn-input {
+.form-register {
 	display: flex;
 	flex-direction: row;
 }
 
-.text-input {
-	border: none;
-	background: var(--light-grey);
+.form-input {
 	display: flex;
+	border: none;
 	padding: 1rem 1.5rem 1rem 2rem;
+	background: var(--light-grey);
 }
 
-.text-input::-webkit-input-placeholder {
+.form-input::-webkit-input-placeholder {
 	color: var(--dark-primary-color);
 	font-family: var(--primary-font);
-	font-size: 1rem;
+	font-size: var(--font-sm);
 	line-height: normal;
 	opacity: 0.2;
 }
 
-.sign-up-btn:hover {
+.form-button:hover {
 	background-color: var(--primary-color);
 }
 
-.copyright-text {
+.copyright-title {
 	padding: 1.4rem 0;
 	color: var(--secondary-color);
 	font-family: var(--primary-font);
-	font-size: 0.875rem;
+	font-size: var(--font-xs);
 	line-height: normal;
 	text-align: center;
 }
@@ -93,11 +93,12 @@
 }
 
 @media (min-width: 1200px) {
-	.footer-main {
+	.footer-wrapper {
 		display: flex;
 		gap: 7rem;
 	}
-	.footer-wrapper {
+
+	.footer-nav {
 		display: flex;
 		flex-direction: row;
 		gap: 7rem;
@@ -113,11 +114,11 @@
     margin-left: 1.3rem;
 	}
 
-	.footer-input {
+	.footer-register {
 		margin-top: 3.5rem;
 	}
 
-	.text-input {
+	.form-input {
 		padding: 1rem 19rem 1rem 2rem;
 	}
 
