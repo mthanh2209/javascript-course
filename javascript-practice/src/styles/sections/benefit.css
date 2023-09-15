@@ -10,7 +10,7 @@
 
 .benefit-content {
 	position: absolute;
-	transform: translateY(-111%);
+	top: 7%;
 	padding: 0 1.5rem;
 	text-align: left;
 }
@@ -18,7 +18,7 @@
 .benefit-title {
 	color: var(--secondary-color);
 	font-family: var(--secondary-font);
-	font-size: 1.5rem;
+	font-size: var(--font-xl);
 	line-height: 2.1rem;
 }
 
@@ -27,7 +27,7 @@
 	margin-bottom: 1.75rem;
 	color: var(--secondary-color);
 	font-family: var(--primary-font);
-	font-size: 0.875rem;
+	font-size: var(--font-xs);
 	line-height: 150%;
 }
 
@@ -49,22 +49,23 @@
 	line-height: 150%;
 }
 
-.benefit-btn {
+.benefit-register {
 	display: flex;
 	flex-direction: row;
 }
 
 .benefit-input {
-	border: none;
-	background: var(--light-grey);
 	display: flex;
+	border: none;
 	padding: 1rem 1.5rem 1rem 2rem;
+	background: var(--light-grey);
+
 }
 
 .benefit-input::-webkit-input-placeholder {
 	color: var(--dark-primary-color);
 	font-family: var(--primary-font);
-	font-size: 1rem;
+	font-size: var(--font-sm);
 	line-height: normal;
 	opacity: 0.2;
 }
@@ -79,7 +80,8 @@
 	}
 
 	.benefit-content {
-		transform: translate(83%, -140%);
+		top: 20%;
+		left: 33%;
 		text-align: center;
 	}
 
@@ -91,7 +93,7 @@
 	.benefit-desc {
 		width: 29rem;
 		margin: 12px auto 30px;
-		font-size: 1.125rem;
+		font-size: var(--font-md);
 		line-height: 150%;
 	}
 
