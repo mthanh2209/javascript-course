@@ -1,12 +1,12 @@
 .btn {
-	border: none;
-	cursor: pointer;
-	font-family: var(--primary-font);
-	background-color: var(--light-grey);
-	font-size: 1rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border: none;
+	cursor: pointer;
+	font-size: var(--font-sm);
+	font-family: var(--primary-font);
+	background-color: var(--light-grey);
 }
 
 .btn:hover {
