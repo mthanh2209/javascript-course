@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>E-Commerce Website</title>
+	<link rel="stylesheet" href="styles/main.css" />
+</head>
+
+<body>
+	<section class="container">
+		<h3 class="cart-title">Your shopping cart</h3>
+		<!-- TODO: dynamic UI -->
+		<div class="cart-wrapper">
+			<div class="cart-product">
+				<img src="assets/images/graystone-vase.png" alt="img product">
+				<div class="cart-content">
+					<h5>Graystone vase</h5>
+					<p class="cart-desc">A timeless ceramic vase with
+						a tri color grey glaze.</p>
+					<span class="cart-per">£85</span>
+					<div class="stepper">
+						<button class="decrement">-</button>
+						<input type="number" class="quantity" value="1" readonly>
+						<button class="increment">+</button>
+					</div>
+				</div>
+			</div>
+			<div class="cart-product">
+				<img src="assets/images/white-vase.png" alt="img product">
+				<div class="cart-content">
+					<h5>Basic white vase</h5>
+					<p class="cart-desc">Beautiful and simple this is
+						one for the classics</p>
+					<span class="cart-per">£85</span>
+					<div class="stepper">
+						<button class="decrement">-</button>
+						<input type="number" class="quantity" value="1" readonly>
+						<button class="increment">+</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="cart-line"></div>
+		<div class="cart-total">
+			<h4>Subtotal</h4>
+			<h3>£210</h3>
+		</div>
+		<p class="cart-note">Taxes and shipping are calculated at checkout</p>
+		<button class="btn primary-btn">Go to checkout</button>
+	</section>
+</body>
+
+</html>
