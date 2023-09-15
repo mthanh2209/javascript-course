@@ -5,8 +5,8 @@
 }
 
 .beginning-content {
-	background-color: var(--dark-primary-color);
 	padding: 2rem;
+	background-color: var(--dark-primary-color);
 }
 
 .beginning-title {
@@ -14,12 +14,12 @@
 }
 
 .beginning-desc {
-	color: var(--secondary-color);
-	font-family: var(--primary-font);
-	font-size: 0.875rem;
-	line-height: 150%;
 	padding-top: 0.7rem;
 	padding-bottom: 3.5rem;
+	color: var(--secondary-color);
+	font-family: var(--primary-font);
+	font-size: var(--font-xs);
+	line-height: 150%;
 }
 
 .beginning-btn {
@@ -47,15 +47,15 @@
 	}
 
 	.beginning-title {
-		font-size: 2rem;
 		padding-top: 0.6rem;
+		font-size: var(--font-2xl);
 	}
 
 	.beginning-desc {
-		font-size: 1.125rem;
-		line-height: normal;
 		padding-top: 1rem;
 		padding-bottom: 13rem;
+		font-size: var(--font-md);
+		line-height: normal;
 	}
 
 	.beginning-btn {
