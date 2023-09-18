@@ -1,0 +1,181 @@
+.main-header {
+	margin: 0 auto;
+	width: 88%;
+}
+
+.top-nav {
+	margin: 1.5rem 0;
+}
+
+.header-search {
+	cursor: pointer;
+}
+
+.search-icon {
+	position: absolute;
+	right: 3.5rem;
+	transition: 0.5s ease-in-out;
+}
+
+.search-icon.active {
+	right: 0;
+}
+
+.close-icon {
+	position: absolute;
+	top: 1.3rem;
+	right: 1.3rem;
+	z-index: 1;
+	display: none;
+	transform: 0.5s;
+	scale: 0;
+}
+
+.close-icon.active {
+	display: block;
+	scale: 1;
+}
+
+.search-box {
+	position: absolute;
+	right: -100%;
+	display: flex;
+	transition: 0.5s ease-in-out;
+	width: 100%;
+	padding: 0 1.4rem;
+	align-items: center;
+}
+
+.search-box.active {
+	right: 0;
+}
+
+.search-input {
+	width: 100%;
+	height: 3rem;
+	outline: none;
+	color: var(--dark-primary-color);
+	font-size: 1rem;
+	font-family: var(--primary-font);
+	border: none;
+	border-bottom: 1px solid var(--dark-primary-color);
+}
+
+.nav-text {
+	color: var(--logo-color);
+	font-family: var(--secondary-font);
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+.menu-text {
+	display: none;
+	color: var(--dark-primary-color);
+	font-family: var(--secondary-font);
+}
+
+header.open .menu-text {
+	position: absolute;
+	top: 29%;
+	left: 5%;
+	z-index: 1;
+	display: block;
+	transition: 0.5s ease-in-out;
+}
+
+.menu-icon {
+	position: absolute;
+	right: 1.25rem;
+	top: 1.44rem;
+	cursor: pointer;
+}
+
+.menu-toggle {
+	display: none;
+	cursor: pointer;
+}
+
+header.open .menu-toggle{
+	position: absolute;
+	top: 20%;
+	right: 5%;
+	display: block;
+	padding-top: 1.44rem;
+	height: 50%;
+	width: 100%;
+	background-color: var(--light-grey);
+	transition: 0.5s ease-in-out;
+}
+
+header.open .cart-icon{
+	position: absolute;
+	right: 17%;
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+header.open .avatar-icon {
+	position: absolute;
+	right: 5%;
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+.header-line {
+	display: none;
+}
+
+.list-categories {
+	display: none;
+}
+
+@media (min-width: 1200px) {
+	.main-header {
+		width: 96%;
+	}
+
+	.top-nav {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.search-icon {
+		position: static;
+	}
+
+	.nav-menu {
+		gap: 1rem;
+	}
+
+	.menu-icon {
+		display: none;
+	}
+
+	.menu-toggle {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.header-line {
+		display: block;
+		height: 1px;
+		background: rgba(0, 0, 0, 0.10);
+	}
+
+	.list-categories {
+		display: flex;
+		justify-content: center;
+		gap: 2.75rem;
+		margin-top: 2.9rem;
+	}
+
+	.item-categories {
+		text-decoration: none;
+		color: var(--categories-color);
+		font-family: var(--primary-font);
+	}
+
+	.item-categories:hover {
+		color: var(--dark-primary-color);
+	}
+}

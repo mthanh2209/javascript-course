@@ -2,6 +2,14 @@
 	--primary-font: "Satoshi";
 	--secondary-font: "ClashDisplay";
 
+	--font-xs: 14px;
+	--font-sm: 16px;
+	--font-md: 18px;
+	--font-lg: 20px;
+	--font-xl: 24px;
+	--font-2xl: 32px;
+	--font-3xl: 36px;
+
 	--primary-color: #4e4d93;
 	--dark-primary-color: #2a254b;
 	--secondary-color: #fff;
