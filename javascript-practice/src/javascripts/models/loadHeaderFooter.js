@@ -1,0 +1,9 @@
+class LoadHeaderFooter {
+	getHeader() {
+
+	}
+
+	getFooter() {
+
+	}
+}
