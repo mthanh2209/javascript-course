@@ -1,17 +1,26 @@
 class Controller {
+	/**
+	 * Constructor of Controller object
+	 * @param {Object} model - The model component responsible for data management.
+	 * @param {Object} view - The view component responsible for rendering UI elements.
+	 */
+
 	constructor(model, view) {
 		this.model = model;
 		this.view = view;
 	}
 
 	//-----LOAD HEADER AND FOOTER-----//
-	init() {
-		const headerFooterData = {
-			header: this.model.getHeader(),
-			footer: this.model.getFooter(),
-		};
+	initHeaderFooter = async () => {
+		try {
+			const headerData = await this.model.render.fetchHeaderData();
+			const footerData = await this.model.render.fetchFooterData();
 
-		this.view.connectedCallback(headerFooterData);
+			this.view.renderView.renderHeader(headerData);
+			this.view.renderView.renderFooter(footerData);
+		} catch (error) {
+			console.error("Error loading header and footer:", error);
+		}
 	}
 }
 
