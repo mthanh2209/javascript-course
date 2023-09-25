@@ -3,13 +3,7 @@
 	margin-bottom: 1.25rem;
 }
 
-.cart-line {
-	margin-bottom: 1rem;
-	height: 1px;
-	background: #EBE8F4;
-}
-
-.thead{
+.thead {
 	display: none;
 }
 
@@ -80,7 +74,7 @@
 		display: flex;
 	}
 
-	.cart-content{
+	.cart-content {
 		margin: 0;
 	}
 
@@ -90,7 +84,7 @@
 		font-size: var(--font-3xl);
 	}
 
-	.thead{
+	.thead {
 		display: revert;
 	}
 
@@ -111,7 +105,7 @@
 	.tbody-total {
 		display: revert;
 		padding-top: 1rem;
-    padding-left: 15rem;
+		padding-left: 15rem;
 	}
 
 	.tbody-stepper {

@@ -9,7 +9,6 @@
 	column-gap: 1.3rem;
 }
 
-
 .footer-link {
 	display: flex;
 	flex-direction: column;
@@ -80,11 +79,6 @@
 	font-size: var(--font-xs);
 	line-height: normal;
 	text-align: center;
-}
-
-.footer-line {
-	height: 1px;
-	background: var(--primary-color);
 }
 
 .social-icon {
