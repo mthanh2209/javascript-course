@@ -1,0 +1,196 @@
+{
+	"products": [
+		{
+			"id": 1,
+			"title": "Rustic Vase Set",
+			"price": 155,
+			"description": "A ceramic is an inorganic non-metallic solid made up of either metal or non-metal compounds that have been shaped and then hardened by heating to high temperatures.",
+			"category": {
+				"id": 1,
+				"name": "Ceramics"
+			},
+			"dimension": {
+				"height": "50cm",
+				"width": "10cm",
+				"depth": "2cm"
+			},
+			"image": ""
+		},
+		{
+			"id": 2,
+			"title": "The Silky Vase",
+			"price": 125,
+			"description": "A ceramic is an inorganic non-metallic solid made up of either metal or non-metal compounds that have been shaped and then hardened by heating to high temperatures.",
+			"category": {
+				"id": 1,
+				"name": "Ceramics"
+			},
+			"dimension": {
+				"height": "50cm",
+				"width": "10cm",
+				"depth": "2cm"
+			},
+			"image": ""
+		},
+		{
+			"id": 3,
+			"title": "Graystone vase",
+			"price": 85,
+			"description": "A timeless ceramic vase with a tri color grey glaze.",
+			"category": {
+				"id": 1,
+				"name": "Ceramics"
+			},
+			"dimension": {
+				"height": "50cm",
+				"width": "10cm",
+				"depth": "2cm"
+			},
+			"image": ""
+		},
+		{
+			"id": 4,
+			"title": "Small vase",
+			"price": 250,
+			"description": "A ceramic is an inorganic non-metallic solid made up of either metal or non-metal compounds that have been shaped and then hardened by heating to high temperatures.",
+			"category": {
+				"id": 1,
+				"name": "Ceramics"
+			},
+			"dimension": {
+				"height": "50cm",
+				"width": "10cm",
+				"depth": "2cm"
+			},
+			"image": ""
+		},
+		{
+			"id": 5,
+			"title": "The Lucy Lamp",
+			"price": 399,
+			"description": "A lamp is a device that makes light and heat. Lamps usually work with electricity, using a lightbulb.",
+			"category": {
+				"id": 2,
+				"name": "Ligth fittings"
+			},
+			"dimension": {
+				"height": "50cm",
+				"width": "10cm",
+				"depth": "2cm"
+			},
+			"image": ""
+		},
+		{
+			"id": 6,
+			"title": "Multiple Lamps",
+			"price": 399,
+			"description": "A lamp is a device that makes light and heat. Lamps usually work with electricity, using a lightbulb.",
+			"category": {
+				"id": 2,
+				"name": "Ligth fittings"
+			},
+			"dimension": {
+				"height": "50cm",
+				"width": "10cm",
+				"depth": "2cm"
+			},
+			"image": ""
+		},
+		{
+			"id": 7,
+			"title": "The Dandy chair",
+			"price": 250,
+			"description": "A timeless design, with premium materials features as one of our most popular and iconic pieces. The dandy chair is perfect for any stylish living space with beech legs and lambskin leather upholstery.",
+			"category": {
+				"id": 3,
+				"name": "Chairs"
+			},
+			"dimension": {
+				"height": "110cm",
+				"width": "75cm",
+				"depth": "50cm"
+			},
+			"image": ""
+		},
+		{
+			"id": 8,
+			"title": "The Dandy chair",
+			"price": 250,
+			"description": "A timeless design, with premium materials features as one of our most popular and iconic pieces. The dandy chair is perfect for any stylish living space with beech legs and lambskin leather upholstery.",
+			"category": {
+				"id": 3,
+				"name": "Chairs"
+			},
+			"dimension": {
+				"height": "110cm",
+				"width": "75cm",
+				"depth": "50cm"
+			},
+			"image": ""
+		},
+		{
+			"id": 9,
+			"title": "The Dark chair",
+			"price": 250,
+			"description": "A timeless design, with premium materials features as one of our most popular and iconic pieces. The dandy chair is perfect for any stylish living space with beech legs and lambskin leather upholstery.",
+			"category": {
+				"id": 3,
+				"name": "Chairs"
+			},
+			"dimension": {
+				"height": "110cm",
+				"width": "75cm",
+				"depth": "50cm"
+			},
+			"image": ""
+		},
+		{
+			"id": 10,
+			"title": "The Yellow chair",
+			"price": 250,
+			"description": "A timeless design, with premium materials features as one of our most popular and iconic pieces. The dandy chair is perfect for any stylish living space with beech legs and lambskin leather upholstery.",
+			"category": {
+				"id": 3,
+				"name": "Chairs"
+			},
+			"dimension": {
+				"height": "110cm",
+				"width": "75cm",
+				"depth": "50cm"
+			},
+			"image": ""
+		},
+		{
+			"id": 11,
+			"title": "Multiple chairs",
+			"price": 250,
+			"description": "A timeless design, with premium materials features as one of our most popular and iconic pieces. The dandy chair is perfect for any stylish living space with beech legs and lambskin leather upholstery.",
+			"category": {
+				"id": 3,
+				"name": "Chairs"
+			},
+			"dimension": {
+				"height": "110cm",
+				"width": "75cm",
+				"depth": "50cm"
+			},
+			"image": ""
+		},
+		{
+			"id": 12,
+			"title": "Basic white vase",
+			"price": 85,
+			"description": "Beautiful and simple this is one for the classics.",
+			"category": {
+				"id": 4,
+				"name": "Plant pots"
+			},
+			"dimension": {
+				"height": "10cm",
+				"width": "5cm",
+				"depth": "1cm"
+			},
+			"image": ""
+		}
+	]
+}
