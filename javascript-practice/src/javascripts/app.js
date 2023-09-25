@@ -4,9 +4,7 @@ import Controller from "./controllers/controller";
 
 class App {
 	constructor() { }
-	/**
-	 * Starts the app by initializing and triggering the controller's setup
-	 */
+
 	start() {
 		const controller = new Controller(new Model(), new View());
 		controller.initHeaderFooter();

@@ -6,6 +6,7 @@ class Controller {
 	 */
 
 	constructor(model, view) {
+		//Initialize the Controller with a Model and View
 		this.model = model;
 		this.view = view;
 	}
@@ -22,6 +23,8 @@ class Controller {
 			console.error("Error loading header and footer:", error);
 		}
 	}
+
+	//-----OTHER FEATURES-----//
 }
 
 export default Controller;
