@@ -50,14 +50,14 @@ The app has 4 features:
 │   │   ├── services/
 │   │   ├── views/
 │   │   ├── app.js
-│   ├── styles/
+│   ├── pages/
+│   └── styles/
 │   │   ├── base/
 │   │   ├── components/
 │   │   ├── layout/
 │   │   ├── sections/
 │   │   ├── utils/
 │   │   └── main.css
-│   └── index.html
 └── .editorconfig
 └── .gitignore
 └── package.json
