@@ -4,11 +4,9 @@
 	"description": "",
 	"source": [
 		"src/index.html",
-		"src/header.html",
-		"src/footer.html",
-		"src/detail.html",
-		"src/productc-listing.html",
-		"src/shopping-cart.html"
+		"src/pages/detail.html",
+		"src/pages/product-listing.html",
+		"src/pages/shopping-cart.html"
 	],
 	"scripts": {
 		"start": "parcel --no-cache",
