@@ -72,6 +72,10 @@
 	background-color: var(--primary-color);
 }
 
+.footer-copyright {
+	border-top: 1px solid var(--primary-color);
+}
+
 .copyright-title {
 	padding: 1.4rem 0;
 	color: var(--secondary-color);
@@ -101,11 +105,11 @@
 	}
 
 	.footer-link:nth-child(2) {
-    order: -1;
+		order: -1;
 	}
 
 	.footer-link:nth-child(3) {
-    margin-left: 1.3rem;
+		margin-left: 1.3rem;
 	}
 
 	.footer-register {
