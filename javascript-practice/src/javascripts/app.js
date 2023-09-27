@@ -6,8 +6,7 @@ class App {
 	constructor() { }
 
 	start() {
-		const controller = new Controller(new Model(), new View());
-		controller.initHeaderFooter();
+		new Controller(new Model(), new View());
 	}
 }
 

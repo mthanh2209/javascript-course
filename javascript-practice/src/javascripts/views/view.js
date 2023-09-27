@@ -1,8 +1,8 @@
-import RenderView from "./renderView";
+import LayoutView from "./layoutView";
 
 class View {
 	constructor() {
-		this.renderView = new RenderView();
+		this.layoutView = new LayoutView();
 	}
 }
 
