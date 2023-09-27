@@ -50,6 +50,7 @@ The app has 4 features:
 │   │   ├── services/
 │   │   ├── views/
 │   │   ├── app.js
+│   ├── pages/
 │   ├── styles/
 │   │   ├── base/
 │   │   ├── components/
