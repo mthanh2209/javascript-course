@@ -23,7 +23,6 @@ class Header {
 		</div>
 		<h1 class="nav-text">Avion</h1>
 		<div class="nav-menu">
-			<h2 class="menu-text">Welcome to furniture website</h2>
 			<img class="menu-icon" src="${menuIcon}" alt="icon menu" />
 			<div class="menu-toggle">
 				<img class="cart-icon" src="${cartIcon}" alt="icon cart" />
