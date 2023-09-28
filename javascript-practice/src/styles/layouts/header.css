@@ -70,21 +70,6 @@
 	cursor: pointer;
 }
 
-.menu-text {
-	display: none;
-	color: var(--dark-primary-color);
-	font-family: var(--secondary-font);
-}
-
-header.open .menu-text {
-	position: absolute;
-	top: 29%;
-	left: 5%;
-	z-index: 1;
-	display: block;
-	transition: 0.5s ease-in-out;
-}
-
 .menu-icon {
 	position: absolute;
 	right: 1.25rem;
@@ -92,35 +77,25 @@ header.open .menu-text {
 	cursor: pointer;
 }
 
-.menu-toggle {
+.cart-icon,
+.avatar-icon {
 	display: none;
 	cursor: pointer;
 }
 
 header.open .menu-toggle {
 	position: absolute;
-	top: 20%;
-	right: 5%;
-	display: block;
-	padding-top: 1.44rem;
-	height: 50%;
-	width: 100%;
+	right: 0;
+	display: flex;
+	gap: 12px;
+	padding: 1.4rem;
 	background-color: var(--light-grey);
 	transition: 0.5s ease-in-out;
 }
 
+header.open .avatar-icon,
 header.open .cart-icon {
-	position: absolute;
-	right: 17%;
-	width: 1.5rem;
-	height: 1.5rem;
-}
-
-header.open .avatar-icon {
-	position: absolute;
-	right: 5%;
-	width: 1.5rem;
-	height: 1.5rem;
+	display: block;
 }
 
 .list-categories {
@@ -152,6 +127,17 @@ header.open .avatar-icon {
 	.menu-toggle {
 		display: flex;
 		gap: 1rem;
+	}
+
+	.cart-icon,
+	.avatar-icon {
+		display: block;
+	}
+
+	.header-line {
+		display: block;
+		height: 1px;
+		background: rgba(0, 0, 0, 0.1);
 	}
 
 	.list-categories {
