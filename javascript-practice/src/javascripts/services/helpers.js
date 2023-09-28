@@ -19,10 +19,10 @@ export default class APIHelper {
 
 	/**
 	 * Get the full path of API endpoint
-	 * @param {String} url
+	 * @param {String} path
 	 * @returns String
 	 */
-	static apiEndpoint(url) {
-		return `${API_URL}${url}`;
+	static apiEndpoint(path) {
+		return `${API_URL}${path}`;
 	}
 }
