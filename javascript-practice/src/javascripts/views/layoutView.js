@@ -5,15 +5,23 @@ class LayoutView {
 	constructor() {
 		this.headerEl = document.querySelector('.main-header');
 		this.footerEl = document.querySelector('.main-footer');
+
 		this.menuEl = document.querySelector('.menu-icon');
 		this.header = document.querySelector('header');
+		this.menuOpen = false;
 	}
+
 	//----- EVENT LISTENER -----//
 	addEventToggleMenu = () => {
 		this.menuEl.addEventListener('click', () => {
-			menu.toggleMenu();
-			header.classList.toggle('open', menu.menuOpen);
+			this.toggleMenu();
 		});
+	}
+
+	//----- METHOD -----//
+	toggleMenu = () => {
+		this.menuOpen = !this.menuOpen;
+		this.header.classList.toggle('open', this.menuOpen);
 	}
 
 	//----- RENDERING -----//
