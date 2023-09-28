@@ -8,7 +8,7 @@ class LayoutView {
 
 		this.menuEl = document.querySelector('.menu-icon');
 		this.header = document.querySelector('header');
-		this.isOpen = false;
+		this.isOpenMenu = false;
 	}
 
 	//----- EVENT LISTENER -----//
@@ -20,8 +20,8 @@ class LayoutView {
 
 	//----- METHOD -----//
 	toggleMenu = () => {
-		this.isOpen = !this.isOpen;
-		this.header.classList.toggle('open', this.isOpen);
+		this.isOpenMenu = !this.isOpenMenu;
+		this.header.classList.toggle('open', this.isOpenMenu);
 	}
 
 	//----- RENDERING -----//
