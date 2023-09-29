@@ -9,6 +9,7 @@
 		"src/pages/shopping-cart.html"
 	],
 	"scripts": {
+		"server": "json-server --watch src/server/db.json",
 		"start": "parcel --no-cache",
 		"build": "parcel build --no-cache"
 	},
@@ -17,5 +18,8 @@
 	"devDependencies": {
 		"parcel": "^2.9.3",
 		"prettier": "3.0.3"
+	},
+	"dependencies": {
+		"json-server": "^0.17.3"
 	}
 }
