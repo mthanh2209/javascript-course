@@ -1,7 +1,9 @@
 .product {
 	margin-top: 4.5rem;
 	margin-bottom: 3.75rem;
-	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .product-img {

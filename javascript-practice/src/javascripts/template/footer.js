@@ -12,7 +12,7 @@ class Footer {
 	 * HTML template for rendering the footer.
 	 * @returns {HTMLElement} HTML element for the footer.
 	 */
-	renderFooter = () => (
+	static renderFooter = (
 		`
 		<div class="container">
 		<div class="footer-wrapper">
