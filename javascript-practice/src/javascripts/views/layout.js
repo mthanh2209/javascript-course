@@ -6,36 +6,28 @@ class LayoutView {
 	constructor() {
 		this.headerEl = document.querySelector(".main-header");
 		this.footerEl = document.querySelector(".main-footer");
-		this.renderHeader();
-		this.renderFooter();
+		this.renderLayout();
 	}
 
 	//----- RENDERING -----//
 
 	/**
-	 * Renders a header element.
-	 * @param {Object} header  - header object to render.
+	 * Renders the header and footer elements.
+	 * @param {Object} data  - data to render the header and footer.
 	 */
-	renderHeader = async () => {
+	renderLayout = async () => {
 		const categories = new APICategory();
 		// Fetch the list of categories from the API.
 		const list = (await categories.get()).data;
+
+		// Render the header and footer templates.
 		const headerTemplate = Header.renderHeader(list);
+		const footerTemplate = Footer.renderFooter(list);
 
-		// Append headerTemplate to the header element.
+		// Append the templates to their respective elements.
 		this.headerEl.innerHTML = headerTemplate;
-	};
-
-	/**
-	 * Renders a header element.
-	 * @param {Object} footer  - footer object to render.
-	 */
-	renderFooter() {
-		const footerTemplate = Footer.renderFooter;
-
-		// Append footerTemplate to the footer element.
 		this.footerEl.innerHTML = footerTemplate;
-	}
+	};
 }
 
 export default LayoutView;
