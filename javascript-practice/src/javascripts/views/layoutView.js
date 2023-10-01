@@ -5,6 +5,8 @@ class LayoutView {
 	constructor() {
 		this.headerEl = document.querySelector('.main-header');
 		this.footerEl = document.querySelector('.main-footer');
+		this.renderHeader();
+		this.renderFooter();
 	}
 
 	//----- RENDERING -----//
@@ -14,7 +16,7 @@ class LayoutView {
 	 * @param {Object} header  - header object to render.
 	 */
 	renderHeader() {
-		const headerTemplate = Header.renderHeader();
+		const headerTemplate = Header.renderHeader;
 
 		// Append headerTemplate to the header element.
 		this.headerEl.innerHTML = headerTemplate;
@@ -25,7 +27,7 @@ class LayoutView {
 	 * @param {Object} footer  - footer object to render.
 	 */
 	renderFooter() {
-		const footerTemplate = Footer.renderFooter();
+		const footerTemplate = Footer.renderFooter;
 
 		// Append footerTemplate to the footer element.
 		this.footerEl.innerHTML = footerTemplate;

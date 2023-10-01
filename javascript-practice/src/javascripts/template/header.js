@@ -11,7 +11,7 @@ class Header {
 	 * HTML template for rendering the header.
 	 * @returns {HTMLElement} HTML element for the header.
 	 */
-	renderHeader = () => (
+	static renderHeader = (
 		`
 		<div class="top-nav">
 		<div class="header-search">
@@ -23,7 +23,6 @@ class Header {
 		</div>
 		<h1 class="nav-text">Avion</h1>
 		<div class="nav-menu">
-			<h2 class="menu-text">Welcome to furniture website</h2>
 			<img class="menu-icon" src="${menuIcon}" alt="icon menu" />
 			<div class="menu-toggle">
 				<img class="cart-icon" src="${cartIcon}" alt="icon cart" />
@@ -57,7 +56,7 @@ class Header {
 			</li>
 		</ul>
 	</nav>
-    `
+`
 	);
 }
 
