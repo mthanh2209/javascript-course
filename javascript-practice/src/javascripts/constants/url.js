@@ -7,4 +7,4 @@ export const DETAIL_PAGE = `${BASE_URL}/detail.html`;
 export const PRODUCT_LISTING_PAGE = `${BASE_URL}/product-listing.html`;
 export const SHOPPING_CART_PAGE = `${BASE_URL}/shopping-cart.html`;
 export const API_PRODUCTS = `${API_URL}/products`;
-export const API_CATEGORIES = `${API_URL}/products/category`;
+export const API_CATEGORIES = `${API_URL}/category`;
