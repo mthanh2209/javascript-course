@@ -9,7 +9,8 @@ class Header {
 
 	/**
 	 * HTML template for rendering the header.
-	 * @returns {HTMLElement} HTML element for the header.
+	 * @param {Array} data - An array of category data to be used in the header.
+	 * @returns {string} HTML markup for the header.
 	 */
 	static renderHeader = (data) => {
 		return `

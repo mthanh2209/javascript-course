@@ -10,7 +10,8 @@ class Footer {
 
 	/**
 	 * HTML template for rendering the footer.
-	 * @returns {HTMLElement} HTML element for the footer.
+	 * @param {Array} data - An array of category data to be used in the footer.
+	 * @returns {string} HTML markup for the footer.
 	 */
 	static renderFooter = (data) => {
 		return `
