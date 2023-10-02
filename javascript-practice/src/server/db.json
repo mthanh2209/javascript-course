@@ -42,7 +42,7 @@
 				"width": "10cm",
 				"depth": "2cm"
 			},
-			"image": "/src/assets/images/rustic-vase.png"
+			"image": "https://www.afloral.com/cdn/shop/products/Rustic-Concrete-Distressed-Vase.jpg?v=1689263906&width=1500"
 		},
 		{
 			"id": 2,
@@ -55,7 +55,7 @@
 				"width": "10cm",
 				"depth": "2cm"
 			},
-			"image": "/src/assets/images/silky-vase.png"
+			"image": "https://ae01.alicdn.com/kf/See09ba67f311454c9cbc2631d309d9ca4.jpg_640x640q90.jpg?width=790&height=1044&hash=1834"
 		},
 		{
 			"id": 3,
@@ -68,7 +68,7 @@
 				"width": "10cm",
 				"depth": "2cm"
 			},
-			"image": "/src/assets/images/graystone-vase.png"
+			"image": "https://tinyporcelainstore.com/cdn/shop/products/4_fecdadae-eca4-476c-8a1f-2b8c1068e45b.jpg?v=1598862341"
 		},
 		{
 			"id": 4,
@@ -81,7 +81,7 @@
 				"width": "10cm",
 				"depth": "2cm"
 			},
-			"image": "/src/assets/images/small-vase.png"
+			"image": "https://www.vivaterra.com/medias/sys_master/images/images/hfe/h7c/12887591419934/12887591419934.jpg"
 		},
 		{
 			"id": 5,
@@ -94,7 +94,7 @@
 				"width": "10cm",
 				"depth": "2cm"
 			},
-			"image": "/src/assets/images/lamp.png"
+			"image": "https://img.zcdn.com.au/lf/50/hash/38885/19820866/4/Cora+Table+Lamp.jpg"
 		},
 		{
 			"id": 6,
@@ -107,7 +107,7 @@
 				"width": "10cm",
 				"depth": "2cm"
 			},
-			"image": "/src/assets/images/multiple-lamp.png"
+			"image": "https://assets.wfcdn.com/im/76764588/compr-r85/2281/228192938/anazagene-modern-accent-ceramic-table-lamp-for-bedroom-white-desk-decor-bedside-lamp-for-living-room.jpg"
 		},
 		{
 			"id": 7,
@@ -120,7 +120,7 @@
 				"width": "75cm",
 				"depth": "50cm"
 			},
-			"image": "/src/assets/images/chair.png"
+			"image": "https://www.2modern.com/cdn/shop/products/by-lassen-the-tired-man-lounge-chair-with-footstool-view-add03_590x590.jpg?v=1629508031"
 		},
 		{
 			"id": 8,
@@ -133,7 +133,7 @@
 				"width": "75cm",
 				"depth": "50cm"
 			},
-			"image": "/src/assets/images/dark-chair.png"
+			"image": "https://i.pinimg.com/564x/6d/e1/46/6de1468eaaf7b456b2c98556126b974b.jpg"
 		},
 		{
 			"id": 9,
@@ -146,7 +146,7 @@
 				"width": "75cm",
 				"depth": "50cm"
 			},
-			"image": "/src/assets/images/yellow-chair.png"
+			"image": "https://floydhome.com/cdn/shop/products/PP_Outdoor_Chair_LifestyleCarouselMobile2.jpg?v=1670300424&width=900"
 		},
 		{
 			"id": 10,
@@ -159,7 +159,7 @@
 				"width": "75cm",
 				"depth": "50cm"
 			},
-			"image": "/src/assets/images/multiple-chair.png"
+			"image": "https://images.unsplash.com/photo-1551298370-9d3d53740c72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8eWVsbG93JTIwY2hhaXJ8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
 		},
 		{
 			"id": 11,
@@ -172,7 +172,7 @@
 				"width": "5cm",
 				"depth": "1cm"
 			},
-			"image": "/src/assets/images/white-vase.png"
+			"image": "https://bscgoods.co/cdn/shop/products/bf550755aa257bc7b2c5177cf847b05d637345f8e819aef7f86c5445d0393c3f_2000x.jpg?v=1642444197"
 		}
 	]
 }
