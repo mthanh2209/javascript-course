@@ -1,6 +1,6 @@
 import { API_PRODUCTS } from "../constants/url";
 
-export default class APICategory {
+export default class APIProduct {
 	constructor() {}
 	/**
 	 * Get all the products in database
