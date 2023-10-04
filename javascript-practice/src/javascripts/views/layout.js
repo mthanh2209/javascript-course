@@ -11,9 +11,10 @@ class LayoutView {
 
 	//----- RENDERING -----//
 
-	/**
+	/*
 	 * Renders the header and footer elements.
-	 * @param {Object} data  - data to render the header and footer.
+	 * This function fetches the list of categories from the API and renders the header
+	 * and footer templates using the retrieved data.
 	 */
 	renderLayout = async () => {
 		const categories = new APICategory();

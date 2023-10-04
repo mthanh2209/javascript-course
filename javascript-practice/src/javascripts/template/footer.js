@@ -11,6 +11,10 @@ class Footer {
 	/**
 	 * HTML template for rendering the footer.
 	 * @param {Array} data - An array of category data to be used in the footer.
+	 *	{
+	 *		"id": 1 - id of category,
+	 *		"name": "Plant pots" - name of category
+	 *	}
 	 * @returns {string} HTML markup for the footer.
 	 */
 	static renderFooter = (data) => {
