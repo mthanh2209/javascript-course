@@ -10,6 +10,10 @@ class Header {
 	/**
 	 * HTML template for rendering the header.
 	 * @param {Array} data - An array of category data to be used in the header.
+	 *	{
+	 *		"id": 1 - id of category,
+	 *		"name": "Plant pots - name of category"
+	 *	}
 	 * @returns {string} HTML markup for the header.
 	 */
 	static renderHeader = (data) => {
