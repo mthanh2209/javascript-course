@@ -1,9 +1,7 @@
 import ProductModel from "../models/product";
-import APIProduct from "../services/product";
 class ProductView {
 	constructor() {
 		this.productModel = new ProductModel();
-		this.apiProduct = new APIProduct();
 		this.productsListing = document.querySelector(".products-listing");
 		this.renderProduct();
 	}
@@ -15,8 +13,7 @@ class ProductView {
 	 */
 	renderProduct = async () => {
 		// Fetch products from the API.
-		const products = await this.apiProduct.get().then((result) => result.data);
-		this.productModel.initProducts(products);
+		const products = await this.productModel.getProductList();;
 
 		// Clear the product listing container.
 		this.productsListing.innerHTML = "";
