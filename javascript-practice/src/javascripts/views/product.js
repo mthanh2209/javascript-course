@@ -8,12 +8,20 @@ class ProductView {
 		this.renderProduct();
 	}
 
+	/**
+	 * Render the list of products on the web page.
+	 * @async
+	 * @returns {Promise<void>} A promise that resolves when the rendering is complete.
+	 */
 	renderProduct = async () => {
+		// Fetch products from the API.
 		const products = await this.apiProduct.get().then((result) => result.data);
 		this.productModel.initProducts(products);
 
+		// Clear the product listing container.
 		this.productsListing.innerHTML = "";
 
+		// Iterate through each product and create HTML elements to display them.
 		products.forEach((product) => {
 			const productItem = document.createElement("li");
 			productItem.className = "products-item";
@@ -34,6 +42,7 @@ class ProductView {
 			productPrice.textContent = `£${product.price}`;
 			productItem.appendChild(productPrice);
 
+			// Append the product item to the products listing container.
 			this.productsListing.appendChild(productItem);
 		});
 	};
