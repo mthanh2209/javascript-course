@@ -1,32 +1,36 @@
-import linkedinLogo from "../../assets/icons/logo-linkedin.svg"
-import facebookLogo from "../../assets/icons/logo-facebook.svg"
-import instagramLogo from "../../assets/icons/logo-instagram.svg"
-import skypeLogo from "../../assets/icons/logo-skype.svg"
-import switterLogo from "../../assets/icons/logo-twitter.svg"
-import pinterestLogo from "../../assets/icons/logo-pinterest.svg"
+import linkedinLogo from "../../assets/icons/logo-linkedin.svg";
+import facebookLogo from "../../assets/icons/logo-facebook.svg";
+import instagramLogo from "../../assets/icons/logo-instagram.svg";
+import skypeLogo from "../../assets/icons/logo-skype.svg";
+import twitterLogo from "../../assets/icons/logo-twitter.svg";
+import pinterestLogo from "../../assets/icons/logo-pinterest.svg";
 
 class Footer {
-	constructor() { }
+	constructor() {}
 
 	/**
 	 * HTML template for rendering the footer.
-	 * @returns {HTMLElement} HTML element for the footer.
+	 * @param {Array} data - An array of category data to be used in the footer.
+	 *	{
+	 *		"id": 1 - id of category,
+	 *		"name": "Plant pots" - name of category
+	 *	}
+	 * @returns {string} HTML markup for the footer.
 	 */
-	static renderFooter = (
-		`
+	static renderFooter = (data) => {
+		return `
 		<div class="container">
 		<div class="footer-wrapper">
 			<nav class="footer-nav">
 				<section class="footer-link">
 					<p class="title-link">Categories</p>
 					<ul class="list-link">
-						<!-- TODO: dynamic UI -->
-						<li class="item-link">Crockery</li>
-						<li class="item-link">Furniture</li>
-						<li class="item-link">Homeware</li>
-						<li class="item-link">Plant pots</li>
-						<li class="item-link">Chairs</li>
-						<li class="item-link">Crockery</li>
+						${data
+							.map(
+								(item, index) =>
+									`<li key="${index}" class="item-link">${item.name}</li>`,
+							)
+							.join(" ")}
 					</ul>
 				</section>
 
@@ -68,13 +72,13 @@ class Footer {
 				<li><img src="${facebookLogo}" alt="img logo" /></li>
 				<li><img src="${instagramLogo}" alt="img logo" /></li>
 				<li><img src="${skypeLogo}" alt="img logo" /></li>
-				<li><img src="${switterLogo}" alt="img logo" /></li>
+				<li><img src="${twitterLogo}" alt="img logo" /></li>
 				<li><img src="${pinterestLogo}" alt="img logo" /></li>
 			</ul>
 		</nav>
 	</div>
-    `
-	);
+    `;
+	};
 }
 
 export default Footer;

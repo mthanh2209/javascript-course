@@ -1,10 +1,10 @@
-import LayoutView from "./layoutView";
+import LayoutView from "./layout";
 import ProductView from "./product";
 
 class View {
 	constructor() {
-		this.layoutView = new LayoutView();
-		this.productView = new ProductView();
+		this.layout = new LayoutView();
+		this.product = new ProductView();
 	}
 }
 

@@ -1,157 +1,181 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>E-Commerce Website</title>
+		<link rel="stylesheet" href="../src/styles/main.css" />
+	</head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>E-Commerce Website</title>
-	<link rel="stylesheet" href="../src/styles/main.css">
-</head>
+	<body>
+		<!-- START HEADER SECTION -->
+		<header class="main-header"></header>
+		<!-- END HEADER SECTION -->
 
-<body>
-	<!-- START HEADER SECTION -->
-	<header class="main-header"></header>
-	<!-- END HEADER SECTION -->
-
-	<main>
-		<!-- START HERO SECTION -->
-		<section class="hero">
-			<div class="container hero-content">
-				<div class="hero-topic">
-					<h1 class="hero-title">
-						Luxury homeware for people who love timeless design quality
-					</h1>
-					<p class="hero-desc-mobile">
-						With our new collection, view over 400 bespoke pieces from
-						homeware through to furniture today
-					</p>
-					<p class="hero-desc-desktop">
-						Shop the new Spring 2022 collection today
-					</p>
+		<main>
+			<!-- START HERO SECTION -->
+			<section class="hero">
+				<div class="container hero-content">
+					<div class="hero-topic">
+						<h1 class="hero-title">
+							Luxury homeware for people who love timeless design quality
+						</h1>
+						<p class="hero-desc-mobile">
+							With our new collection, view over 400 bespoke pieces from
+							homeware through to furniture today
+						</p>
+						<p class="hero-desc-desktop">
+							Shop the new Spring 2022 collection today
+						</p>
+					</div>
+					<button class="btn primary-btn">View collection</button>
 				</div>
-				<button class="btn primary-btn">View collection</button>
-			</div>
-			<img class="hero-img" src="assets/images/hero-img.png" alt="img for hero section" />
-		</section>
-		<!-- END HERO SECTION -->
+				<img
+					class="hero-img"
+					src="assets/images/hero-img.png"
+					alt="img for hero section"
+				/>
+			</section>
+			<!-- END HERO SECTION -->
 
-		<!-- START INTRO SECTION -->
-		<section class="container intro">
-			<h4 class="intro-title">What makes our brand different</h4>
-			<ul class="intro-list">
-				<li class="intro-item">
-					<img src="assets/icons/delivery.svg" alt="icon delivery" />
-					<h4 class="item-title">Next day as standard</h4>
-					<p class="item-desc">
-						Order before 3pm and get your order the next day as standard
-					</p>
-				</li>
-				<li class="intro-item">
-					<img src="assets/icons/checkmark-outline.svg" alt="icon check" />
-					<h4 class="item-title">Made by true artisans</h4>
-					<p class="item-desc">
-						Handmade crafted goods made with real passion and craftmanship
-					</p>
-				</li>
-				<li class="intro-item">
-					<img src="assets/icons/purchase.svg" alt="icon purchase" />
-					<h4 class="item-title">Unbeatable prices</h4>
-					<p class="item-desc">
-						For our materials and quality you won’t find better prices
-						anywhere
-					</p>
-				</li>
-				<li class="intro-item">
-					<img src="assets/icons/sprout.svg" alt="icon sprout" />
-					<h4 class="item-title">Recycled packaging</h4>
-					<p class="item-desc">
-						We use 100% recycled to ensure our footprint is more manageable
-					</p>
-				</li>
-			</ul>
-		</section>
-		<!-- END INTRO SECTION -->
-
-		<!-- START PRODUCT SECTION -->
-		<section class="container product">
-			<ul class="product-list">
-				<!-- TODO: dynamic UI-->
-				<li class="product-item">
-					<img class="product-img" src="assets/images/chair.png" alt="" />
-					<h4>The Dandy chair</h4>
-					<p class="item-per">£250</p>
-				</li>
-				<li class="product-item">
-					<img class="product-img" src="assets/images/rustic-vase.png" alt="" />
-					<h4>Rustic Vase Set</h4>
-					<p class="item-per">£155</p>
-				</li>
-				<li class="product-item">
-					<img class="product-img" src="assets/images/silky-vase.png" alt="" />
-					<h4>The Silky Vase</h4>
-					<p class="item-per">£125</p>
-				</li>
-				<li class="product-item">
-					<img class="product-img" src="assets/images/lamp.png" alt="" />
-					<h4>The Lucy Lamp</h4>
-					<p class="item-per">£399</p>
-				</li>
-			</ul>
-			<button class="btn primary-btn">View collection</button>
-		</section>
-		<!-- END PRODUCT SECTION -->
-
-		<!-- START BEGINNING SECTION -->
-		<section class="container beginning">
-			<div class="beginning-content">
-				<h4 class="beginning-title">It started with a small idea</h4>
-				<p class="beginning-desc">
-					A global brand with local beginnings, our story begain in a small
-					studio in South London in early 2014
-				</p>
-				<button class="btn beginning-btn">View collection</button>
-			</div>
-			<img class="beginning-img" src="assets/images/beginning-img.png" alt="img for beginning section" />
-		</section>
-		<!-- END BEGINNING SECTION -->
-
-		<!-- START BENEFIT SECTION -->
-		<section class="benefit">
-			<img class="benefit-img" src="assets/images/benefit-img.png" alt="img for benefit section" />
-			<div class="benefit-content">
-				<h3 class="benefit-title">Join the club and get the benefits</h3>
-				<p class="benefit-desc">
-					Sign up for our newsletter and receive exclusive offers on new
-					ranges, sales, pop up stores and more
-				</p>
-				<ul class="benefit-list">
-					<li class="benefit-item">
-						<img src="assets/icons/checkmark-filled.svg" alt="icon check" />
-						<p class="item-text">Exclusive offers</p>
+			<!-- START INTRO SECTION -->
+			<section class="container intro">
+				<h4 class="intro-title">What makes our brand different</h4>
+				<ul class="intro-list">
+					<li class="intro-item">
+						<img src="assets/icons/delivery.svg" alt="icon delivery" />
+						<h4 class="item-title">Next day as standard</h4>
+						<p class="item-desc">
+							Order before 3pm and get your order the next day as standard
+						</p>
 					</li>
-					<li class="benefit-item">
-						<img src="assets/icons/checkmark-filled.svg" alt="icon check" />
-						<p class="item-text">Free events</p>
+					<li class="intro-item">
+						<img src="assets/icons/checkmark-outline.svg" alt="icon check" />
+						<h4 class="item-title">Made by true artisans</h4>
+						<p class="item-desc">
+							Handmade crafted goods made with real passion and craftmanship
+						</p>
 					</li>
-					<li class="benefit-item">
-						<img src="assets/icons/checkmark-filled.svg" alt="icon check" />
-						<p class="item-text">Large discounts</p>
+					<li class="intro-item">
+						<img src="assets/icons/purchase.svg" alt="icon purchase" />
+						<h4 class="item-title">Unbeatable prices</h4>
+						<p class="item-desc">
+							For our materials and quality you won’t find better prices
+							anywhere
+						</p>
+					</li>
+					<li class="intro-item">
+						<img src="assets/icons/sprout.svg" alt="icon sprout" />
+						<h4 class="item-title">Recycled packaging</h4>
+						<p class="item-desc">
+							We use 100% recycled to ensure our footprint is more manageable
+						</p>
 					</li>
 				</ul>
-				<div class="benefit-register">
-					<input class="benefit-input" type="text" placeholder="your@email.com" />
-					<button class="btn secondary-btn">Sign up</button>
+			</section>
+			<!-- END INTRO SECTION -->
+
+			<!-- START PRODUCT SECTION -->
+			<section class="container product">
+				<ul class="product-list">
+					<!-- TODO: dynamic UI-->
+					<li class="product-item">
+						<img class="product-img" src="assets/images/chair.png" alt="" />
+						<h4>The Dandy chair</h4>
+						<p class="item-per">£250</p>
+					</li>
+					<li class="product-item">
+						<img
+							class="product-img"
+							src="assets/images/rustic-vase.png"
+							alt=""
+						/>
+						<h4>Rustic Vase Set</h4>
+						<p class="item-per">£155</p>
+					</li>
+					<li class="product-item">
+						<img
+							class="product-img"
+							src="assets/images/silky-vase.png"
+							alt=""
+						/>
+						<h4>The Silky Vase</h4>
+						<p class="item-per">£125</p>
+					</li>
+					<li class="product-item">
+						<img class="product-img" src="assets/images/lamp.png" alt="" />
+						<h4>The Lucy Lamp</h4>
+						<p class="item-per">£399</p>
+					</li>
+				</ul>
+				<div class="product-button">
+					<button class="btn primary-btn">View collection</button>
 				</div>
-			</div>
-		</section>
-		<!-- END BENEFIT SECTION -->
-	</main>
+			</section>
+			<!-- END PRODUCT SECTION -->
 
-	<!-- START FOOTER SECTION -->
-	<footer class="main-footer"></footer>
-	<!-- END FOOTER SECTION -->
+			<!-- START BEGINNING SECTION -->
+			<section class="container beginning">
+				<div class="beginning-content">
+					<h4 class="beginning-title">It started with a small idea</h4>
+					<p class="beginning-desc">
+						A global brand with local beginnings, our story begain in a small
+						studio in South London in early 2014
+					</p>
+					<button class="btn beginning-btn">View collection</button>
+				</div>
+				<img
+					class="beginning-img"
+					src="assets/images/beginning-img.png"
+					alt="img for beginning section"
+				/>
+			</section>
+			<!-- END BEGINNING SECTION -->
 
-	<script type="module" src="javascripts/app.js"></script>
-</body>
+			<!-- START BENEFIT SECTION -->
+			<section class="benefit">
+				<img
+					class="benefit-img"
+					src="assets/images/benefit-img.png"
+					alt="img for benefit section"
+				/>
+				<div class="benefit-content">
+					<h3 class="benefit-title">Join the club and get the benefits</h3>
+					<p class="benefit-desc">
+						Sign up for our newsletter and receive exclusive offers on new
+						ranges, sales, pop up stores and more
+					</p>
+					<ul class="benefit-list">
+						<li class="benefit-item">
+							<img src="assets/icons/checkmark-filled.svg" alt="icon check" />
+							<p class="item-text">Exclusive offers</p>
+						</li>
+						<li class="benefit-item">
+							<img src="assets/icons/checkmark-filled.svg" alt="icon check" />
+							<p class="item-text">Free events</p>
+						</li>
+						<li class="benefit-item">
+							<img src="assets/icons/checkmark-filled.svg" alt="icon check" />
+							<p class="item-text">Large discounts</p>
+						</li>
+					</ul>
+					<div class="benefit-register">
+						<input
+							class="benefit-input"
+							type="text"
+							placeholder="your@email.com"
+						/>
+						<button class="btn secondary-btn">Sign up</button>
+					</div>
+				</div>
+			</section>
+			<!-- END BENEFIT SECTION -->
+		</main>
 
+		<!-- START FOOTER SECTION -->
+		<footer class="main-footer"></footer>
+		<!-- END FOOTER SECTION -->
+
+		<script type="module" src="javascripts/app.js"></script>
+	</body>
 </html>
