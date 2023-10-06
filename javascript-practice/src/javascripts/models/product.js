@@ -1,4 +1,5 @@
 import APIProduct from "../services/product";
+
 class ProductModel {
 	constructor() {
 		this.apiProduct = new APIProduct();
