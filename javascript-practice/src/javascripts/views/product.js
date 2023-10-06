@@ -21,22 +21,23 @@ class ProductView {
 		// Iterate through each product and create HTML elements to display them.
 		products.forEach((product) => {
 			const productItem = document.createElement("li");
+			const productImg = document.createElement("img");
+			const productTitle = document.createElement("h4");
+			const productPrice = document.createElement("p");
+
 			productItem.className = "products-item";
 
-			const productImg = document.createElement("img");
 			productImg.className = "products-img";
-
 			productImg.src = product.image;
 			productImg.alt = product.title;
-			productItem.appendChild(productImg);
 
-			const productTitle = document.createElement("h4");
 			productTitle.textContent = `${product.title}`;
-			productItem.appendChild(productTitle);
 
-			const productPrice = document.createElement("p");
 			productPrice.classList.add("products-per");
 			productPrice.textContent = `£${product.price}`;
+
+			productItem.appendChild(productImg);
+			productItem.appendChild(productTitle);
 			productItem.appendChild(productPrice);
 
 			// Append the product item to the products listing container.
