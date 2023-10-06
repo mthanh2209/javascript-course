@@ -1,4 +1,5 @@
 import ProductModel from "../models/product";
+
 class ProductView {
 	constructor() {
 		this.productModel = new ProductModel();
