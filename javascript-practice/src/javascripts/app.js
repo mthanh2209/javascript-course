@@ -1,4 +1,9 @@
+import Controller from "./controllers/controller";
+import Model from "./models/model";
 import View from "./views/view";
 
-const view = new View();
-view.start();
+export function main() {
+	const controller = new Controller(new Model(), new View());
+}
+
+main();
