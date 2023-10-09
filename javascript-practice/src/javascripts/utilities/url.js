@@ -1,14 +1,11 @@
-class Utilities {
-	constructor() { }
-
-	/**
-		 * Builds a URL for a specific resource ID.
-		 * @param {string|null} id - The ID of the resource (optional).
-		 * @returns {string} The constructed URL.
-		 */
-	buildUrl(apiUrl, path, id) {
-		return `${apiUrl}${path}${id ? `/${id}` : ""}`;
-	}
+/**
+ * Build a URL by combining the API URL, path, and optional ID.
+ *
+ * @param {string} apiUrl - The base API_URL.
+ * @param {string} path - The path to append to the base URL.
+ * @param {string} [id] - (Optional) An ID to append to the path (if provided).
+ * @returns {string} The constructed URL.
+ */
+export default function BuildUrl(apiUrl, path, id) {
+	return `${apiUrl}${path}${id ? `/${id}` : ""}`;
 }
-
-export const utilities = new Utilities();
