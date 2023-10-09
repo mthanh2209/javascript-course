@@ -13,15 +13,24 @@ export default class APIService {
 	getList = () => this.sendRequest(null, "get");
 
 	/**
-	 * Method to send an HTTP request to the API endpoint.
-	 * @param {String} path - The endpoint path for the request.
-	 * @param {String} method - The HTTP method (GET, POST, PUT, DELETE, etc.).
+	 * Builds a URL for a specific resource ID.
+	 * @param {string|null} id - The ID of the resource (optional).
+	 * @returns {string} The constructed URL.
+	 */
+	buildUrl(id) {
+		return `${this.apiUrl}${this.path}${id ? `/${id}` : ""}`;
+	}
+
+	/**
+	 * Sends an HTTP request to the API endpoint.
+	 * @param {string|null} id - The ID of the resource (optional).
+	 * @param {string} method - The HTTP method (GET, POST, PUT, DELETE, etc.).
 	 * @param {Object} body - The request body (optional).
-	 * @return {Promise} A promise that resolves to the server response data.
+	 * @returns {Promise<Object>} A promise that resolves to the server response data.
 	 * @throws {Error} If the request was not successful.
 	 */
 	sendRequest = async (id, method, body) => {
-		const url = `${this.apiUrl}${this.path}${id ? `/${id}` : ""}`;
+		const url = this.buildUrl(id);
 		const response = await fetch(url, {
 			method,
 			headers: {
