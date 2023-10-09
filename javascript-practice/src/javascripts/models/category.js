@@ -1,7 +1,10 @@
 import APIService from "../services/service"
 
 export default class CategoryModel {
-	constructor() {
+	constructor(id, name) {
+		this.id = id;
+		this.name = name;
+
 		this.apiService = new APIService("/category")
 	}
 
