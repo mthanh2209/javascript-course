@@ -1,12 +1,13 @@
-import APICategory from "../services/category"
+import APIService from "../services/service"
+
 export default class CategoryModel {
 	constructor() {
-		this.apiCategory = new APICategory();
+		this.apiService = new APIService("/category")
 	}
 
-	async getCategoryList() {
-		const result = await this.apiCategory.get();
-		const categories = result.data;
-		return categories;
-	}
+	/**
+	 * Method to retrieve the list of category from the API.
+	 * @returns {Promise<Object[]>} A promise that resolves with the list of category.
+	 */
+	getCategoryList = () => this.apiService.getList()
 }
