@@ -1,4 +1,4 @@
-export default class Controller {
+class Controller {
 	/**
 	 * Constructor of Controller object
 	 * @param {Object} model - The model component responsible for data management.
@@ -9,35 +9,28 @@ export default class Controller {
 		this.view = view;
 	}
 
-	/**
-	 * Initializes the controller by initializing the category view and product view.
-	 */
 	init = () => {
 		this.initCategoryView()
 		this.initProductView()
 	}
 
 	/**
-	 * Initializes the category view by fetching categories from the model and rendering the layout.
+	 * Get the category list from model
+	 * Then execute renderLayout method in view
 	 */
 	async initCategoryView() {
-		/**
-		 * An array of category objects.
-		 * @type {Object[]}
-		 */
 		const categories = await this.model.category.getCategoryList();
 		this.view.layout.renderLayout(categories);
 	}
 
 	/**
-	 * Initializes the product view by fetching products from the model and rendering the products.
+	 * Get the product list from model
+	 * Then execute renderProduct method in view
 	 */
 	async initProductView() {
-		/**
-		 * An array of product objects.
-		 * @type {Object[]}
-		 */
 		const products = await this.model.product.getProductList();
 		this.view.product.renderProduct(products);
 	}
 }
+
+export default Controller;
