@@ -1,8 +1,8 @@
-import LayoutView from "./layoutView";
+import LayoutView from "./layout";
 
 class View {
 	constructor() {
-		this.layoutView = new LayoutView();
+		this.layout = new LayoutView();
 	}
 }
 
