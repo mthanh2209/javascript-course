@@ -1,4 +1,5 @@
 import { API_URL } from '../constants/url';
+import { utilities } from '../utilities/url';
 
 export default class APIService {
 	constructor(path) {
@@ -13,15 +14,6 @@ export default class APIService {
 	getList = () => this.sendRequest(null, "get");
 
 	/**
-	 * Builds a URL for a specific resource ID.
-	 * @param {string|null} id - The ID of the resource (optional).
-	 * @returns {string} The constructed URL.
-	 */
-	buildUrl(id) {
-		return `${this.apiUrl}${this.path}${id ? `/${id}` : ""}`;
-	}
-
-	/**
 	 * Sends an HTTP request to the API endpoint.
 	 * @param {string|null} id - The ID of the resource (optional).
 	 * @param {string} method - The HTTP method (GET, POST, PUT, DELETE, etc.).
@@ -30,7 +22,7 @@ export default class APIService {
 	 * @throws {Error} If the request was not successful.
 	 */
 	sendRequest = async (id, method, body) => {
-		const url = this.buildUrl(id);
+		const url = utilities.buildUrl(id);
 		const response = await fetch(url, {
 			method,
 			headers: {
