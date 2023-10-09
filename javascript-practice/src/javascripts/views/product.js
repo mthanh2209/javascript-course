@@ -1,21 +1,14 @@
-import ProductModel from "../models/product";
-
 class ProductView {
 	constructor() {
-		this.productModel = new ProductModel();
 		this.productsListing = document.querySelector(".products-listing");
-		this.renderProduct();
 	}
 
 	/**
-	 * Render the list of products on the web page.
-	 * @async
+	 * Renders the list of products on the web page.
+	 * @param {Object[]} products - An array of product objects to render.
 	 * @returns {Promise<void>} A promise that resolves when the rendering is complete.
 	 */
-	renderProduct = async () => {
-		// Fetch products from the API.
-		const products = await this.productModel.getProductList();;
-
+	renderProduct = (products) => {
 		// Clear the product listing container.
 		this.productsListing.innerHTML = "";
 
