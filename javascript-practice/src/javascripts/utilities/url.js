@@ -6,6 +6,6 @@
  * @param {string} [id] - (Optional) An ID to append to the path (if provided).
  * @returns {string} The constructed URL.
  */
-export default function BuildUrl(apiUrl, path, id) {
+export function BuildUrl(apiUrl, path, id) {
 	return `${apiUrl}${path}${id ? `/${id}` : ""}`;
 }
