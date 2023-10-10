@@ -1,5 +1,5 @@
 import { API_URL } from "../constants/url";
-import { BuildUrl } from "../utilities/url";
+import { buildUrl } from "../utilities/url";
 
 export default class APIService {
 	constructor(path) {
@@ -22,7 +22,7 @@ export default class APIService {
 	 * @throws {Error} If the request was not successful.
 	 */
 	sendRequest = async (id, method, body) => {
-		const url = BuildUrl(this.apiUrl, this.path, id);
+		const url = buildUrl(this.apiUrl, this.path, id);
 		const response = await fetch(url, {
 			method,
 			headers: {
