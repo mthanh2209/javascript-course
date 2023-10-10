@@ -1,15 +1,16 @@
-import APIProduct from "../services/product";
+import APIService from "../services/service"
 
-class ProductModel {
-	constructor() {
-		this.apiProduct = new APIProduct();
+export default class ProductModel {
+	constructor(title, price) {
+		this.title = title;
+		this.price = price;
+
+		this.apiService = new APIService("/products")
 	}
 
 	/**
-	 * Fetches the list of products from the API.
-	 * @returns {Promise<Array>} A Promise that resolves to an array of products.
+	 * Method to retrieve the list of product from the API.
+	 * @returns {Promise<Object[]>} A promise that resolves with the list of product.
 	 */
-	getProductList = () => this.apiProduct.get().then((result) => result.data);
+	getProductList = () => this.apiService.getList()
 }
-
-export default ProductModel;
