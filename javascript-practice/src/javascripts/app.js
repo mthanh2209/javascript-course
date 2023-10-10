@@ -4,6 +4,7 @@ import View from "./views/view";
 
 export function main() {
 	const controller = new Controller(new Model(), new View());
+	controller.init();
 }
 
 main();
