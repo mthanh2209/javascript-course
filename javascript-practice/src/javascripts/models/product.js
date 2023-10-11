@@ -1,14 +1,13 @@
 import APIService from "../services/service";
 
 export default class ProductModel {
-	constructor() {
-		this.id = id;
-		this.title = title;
-		this.price = price;
-		this.description = description;
+	constructor(categoryId) {
+		this.title = "";
+		this.price = 0;
+		this.description = "";
 		this.categoryId = categoryId;
-		this.dimension = dimension;
-		this.image = image;
+		this.dimension = { height: "", width: "", depth: "" };
+		this.image = "";
 
 		this.apiService = new APIService("/products");
 	}
