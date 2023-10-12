@@ -1,6 +1,9 @@
+import { PRODUCT_LISTING_PAGE } from "../constants/url";
+
 class ProductView {
 	constructor() {
 		this.productsListing = document.querySelector(".products-listing");
+		this.viewCollectionButton = document.querySelectorAll(".product-view");
 	}
 
 	/**
@@ -38,6 +41,14 @@ class ProductView {
 			this.productsListing.appendChild(productItem);
 		});
 	};
+
+	addEventSwitchPage = () => {
+		this.viewCollectionButton.forEach((button) => {
+			button.addEventListener("click", () => {
+				window.location.href = PRODUCT_LISTING_PAGE;
+			});
+		})
+	}
 }
 
 export default ProductView;

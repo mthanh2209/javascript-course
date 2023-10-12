@@ -12,6 +12,7 @@ class Controller {
 	init = () => {
 		this.initCategoryView()
 		this.initProductView()
+		this.handleNextPage()
 	}
 
 	/**
@@ -30,6 +31,14 @@ class Controller {
 	async initProductView() {
 		const products = await this.model.product.getProductList();
 		this.view.product.renderProduct(products);
+	}
+
+	/**
+	 * Handled when the View Collection button is clicked
+	 * Then go to the product-listing.html page
+	 */
+	handleSwitchPage() {
+		this.view.product.addEventSwitchPage();
 	}
 }
 
