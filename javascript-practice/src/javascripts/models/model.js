@@ -1,7 +1,11 @@
+import CategoryModel from "./category";
 import ProductModel from "./product";
 
-export default class Model {
+class Model {
 	constructor() {
+		this.category = new CategoryModel();
 		this.product = new ProductModel();
 	}
 }
+
+export default Model;
