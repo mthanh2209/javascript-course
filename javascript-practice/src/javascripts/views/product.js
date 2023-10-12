@@ -3,8 +3,8 @@ class ProductView {
 		this.productsListing = document.querySelector(".products-listing");
 		this.loadMoreButton = document.querySelector(".load-more-btn");
 		this.products = [];
-		this.displayProduct = 3;
-		this.nextProduct = 3;
+		this.displayedListProduct = 3;
+		this.productsNext = 3;
 	}
 
 	/**
@@ -16,7 +16,7 @@ class ProductView {
 
 		this.productsListing.innerHTML = "";
 
-		this.products.slice(0, this.displayProduct).forEach((product) => {
+		this.products.slice(0, this.displayedListProduct).forEach((product) => {
 			const productItem = document.createElement("li");
 			const productImg = document.createElement("img");
 			const productTitle = document.createElement("h4");
@@ -46,8 +46,8 @@ class ProductView {
 	addEventMoreProduct = () => {
 		this.loadMoreButton.addEventListener("click", async (e) => {
 			e.preventDefault()
-			const newProducts = this.products.slice(this.displayProduct, this.displayProduct + this.nextProduct);
-			this.displayProduct += this.nextProduct;
+			const newProducts = this.products.slice(this.displayedListProduct, this.displayedListProduct + this.productsNext);
+			this.displayedListProduct += this.productsNext;
 			this.renderProduct(null, newProducts);
 		});
 	}

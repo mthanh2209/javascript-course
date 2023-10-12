@@ -10,16 +10,16 @@ class Controller {
 	}
 
 	init = () => {
-		this.initCategoryView()
-		this.initProductView()
-		this.initMoreProduct()
+		this.handleRenderCategory()
+		this.handleRenderProduct()
+		this.handleLoadMoreProduct()
 	}
 
 	/**
 	 * Get the category list from model
 	 * Then execute renderLayout method in view
 	 */
-	async initCategoryView() {
+	async handleRenderCategory() {
 		const categories = await this.model.category.getCategoryList();
 		this.view.layout.renderLayout(categories);
 	}
@@ -28,7 +28,7 @@ class Controller {
 	 * Get the product list from model
 	 * Then execute renderProduct method in view
 	 */
-	async initProductView() {
+	async handleRenderProduct() {
 		const products = await this.model.product.getProductList();
 		this.view.product.renderProduct(products);
 	}
@@ -37,7 +37,7 @@ class Controller {
 	 * Initializes the addition of more products in the view.
 	 * This method is responsible for adding an event and rendering additional products.
 	 */
-	initMoreProduct() {
+	handleLoadMoreProduct() {
 		this.view.product.addEventMoreProduct();
 		this.view.product.renderProduct();
 	}
