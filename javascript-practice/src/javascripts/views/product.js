@@ -6,8 +6,8 @@ class ProductView {
 		this.loadMoreButton = document.querySelector(".load-more-btn");
 		this.viewCollectionButton = document.querySelectorAll(".product-view");
 		this.products = [];
-		this.displayedListProduct = 3;
-		this.productsNext = 3;
+		this.displayedProducts = 4;
+		this.newProducts = 3;
 	}
 
 	/**
@@ -19,7 +19,7 @@ class ProductView {
 
 		this.productsListing.innerHTML = "";
 
-		this.products.slice(0, this.displayedListProduct).forEach((product) => {
+		this.products.slice(0, this.displayedProducts).forEach((product) => {
 			const productItem = document.createElement("li");
 			const productImg = document.createElement("img");
 			const productTitle = document.createElement("h4");
@@ -49,8 +49,8 @@ class ProductView {
 	addEventMoreProduct = () => {
 		this.loadMoreButton.addEventListener("click", async (e) => {
 			e.preventDefault()
-			const newProducts = this.products.slice(this.displayedListProduct, this.displayedListProduct + this.productsNext);
-			this.displayedListProduct += this.productsNext;
+			const newProducts = this.products.slice(this.displayedProducts, this.displayedProducts + this.newProducts);
+			this.displayedProducts += this.newProducts;
 			this.renderProduct(null, newProducts);
 		});
 
