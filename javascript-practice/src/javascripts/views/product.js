@@ -1,19 +1,22 @@
 class ProductView {
 	constructor() {
 		this.productsListing = document.querySelector(".products-listing");
+		this.loadMoreButton = document.querySelector(".load-more-btn");
+		this.products = [];
+		this.displayProduct = 3;
+		this.nextProduct = 3;
 	}
 
 	/**
-	 * Renders the list of products on the web page.
-	 * @param {Object[]} products - An array of product objects to render.
-	 * @returns {Promise<void>} A promise that resolves when the rendering is complete.
+	 * Render the specified products in the product listing element.
+	 * @param {Array} [products] - The array of products to render. If not provided, the existing products will be rendered.
 	 */
 	renderProduct = (products) => {
-		// Clear the product listing container.
+		this.products = products && Array.isArray(products) ? products : this.products
+
 		this.productsListing.innerHTML = "";
 
-		// Iterate through each product and create HTML elements to display them.
-		products.forEach((product) => {
+		this.products.slice(0, this.displayProduct).forEach((product) => {
 			const productItem = document.createElement("li");
 			const productImg = document.createElement("img");
 			const productTitle = document.createElement("h4");
@@ -34,10 +37,20 @@ class ProductView {
 			productItem.appendChild(productTitle);
 			productItem.appendChild(productPrice);
 
-			// Append the product item to the products listing container.
 			this.productsListing.appendChild(productItem);
 		});
 	};
+
+	//----- EVENT LISTENER -----//
+
+	addEventMoreProduct = () => {
+		this.loadMoreButton.addEventListener("click", async (e) => {
+			e.preventDefault()
+			const newProducts = this.products.slice(this.displayProduct, this.displayProduct + this.nextProduct);
+			this.displayProduct += this.nextProduct;
+			this.renderProduct(null, newProducts);
+		});
+	}
 }
 
 export default ProductView;

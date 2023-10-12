@@ -7,6 +7,7 @@
 }
 
 .products {
+	margin-bottom: 1.8rem;
 	text-align: -webkit-center;
 }
 
@@ -15,11 +16,14 @@
 	height: 10rem;
 }
 
+.products-banner {
+	position: relative;
+}
+
 .banner-title {
 	position: absolute;
-	top: 12%;
-	left: 24%;
-	z-index: 1;
+	bottom: 30%;
+	left: 25%;
 }
 
 .products-filter {
@@ -125,6 +129,10 @@
 		margin-top: 7rem;
 	}
 
+	.products {
+		margin-top: 1.5rem;
+	}
+
 	.product-button {
 		display: flex;
 		justify-content: center;
@@ -136,7 +144,7 @@
 	}
 
 	.banner-title {
-		top: 17.5%;
+		bottom: 17.5%;
 		left: 5.5%;
 	}
 
