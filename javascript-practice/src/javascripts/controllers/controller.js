@@ -13,6 +13,7 @@ class Controller {
 		this.handleRenderCategory()
 		this.handleRenderProduct()
 		this.handleLoadMoreProduct()
+		this.handleSwitchPage()
 	}
 
 	/**
@@ -40,6 +41,14 @@ class Controller {
 	handleLoadMoreProduct() {
 		this.view.product.addEventMoreProduct();
 		this.view.product.renderProduct();
+	}
+
+	/**
+	 * Handled when the View Collection button is clicked
+	 * Then go to the product-listing.html page
+	 */
+	handleSwitchPage() {
+		this.view.product.addEventSwitchPage();
 	}
 }
 

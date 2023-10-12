@@ -1,7 +1,10 @@
+import { PRODUCT_LISTING_PAGE } from "../constants/url";
+
 class ProductView {
 	constructor() {
 		this.productsListing = document.querySelector(".products-listing");
 		this.loadMoreButton = document.querySelector(".load-more-btn");
+		this.viewCollectionButton = document.querySelectorAll(".product-view");
 		this.products = [];
 		this.displayedListProduct = 3;
 		this.productsNext = 3;
@@ -50,6 +53,14 @@ class ProductView {
 			this.displayedListProduct += this.productsNext;
 			this.renderProduct(null, newProducts);
 		});
+
+		addEventSwitchPage = () => {
+			this.viewCollectionButton.forEach((button) => {
+				button.addEventListener("click", () => {
+					window.location.href = PRODUCT_LISTING_PAGE;
+				});
+			})
+		}
 	}
 }
 
