@@ -14,6 +14,13 @@ export default class APIService {
 	getList = () => this.sendRequest(null, "get");
 
 	/**
+	 * Method to fetch details of an item from the API.
+	 * @param {String} id - The ID of the item to retrieve.
+	 * @return {Promise<Object>} A promise that resolves to the retrieved data.
+	 */
+	getDetail = (id) => this.sendRequest(id, "get");
+
+	/**
 	 * Sends an HTTP request to the API endpoint.
 	 * @param {string|null} id - The ID of the resource (optional).
 	 * @param {string} method - The HTTP method (GET, POST, PUT, DELETE, etc.).
