@@ -1,5 +1,4 @@
 import CartTemplate from "../template/cart";
-import DetailView from "./detail";
 
 export default class CartView {
 	constructor() {
