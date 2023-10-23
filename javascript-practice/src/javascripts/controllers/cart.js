@@ -1,14 +1,11 @@
 import LayoutController from "./layout";
-import CartModel from "./../models/cart";
-import ProductModel from "./../models/product";
-import CartView from "../views/cart";
 
 export default class CartController extends LayoutController {
-	constructor() {
+	constructor(cartModel, productModel, cartView) {
 		super();
-		this.cartModel = new CartModel();
-		this.productModel = new ProductModel();
-		this.cartView = new CartView();
+		this.cartModel = cartModel;
+		this.productModel = productModel;
+		this.cartView = cartView;
 
 		this.init();
 	}
