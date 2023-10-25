@@ -5,7 +5,7 @@ import cartIcon from "../../assets/icons/shopping-cart.svg";
 import userIcon from "../../assets/icons/user-avatar.svg";
 
 class Header {
-	constructor() {}
+	constructor() { }
 
 	/**
 	 * HTML template for rendering the header.
@@ -30,6 +30,7 @@ class Header {
 		<div class="nav-menu">
 			<img class="menu-icon" src="${menuIcon}" alt="icon menu" />
 			<div class="menu-toggle">
+				<span class="cart-number"></span>
 				<img class="cart-icon" src="${cartIcon}" alt="icon cart" />
 				<img class="avatar-icon" src="${userIcon}" alt="icon avatar" />
 			</div>
