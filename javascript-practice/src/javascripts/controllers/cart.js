@@ -12,6 +12,7 @@ export default class CartController extends LayoutController {
 
 	init = async () => {
 		await this.handleDisplayCart();
+		this.cartView.setupItemEvent();
 	};
 
 	/**
