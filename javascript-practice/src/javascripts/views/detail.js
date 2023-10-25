@@ -7,6 +7,10 @@ class DetailView extends ProductView {
 		this.detailSection = document.querySelector(".detail")
 	}
 
+	/**
+	 * Render the product detail on the view.
+	 * @param {Object[]} detail - The product detail data to display.
+	 */
 	renderProductDetail(detail) {
 		const urlParams = new URLSearchParams(window.location.search);
 		const productId = parseInt(urlParams.get('id'));
@@ -19,6 +23,54 @@ class DetailView extends ProductView {
 				this.detailSection.innerHTML = productDetailTemplate;
 			}
 		}
+	}
+
+	/**
+	 * Handle adding a product to the shopping cart.
+	 * @param {function} callback - The callback function to execute when adding a product to the cart.
+	 */
+	addToCart(callback) {
+		const addToCartBtn = document.querySelector(".add-to-cart-btn");
+		addToCartBtn.addEventListener("click", (e) => {
+			const product = {
+				id: getURLSearchParam("id"),
+				quantity: e.target.closest(".desc-quantity").querySelector(".quantity")
+					.value,
+			};
+			callback(product)
+		});
+	}
+
+	/**
+	 * Update the cart number on the view.
+	 * @param {number} getCount - The number of products in the shopping cart.
+	 */
+	updateCartNumber(getCount) {
+		const cartNumber = document.querySelector(".cart-number");
+		cartNumber.textContent = getCount;
+	}
+
+	/**
+	 * Setup event handlers for item increment and decrement buttons.
+	 */
+	setupItemevent() {
+		const plusBtns = document.querySelectorAll(".increment");
+		const minusBtns = document.querySelectorAll(".decrement");
+		const quantity = document.querySelectorAll(".quantity");
+
+		plusBtns.forEach((plusBtn, index) => {
+			plusBtn.addEventListener("click", () => {
+				quantity[index].value = parseFloat(quantity[index].value) + 1;
+			});
+		});
+
+		minusBtns.forEach((minusBtn, index) => {
+			minusBtn.addEventListener("click", () => {
+				if (quantity[index].value > 1) {
+					quantity[index].value = parseFloat(quantity[index].value) - 1;
+				}
+			});
+		});
 	}
 }
 

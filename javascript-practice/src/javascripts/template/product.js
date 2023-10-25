@@ -57,7 +57,7 @@ class ProductTemplate {
 							<button class="btn increment">+</button>
 						</div>
 						<div class="detail-btn">
-							<button class="btn primary-btn">Add to cart</button>
+							<button class="btn primary-btn add-to-cart-btn">Add to cart</button>
 						</div>
 					</div>
 				</div>`,
