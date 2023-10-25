@@ -4,19 +4,23 @@ export default class HomeController {
 	 * @param {Object} productModel - The model for handling product data.
 	 * @param {Object} productView - The view for rendering product data and handling user interactions.
 	 */
-	constructor(productModel, productView) {
+	constructor(productModel, categoryModel, productView, layoutView) {
 		this.productModel = productModel;
+		this.categoryModel = categoryModel;
 		this.productView = productView;
+		this.layoutView = layoutView;
 
 		this.init();
 	}
 
-	init = () => {
-		this.handleRenderCategory()
+	init = async () => {
+		await this.handleRenderCategory()
 		this.handleRenderProduct()
 		this.productView.addEventSwitchPage();
 		this.productView.addEventMoreProduct();
 		this.productView.renderProduct();
+		this.layoutView.addEventCartPage();
+		this.layoutView.addEventForIcons();
 	}
 
 	/**
@@ -24,8 +28,8 @@ export default class HomeController {
 	 * Then execute renderLayout method in view
 	 */
 	async handleRenderCategory() {
-		const categories = await this.model.category.getCategoryList();
-		this.view.layout.renderLayout(categories);
+		const categories = await this.categoryModel.getCategoryList();
+		this.layoutView.renderLayout(categories);
 	}
 
 	/**
@@ -33,7 +37,7 @@ export default class HomeController {
 	 * Then execute renderProduct method in view
 	 */
 	async handleRenderProduct() {
-		const products = await this.model.product.getProductList();
-		this.view.product.renderProduct(products);
+		const products = await this.productModel.getProductList();
+		this.productView.renderProduct(products);
 	}
 }
