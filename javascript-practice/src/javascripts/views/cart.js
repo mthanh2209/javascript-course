@@ -42,4 +42,76 @@ export default class CartView {
 			this.subtotalEl.textContent = `£${subtotal}`;
 		}
 	}
+
+	/**
+	 * Set up event handlers for +/- buttons in the cart section.
+	 */
+	setupItemEvent() {
+		this.cartSection.addEventListener("click", (event) => {
+			if (event.target.classList.contains("increment")) {
+				this.handleIncrement(event.target);
+			} else if (event.target.classList.contains("decrement")) {
+				this.handleDecrement(event.target);
+			}
+		});
+	}
+
+	/**
+	 * Handle an increment action for an item in the cart.
+	 * @param {HTMLElement} incrementButton - The increment button element.
+	 */
+	handleIncrement(incrementButton) {
+		// Find the associated quantity input and update its value
+		const quantityInput = incrementButton.parentElement.querySelector(".quantity");
+		quantityInput.value = parseFloat(quantityInput.value) + 1;
+
+		// Update the total-per for this item
+		const itemRow = incrementButton.closest(".table-body");
+		const productPrice = parseFloat(
+			itemRow.querySelector(".body-per").textContent.replace("£", ""),
+		);
+		const newTotal = productPrice * parseFloat(quantityInput.value);
+		itemRow.querySelector(".total-per").textContent = `£${newTotal}`;
+
+		// Recalculate the subtotal and update the display
+		this.updateSubtotal();
+	}
+
+	/**
+	 * Handle a decrement action for an item in the cart.
+	 * @param {HTMLElement} decrementButton - The decrement button element.
+	 */
+	handleDecrement(decrementButton) {
+		// Find the associated quantity input and update its value
+		const quantityInput = decrementButton.parentElement.querySelector(".quantity");
+		const newValue = parseFloat(quantityInput.value) - 1;
+		if (newValue >= 1) {
+			quantityInput.value = newValue;
+
+			// Update the total-per for this item
+			const itemRow = decrementButton.closest(".table-body");
+			const productPrice = parseFloat(
+				itemRow.querySelector(".body-per").textContent.replace("£", ""),
+			);
+			const newTotal = productPrice * parseFloat(quantityInput.value);
+			itemRow.querySelector(".total-per").textContent = `£${newTotal}`;
+
+			// Recalculate the subtotal and update the display
+			this.updateSubtotal();
+		}
+	}
+
+	/**
+	 * Update the subtotal for the shopping cart and refresh the display.
+	 */
+	updateSubtotal() {
+		const totalPerElements = this.cartSection.querySelectorAll(".total-per");
+		let subtotal = 0;
+
+		totalPerElements.forEach((totalPerElement) => {
+			subtotal += parseFloat(totalPerElement.textContent.replace("£", ""));
+		});
+
+		this.subtotalEl.textContent = `£${subtotal}`;
+	}
 }
