@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>E-Commerce Website</title>
-	<link rel="stylesheet" href="../src/styles/main.css">
+	<link rel="stylesheet" href="styles/main.css" />
 </head>
 
 <body>
@@ -29,7 +29,7 @@
 						Shop the new Spring 2022 collection today
 					</p>
 				</div>
-				<button class="btn primary-btn">View collection</button>
+				<button class="btn primary-btn view-collection-button">View collection</button>
 			</div>
 			<img class="hero-img" src="assets/images/hero-img.png" alt="img for hero section" />
 		</section>
@@ -74,30 +74,10 @@
 
 		<!-- START PRODUCT SECTION -->
 		<section class="container product">
-			<ul class="product-list">
-				<!-- TODO: dynamic UI-->
-				<li class="product-item">
-					<img class="product-img" src="assets/images/chair.png" alt="" />
-					<h4>The Dandy chair</h4>
-					<p class="item-per">£250</p>
-				</li>
-				<li class="product-item">
-					<img class="product-img" src="assets/images/rustic-vase.png" alt="" />
-					<h4>Rustic Vase Set</h4>
-					<p class="item-per">£155</p>
-				</li>
-				<li class="product-item">
-					<img class="product-img" src="assets/images/silky-vase.png" alt="" />
-					<h4>The Silky Vase</h4>
-					<p class="item-per">£125</p>
-				</li>
-				<li class="product-item">
-					<img class="product-img" src="assets/images/lamp.png" alt="" />
-					<h4>The Lucy Lamp</h4>
-					<p class="item-per">£399</p>
-				</li>
-			</ul>
-			<button class="btn primary-btn">View collection</button>
+			<ul class="col-4 products-listing"></ul>
+			<div class="product-button">
+				<button class="btn primary-btn view-collection-button">View collection</button>
+			</div>
 		</section>
 		<!-- END PRODUCT SECTION -->
 
@@ -109,7 +89,7 @@
 					A global brand with local beginnings, our story begain in a small
 					studio in South London in early 2014
 				</p>
-				<button class="btn beginning-btn">View collection</button>
+				<button class="btn beginning-btn view-collection-button">View collection</button>
 			</div>
 			<img class="beginning-img" src="assets/images/beginning-img.png" alt="img for beginning section" />
 		</section>
@@ -151,7 +131,7 @@
 	<footer class="main-footer"></footer>
 	<!-- END FOOTER SECTION -->
 
-	<script type="module" src="javascripts/app.js"></script>
+	<script type="module" src="javascripts/pages/home.js"></script>
 </body>
 
 </html>

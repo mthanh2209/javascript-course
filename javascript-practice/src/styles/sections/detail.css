@@ -2,6 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 4rem;
+	margin-top: 1.5rem;
 }
 
 .detail-img {
@@ -51,7 +52,8 @@
 	line-height: 140%;
 }
 
-.dimension-text:nth-child(2), .dimension-number:nth-child(2) {
+.dimension-text:nth-child(2),
+.dimension-number:nth-child(2) {
 	padding: 1rem 6.5rem 0;
 }
 
@@ -62,8 +64,9 @@
 	line-height: 150%;
 }
 
-.decrement, .increment{
-	color: var(--Border-Dark, #CAC6DA);
+.decrement,
+.increment {
+	color: var(--Border-Dark, #cac6da);
 	font-family: var(--primary-font);
 	line-height: normal;
 }
@@ -131,7 +134,8 @@
 		margin-bottom: 3.25rem;
 	}
 
-	.dimension-text:nth-child(2), .dimension-number:nth-child(2) {
+	.dimension-text:nth-child(2),
+	.dimension-number:nth-child(2) {
 		padding: 1.4rem 3.6rem 0;
 	}
 

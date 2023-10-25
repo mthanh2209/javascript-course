@@ -3,21 +3,15 @@
 	margin-bottom: 1.25rem;
 }
 
-.cart-line {
-	margin-bottom: 1rem;
-	height: 1px;
-	background: #EBE8F4;
-}
-
-.thead{
+.table-header {
 	display: none;
 }
 
-.tbody-total {
+.body-total {
 	display: none;
 }
 
-.tbody-stepper {
+.body-stepper {
 	display: none;
 }
 
@@ -26,20 +20,20 @@
 	gap: 1.5rem;
 }
 
-.cart-img {
+.body-img {
 	width: 8rem;
 	height: 10rem;
 	margin-bottom: 1.75rem;
 }
 
-.cart-content {
+.body-content {
 	display: flex;
 	flex-direction: row;
 	gap: 1.4rem;
 	margin-right: 13rem;
 }
 
-.cart-desc {
+.body-desc {
 	margin-top: 1rem;
 	margin-bottom: 0.5rem;
 	color: var(--dark-primary-color);
@@ -48,7 +42,7 @@
 	line-height: 150%;
 }
 
-.cart-per {
+.body-per {
 	color: var(--dark-primary-color);
 	font-family: var(--primary-font);
 	line-height: 150%;
@@ -59,6 +53,8 @@
 	justify-content: flex-end;
 	align-items: center;
 	gap: 1rem;
+	padding-top: 2rem;
+	border-top: 1px solid #ebe8f4;
 }
 
 .cart-note {
@@ -76,11 +72,11 @@
 		padding: 0 7rem;
 	}
 
-	.cart-wrapper {
+	.table-body {
 		display: flex;
 	}
 
-	.cart-content{
+	.body-content {
 		margin: 0;
 	}
 
@@ -90,7 +86,7 @@
 		font-size: var(--font-3xl);
 	}
 
-	.thead{
+	.table-header {
 		display: revert;
 	}
 
@@ -99,7 +95,7 @@
 		padding-right: 20rem;
 	}
 
-	.thead-text {
+	.header-text {
 		color: var(--dark-primary-color);
 		font-family: var(--secondary-font);
 		font-size: var(--font-xs);
@@ -108,13 +104,13 @@
 		padding-bottom: 2rem;
 	}
 
-	.tbody-total {
+	.body-total {
 		display: revert;
 		padding-top: 1rem;
-    padding-left: 15rem;
+		padding-left: 15rem;
 	}
 
-	.tbody-stepper {
+	.body-stepper {
 		display: revert;
 		padding-left: 15rem;
 	}
@@ -123,36 +119,35 @@
 		display: none;
 	}
 
-	.cart-img {
+	.body-img {
 		width: 7rem;
 		height: 8rem;
 		margin-bottom: 1.3rem;
 	}
 
-	.cart-text {
+	.body-text {
 		margin-top: 0.8rem;
 		font-size: var(--font-lg);
 		line-height: 140%;
 	}
 
-	.cart-desc {
+	.body-desc {
 		width: 60%;
 		margin-top: 0.5rem;
 	}
 
-	.cart-per {
-		font-size: var(--font-sm);
-	}
-
-	.cart-total {
-		margin-top: 2rem;
+	.total-per {
+		color: var(--dark-primary-color);
+		font-family: var(--primary-font);
+		font-size: var(--font-md);
+		line-height: 150%;
 	}
 
 	.cart-note {
 		margin-bottom: 1rem;
 	}
 
-	.cart-btn {
+	.cart-button {
 		display: flex;
 		justify-content: end;
 	}

@@ -1,18 +1,23 @@
-import searchIcon from "../../assets/icons/search.svg"
-import closeIcon from "../../assets/icons/close.svg"
-import menuIcon from "../../assets/icons/menu.svg"
-import cartIcon from "../../assets/icons/shopping-cart.svg"
-import userIcon from "../../assets/icons/user-avatar.svg"
+import searchIcon from "../../assets/icons/search.svg";
+import closeIcon from "../../assets/icons/close.svg";
+import menuIcon from "../../assets/icons/menu.svg";
+import cartIcon from "../../assets/icons/shopping-cart.svg";
+import userIcon from "../../assets/icons/user-avatar.svg";
 
 class Header {
 	constructor() { }
 
 	/**
 	 * HTML template for rendering the header.
-	 * @returns {HTMLElement} HTML element for the header.
+	 * @param {Array} data - An array of category data to be used in the header.
+	 *	{
+	 *		"id": 1 - id of category,
+	 *		"name": "Plant pots - name of category"
+	 *	}
+	 * @returns {string} HTML markup for the header.
 	 */
-	renderHeader = () => (
-		`
+	static renderHeader = (data) => {
+		return `
 		<div class="top-nav">
 		<div class="header-search">
 			<img class="search-icon" src="${searchIcon}" alt="icon search" />
@@ -23,9 +28,9 @@ class Header {
 		</div>
 		<h1 class="nav-text">Avion</h1>
 		<div class="nav-menu">
-			<h2 class="menu-text">Welcome to furniture website</h2>
 			<img class="menu-icon" src="${menuIcon}" alt="icon menu" />
 			<div class="menu-toggle">
+				<span class="cart-number"></span>
 				<img class="cart-icon" src="${cartIcon}" alt="icon cart" />
 				<img class="avatar-icon" src="${userIcon}" alt="icon avatar" />
 			</div>
@@ -33,32 +38,16 @@ class Header {
 	</div>
 	<nav>
 		<ul class="list-categories">
-			<!-- TODO: dynamic UI -->
-			<li>
-				<a class="item-categories" href="javascript:void(0)">Plant pots</a>
-			</li>
-			<li>
-				<a class="item-categories" href="javascript:void(0)">Ceramics</a>
-			</li>
-			<li>
-				<a class="item-categories" href="javascript:void(0)">Tables</a>
-			</li>
-			<li>
-				<a class="item-categories" href="javascript:void(0)">Chairs</a>
-			</li>
-			<li>
-				<a class="item-categories" href="javascript:void(0)">Crockery</a>
-			</li>
-			<li>
-				<a class="item-categories" href="javascript:void(0)">Tableware</a>
-			</li>
-			<li>
-				<a class="item-categories" href="javascript:void(0)">Cutlery</a>
-			</li>
+			${data
+				.map(
+					(item, index) => `<li key="${index}">
+					<a class="item-categories" href="javascript:void(0)">${item.name}</a>
+				</li>`,
+				)
+				.join(" ")}
 		</ul>
-	</nav>
-    `
-	);
+	</nav>`;
+	};
 }
 
 export default Header;
