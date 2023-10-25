@@ -24,4 +24,16 @@ export default class ProductModel {
 	* @returns {Promise<Object>} A promise that resolves with the detailed product object.
 	*/
 	getProductDetail = (id) => this.apiService.getDetail(id);
+
+	/**
+	 * Find products based on search data.
+	 * @param {string} searchData - The search data to filter products by title.
+	 * @returns {Promise<Object[]>} A promise that resolves with the filtered products.
+	 */
+	findProduct = async (searchData) => {
+		const productList = await this.getProductList();
+
+		return searchData === "" ? [] : productList.filter((product) =>
+			product.title.toLowerCase().includes(searchData));
+	};
 }
