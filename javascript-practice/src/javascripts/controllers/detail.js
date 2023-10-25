@@ -16,6 +16,7 @@ export default class DetailController extends HomeController {
 	init = async () => {
 		await this.handleRenderProductDetail();
 		this.handleAddToCart();
+		this.detailView.setupItemevent();
 	};
 
 	/**

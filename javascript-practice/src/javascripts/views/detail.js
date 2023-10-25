@@ -49,6 +49,29 @@ class DetailView extends ProductView {
 		const cartNumber = document.querySelector(".cart-number");
 		cartNumber.textContent = getCount;
 	}
+
+	/**
+	 * Setup event handlers for item increment and decrement buttons.
+	 */
+	setupItemevent() {
+		const plusBtns = document.querySelectorAll(".increment");
+		const minusBtns = document.querySelectorAll(".decrement");
+		const quantity = document.querySelectorAll(".quantity");
+
+		plusBtns.forEach((plusBtn, index) => {
+			plusBtn.addEventListener("click", () => {
+				quantity[index].value = parseFloat(quantity[index].value) + 1;
+			});
+		});
+
+		minusBtns.forEach((minusBtn, index) => {
+			minusBtn.addEventListener("click", () => {
+				if (quantity[index].value > 1) {
+					quantity[index].value = parseFloat(quantity[index].value) - 1;
+				}
+			});
+		});
+	}
 }
 
 export default DetailView;
