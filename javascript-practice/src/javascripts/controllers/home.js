@@ -22,9 +22,11 @@ export default class HomeController {
 
 		this.productView.addEventSwitchPage();
 		this.productView.addEventMoreProduct();
+		this.productView.addEventFilters();
 
 		this.layoutView.addEventCartPage();
 		this.layoutView.addEventForIcons();
+
 	}
 
 	/**
