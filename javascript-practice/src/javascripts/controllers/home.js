@@ -18,13 +18,15 @@ export default class HomeController {
 	init = async () => {
 		await this.handleRenderCategory()
 		this.handleRenderProduct()
+		this.initFindProduct()
+
 		this.productView.addEventSwitchPage();
 		this.productView.addEventMoreProduct();
-		this.productView.renderProduct();
+		this.productView.addEventFilters();
+
 		this.layoutView.addEventCartPage();
 		this.layoutView.addEventForIcons();
-		this.initFindProduct()
-		this.productView.addEventFilters();
+
 	}
 
 	/**
