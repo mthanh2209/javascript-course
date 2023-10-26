@@ -54,7 +54,7 @@ class ProductView {
 	 * @param {string} type - The filter type (FILTER_TYPE.CATEGORY or FILTER_TYPE.PRICE).
 	 */
 	renderProduct = (products, type) => {
-		if (type !== FILTER_TYPE.FILTER) {
+		if (type !== FILTER_TYPE) {
 			this.products = products && Array.isArray(products) ? products : this.products;
 			this.productsListing.innerHTML = "";
 
@@ -181,7 +181,7 @@ class ProductView {
 					e.target,
 					this.products,
 				);
-				this.renderProduct(filteredProducts, FILTER_TYPE.FILTER);
+				this.renderProduct(filteredProducts, FILTER_TYPE);
 			}
 		};
 	};

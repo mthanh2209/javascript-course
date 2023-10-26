@@ -1,3 +1,5 @@
+import { FILTER_TYPE } from "../constants/constants";
+
 /**
  * Build a URL by combining the API URL, path, and optional ID.
  *

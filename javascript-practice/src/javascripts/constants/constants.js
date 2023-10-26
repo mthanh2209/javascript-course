@@ -18,7 +18,6 @@ export const DATA_SOURCES = {
  * Filter types for product filtering.
  */
 export const FILTER_TYPE = {
-	FILTER: "filter",
 	CATEGORY: "category",
 	PRICE: "price",
 };
