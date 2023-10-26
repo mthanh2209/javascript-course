@@ -3,7 +3,7 @@ import { getURLSearchParam } from "../utilities";
 
 class DetailView {
 	constructor() {
-		this.detailSection = document.querySelector(".detail")
+		this.detailSection = document.querySelector(".detail");
 	}
 
 	/**
@@ -14,10 +14,12 @@ class DetailView {
 		const productId = getURLSearchParam("id");
 
 		if (!isNaN(productId)) {
-			const selectedProduct = detail.find((item) => item.id === productId);;
+			const selectedProduct = detail.find((item) => item.id === productId);
 
 			if (selectedProduct) {
-				const productDetailTemplate = ProductTemplate.renderProductDetail([selectedProduct]);
+				const productDetailTemplate = ProductTemplate.renderProductDetail([
+					selectedProduct,
+				]);
 				this.detailSection.innerHTML = productDetailTemplate;
 			}
 		}
@@ -35,7 +37,7 @@ class DetailView {
 				quantity: e.target.closest(".desc-quantity").querySelector(".quantity")
 					.value,
 			};
-			callback(product)
+			callback(product);
 		});
 	}
 

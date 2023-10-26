@@ -3,8 +3,8 @@
  */
 export const STATE = {
 	SUCCESS: "success",
-	FAIL: "fail"
-}
+	FAIL: "fail",
+};
 
 /**
  * Two types of forms in this app

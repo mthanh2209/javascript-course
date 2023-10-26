@@ -7,8 +7,8 @@ export default class DetailController extends HomeController {
 	 * @param {DetailView} detailView - The detail view to display product details.
 	 */
 	constructor(cartModel, detailView) {
-		super()
-		this.cartModel = cartModel
+		super();
+		this.cartModel = cartModel;
 		this.detailView = detailView;
 		this.init();
 	}
@@ -32,7 +32,7 @@ export default class DetailController extends HomeController {
 	 */
 	async handleAddToCart() {
 		this.detailView.addToCart(async (product) => {
-			const isSuccess = await this.cartModel.addToCart(product)
+			const isSuccess = await this.cartModel.addToCart(product);
 			if (isSuccess) {
 				const getCount = this.cartModel.getProductsCount();
 				this.detailView.updateCartNumber(getCount);

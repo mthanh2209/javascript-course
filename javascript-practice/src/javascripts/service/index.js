@@ -1,5 +1,5 @@
 import { API_URL } from "../constants/url";
-import { buildUrl } from './../utilities/index';
+import { buildUrl } from "./../utilities/index";
 
 export default class APIService {
 	constructor(path) {

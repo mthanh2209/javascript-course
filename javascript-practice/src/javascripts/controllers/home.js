@@ -1,11 +1,11 @@
 export default class HomeController {
 	/**
-		 * Constructor of the Controller object.
-		 * @param {Object} productModel - The model for handling product data.
-		 * @param {Object} categoryModel - The model for handling category data.
-		 * @param {Object} productView - The view for rendering product data and handling user interactions.
-		 * @param {Object} layoutView - The view for rendering the layout and handling layout-related interactions.
-		 */
+	 * Constructor of the Controller object.
+	 * @param {Object} productModel - The model for handling product data.
+	 * @param {Object} categoryModel - The model for handling category data.
+	 * @param {Object} productView - The view for rendering product data and handling user interactions.
+	 * @param {Object} layoutView - The view for rendering the layout and handling layout-related interactions.
+	 */
 	constructor(productModel, categoryModel, productView, layoutView) {
 		this.productModel = productModel;
 		this.categoryModel = categoryModel;
@@ -16,9 +16,9 @@ export default class HomeController {
 	}
 
 	init = async () => {
-		await this.handleRenderCategory()
-		this.handleRenderProduct()
-		this.initFindProduct()
+		await this.handleRenderCategory();
+		this.handleRenderProduct();
+		this.initFindProduct();
 
 		this.productView.addEventSwitchPage();
 		this.productView.addEventMoreProduct();
@@ -26,8 +26,7 @@ export default class HomeController {
 
 		this.layoutView.addEventCartPage();
 		this.layoutView.addEventForIcons();
-
-	}
+	};
 
 	/**
 	 * Get the category list from model

@@ -1,4 +1,4 @@
-import APIService from './../service/index';
+import APIService from "./../service/index";
 
 export default class ProductModel {
 	constructor() {
@@ -12,10 +12,10 @@ export default class ProductModel {
 	getProductList = () => this.apiService.getList();
 
 	/**
-	* Method to retrieve detailed information for a specific product from the API.
-	* @param {string} id - The ID of the product to retrieve details for.
-	* @returns {Promise<Object>} A promise that resolves with the detailed product object.
-	*/
+	 * Method to retrieve detailed information for a specific product from the API.
+	 * @param {string} id - The ID of the product to retrieve details for.
+	 * @returns {Promise<Object>} A promise that resolves with the detailed product object.
+	 */
 	getProductDetail = (id) => this.apiService.getDetail(id);
 
 	/**

@@ -1,6 +1,6 @@
 import { DETAIL_PAGE, PRODUCT_LISTING_PAGE } from "../constants/url";
-import { FILTER_TYPE } from '../constants';
-import { FILTER_STRATEGIES } from '../utilities';
+import { FILTER_TYPE } from "../constants";
+import { FILTER_STRATEGIES } from "../utilities";
 
 class ProductView {
 	constructor() {
@@ -73,7 +73,6 @@ class ProductView {
 		}
 	};
 
-
 	//----- EVENT LISTENER -----//
 
 	/**
@@ -82,13 +81,16 @@ class ProductView {
 	addEventMoreProduct = () => {
 		if (this.loadMoreButton) {
 			this.loadMoreButton.addEventListener("click", async (e) => {
-				e.preventDefault()
-				const newProducts = this.products.slice(this.displayedProducts, this.displayedProducts + this.newProducts);
+				e.preventDefault();
+				const newProducts = this.products.slice(
+					this.displayedProducts,
+					this.displayedProducts + this.newProducts,
+				);
 				this.displayedProducts += this.newProducts;
 				this.renderProduct(null, newProducts);
 			});
 		}
-	}
+	};
 	/**
 	 * Add an event listener for switching to the product listing page.
 	 */
@@ -97,8 +99,8 @@ class ProductView {
 			button.addEventListener("click", () => {
 				window.location.href = PRODUCT_LISTING_PAGE;
 			});
-		})
-	}
+		});
+	};
 
 	/**
 	 * Add an event listener for the find product button click.
@@ -107,7 +109,9 @@ class ProductView {
 	 */
 	addEventFindProduct = (findProduct) => {
 		const searchEL = document.querySelector(".search-icon");
-		searchEL.addEventListener("click", () => this.handleFindProduct(findProduct));
+		searchEL.addEventListener("click", () =>
+			this.handleFindProduct(findProduct),
+		);
 	};
 
 	/**
@@ -115,7 +119,7 @@ class ProductView {
 	 * @param {Function} findProduct - The function to find products based on search input.
 	 */
 	addEventEnter = (findProduct) => {
-		const searchInput = document.querySelector(".search-input")
+		const searchInput = document.querySelector(".search-input");
 		searchInput.addEventListener("keyup", (e) => {
 			if (e.key === "Enter") {
 				this.handleFindProduct(findProduct);
@@ -147,8 +151,8 @@ class ProductView {
 		this.productsListing.innerHTML = "";
 
 		products.forEach((product) => {
-			this.createProductDOM(product)
-		})
+			this.createProductDOM(product);
+		});
 	};
 
 	/**
@@ -156,7 +160,7 @@ class ProductView {
 	 * @param {Function} findProduct - The function to find products based on search input.
 	 */
 	handleFindProduct = async (findProduct) => {
-		const searchInput = document.querySelector(".search-input")
+		const searchInput = document.querySelector(".search-input");
 		let inputData = searchInput.value.toLowerCase();
 
 		const isProduct = await findProduct(inputData);
@@ -178,10 +182,7 @@ class ProductView {
 			if (!checked) {
 				filteredProducts = this.products;
 			} else {
-				filteredProducts = FILTER_STRATEGIES[type](
-					e.target,
-					this.products,
-				);
+				filteredProducts = FILTER_STRATEGIES[type](e.target, this.products);
 				this.renderProduct(filteredProducts, FILTER_TYPE);
 			}
 		};
