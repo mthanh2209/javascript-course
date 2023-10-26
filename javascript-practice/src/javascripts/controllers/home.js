@@ -24,6 +24,7 @@ export default class HomeController {
 		this.layoutView.addEventCartPage();
 		this.layoutView.addEventForIcons();
 		this.initFindProduct()
+		this.productView.addEventFilters();
 	}
 
 	/**

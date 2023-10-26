@@ -20,3 +20,29 @@ export function getURLSearchParam(key) {
 	const urlParams = new URLSearchParams(window.location.search);
 	return parseInt(urlParams.get(key));
 }
+
+/**
+ * A collection of filter strategies for product filtering.
+ * @type {Object.<string, function>}
+ */
+export const FILTER_STRATEGIES = {
+	[FILTER_TYPE.CATEGORY]: (target, products) => {
+		return products.filter((product) =>
+			target.value.includes(product.categoryId.toString()),
+		);
+	},
+
+	[FILTER_TYPE.PRICE]: (target, products) => {
+		if (target) {
+			const text = target.nextSibling.textContent;
+			const [low, high] = text.split(/\D/).filter(Boolean); // "100 - 250" => ["100", "250"]
+
+			return products.filter((product) => {
+				const price = product.price;
+
+				return price >= low && (high ? price <= high : true);
+			});
+		}
+		return null;
+	},
+};
