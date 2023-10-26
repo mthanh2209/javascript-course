@@ -24,12 +24,14 @@ export default class CartModel {
 	addToCart(product) {
 		const productId = getURLSearchParam("id");
 		const productIndex = this.products.findIndex((event) => event.id === productId);
+
 		if (productIndex !== -1) {
 			this.products[productIndex].quantity =
 				Number(this.products[productIndex].quantity) + Number(product.quantity);
 			this.sync();
 			return true;
 		}
+
 		this.products.push(product);
 		this.sync();
 		return true;
