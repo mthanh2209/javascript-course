@@ -1,4 +1,4 @@
-import { PRODUCT_LISTING_PAGE } from "../constants/url";
+import { DETAIL_PAGE, PRODUCT_LISTING_PAGE } from "../constants/url";
 import { FILTER_TYPE } from './../constants/constants';
 import { FILTER_STRATEGIES } from './../utilities/utilities';
 
@@ -6,7 +6,7 @@ class ProductView {
 	constructor() {
 		this.productsListing = document.querySelector(".products-listing");
 		this.loadMoreButton = document.querySelector(".load-more-btn");
-		this.viewCollectionButton = document.querySelectorAll(".product-view");
+		this.viewCollectionButton = document.querySelectorAll(".view-collection-button");
 		this.products = [];
 		this.displayedProducts = 4;
 		this.newProducts = 3;
@@ -80,14 +80,15 @@ class ProductView {
 	 * Add an event listener for loading more products.
 	 */
 	addEventMoreProduct = () => {
-		this.loadMoreButton.addEventListener("click", async (e) => {
-			e.preventDefault()
-			const newProducts = this.products.slice(this.displayedProducts, this.displayedProducts + this.newProducts);
-			this.displayedProducts += this.newProducts;
-			this.renderProduct(null, newProducts);
-		});
+		if (this.loadMoreButton) {
+			this.loadMoreButton.addEventListener("click", async (e) => {
+				e.preventDefault()
+				const newProducts = this.products.slice(this.displayedProducts, this.displayedProducts + this.newProducts);
+				this.displayedProducts += this.newProducts;
+				this.renderProduct(null, newProducts);
+			});
+		}
 	}
-
 	/**
 	 * Add an event listener for switching to the product listing page.
 	 */
