@@ -1,5 +1,6 @@
 import Header from "../template/header";
 import Footer from "../template/footer";
+import { SHOPPING_CART_PAGE } from "../constants/url";
 
 class LayoutView {
 	constructor() {
