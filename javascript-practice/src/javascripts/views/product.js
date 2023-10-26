@@ -55,21 +55,26 @@ class ProductView {
 	 */
 	renderProduct = (products, type) => {
 		if (type !== FILTER_TYPE) {
-			this.products = products && Array.isArray(products) ? products : this.products;
-			this.productsListing.innerHTML = "";
+			this.products =
+				products && Array.isArray(products) ? products : this.products;
+			if (this.productsListing) {
+				this.productsListing.innerHTML = "";
 
-			this.products.slice(0, this.displayedProducts).forEach((product) => {
-				this.createProductDOM(product);
-			});
-			return;
+				this.products.slice(0, this.displayedProducts).forEach((product) => {
+					this.createProductDOM(product);
+				});
+				return;
+			}
 		}
 
 		if (products) {
-			this.productsListing.innerHTML = "";
+			if (this.productsListing) {
+				this.productsListing.innerHTML = "";
 
-			products.slice(0, this.displayedProducts).forEach((product) => {
-				this.createProductDOM(product);
-			});
+				products.slice(0, this.displayedProducts).forEach((product) => {
+					this.createProductDOM(product);
+				});
+			}
 		}
 	};
 

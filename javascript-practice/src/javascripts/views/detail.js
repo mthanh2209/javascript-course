@@ -53,7 +53,7 @@ class DetailView {
 	/**
 	 * Setup event handlers for item increment and decrement buttons.
 	 */
-	setupItemevent() {
+	setupItemEvent() {
 		const increment = document.querySelectorAll(".increment");
 		const decrement = document.querySelectorAll(".decrement");
 		const quantity = document.querySelectorAll(".quantity");

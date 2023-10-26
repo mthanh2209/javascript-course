@@ -10,13 +10,14 @@ export default class DetailController extends HomeController {
 		super();
 		this.cartModel = cartModel;
 		this.detailView = detailView;
+
 		this.init();
 	}
 
 	init = async () => {
 		await this.handleRenderProductDetail();
 		this.handleAddToCart();
-		this.detailView.setupItemevent();
+		this.detailView.setupItemEvent();
 	};
 
 	/**

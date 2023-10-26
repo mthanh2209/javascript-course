@@ -3,12 +3,14 @@ export default class HomeController {
 	 * Constructor of the Controller object.
 	 * @param {Object} productModel - The model for handling product data.
 	 * @param {Object} categoryModel - The model for handling category data.
+	 * @param {Object} cartModel - The model for handling cart data.
 	 * @param {Object} productView - The view for rendering product data and handling user interactions.
 	 * @param {Object} layoutView - The view for rendering the layout and handling layout-related interactions.
 	 */
-	constructor(productModel, categoryModel, productView, layoutView) {
+	constructor(productModel, categoryModel, cartModel, productView, layoutView) {
 		this.productModel = productModel;
 		this.categoryModel = categoryModel;
+		this.cartModel = cartModel;
 		this.productView = productView;
 		this.layoutView = layoutView;
 
@@ -19,6 +21,7 @@ export default class HomeController {
 		await this.handleRenderCategory();
 		this.handleRenderProduct();
 		this.initFindProduct();
+		this.handleCartNumber();
 
 		this.productView.addEventSwitchPage();
 		this.productView.addEventMoreProduct();
@@ -44,6 +47,11 @@ export default class HomeController {
 	async handleRenderProduct() {
 		const products = await this.productModel.getProductList();
 		this.productView.renderProduct(products);
+	}
+
+	handleCartNumber() {
+		const cartNumber = this.cartModel.getProductsCount();
+		this.layoutView.updateCartNumber(cartNumber);
 	}
 
 	/**
