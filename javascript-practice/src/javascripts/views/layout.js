@@ -57,26 +57,43 @@ class LayoutView {
 		const searchIconElement = document.querySelector(".search-icon");
 		const closeIconElement = document.querySelector(".close-icon");
 		const searchBoxElement = document.querySelector(".search-box");
-		const menuIconElement = document.querySelector(".menu-icon");
-		const menuToggleElement = document.querySelector(".menu-toggle");
 		const headerElement = document.querySelector("header");
 
-		if (event.target === searchIconElement) {
-			searchBoxElement.classList.add("active");
-			closeIconElement.classList.add("active");
-			searchIconElement.classList.add("active");
+		const iconElements = [
+			{
+				icon: searchIconElement,
+				action: () => {
+					searchBoxElement.classList.add("active");
+					closeIconElement.classList.add("active");
+					searchIconElement.classList.add("active");
+				},
+			},
+			{
+				icon: closeIconElement,
+				action: () => {
+					searchBoxElement.classList.remove("active");
+					closeIconElement.classList.remove("active");
+					searchIconElement.classList.remove("active");
+				},
+			},
+			{
+				icon: document.querySelector(".menu-icon"),
+				action: () => {
+					headerElement.classList.toggle("open");
+				},
+			},
+		];
+
+		for (const iconElement of iconElements) {
+			if (event.target === iconElement.icon) {
+				iconElement.action();
+			}
 		}
-		else if (event.target === closeIconElement) {
-			searchBoxElement.classList.remove("active");
-			closeIconElement.classList.remove("active");
-			searchIconElement.classList.remove("active");
-		}
-		else if (event.target === menuIconElement) {
-			headerElement.classList.toggle("open");
-		}
-		else if (
+
+		const menuToggleElement = document.querySelector(".menu-toggle");
+		if (
 			!menuToggleElement.contains(event.target) &&
-			!menuIconElement.contains(event.target)
+			!iconElements[2].icon.contains(event.target)
 		) {
 			headerElement.classList.remove("open");
 		}
