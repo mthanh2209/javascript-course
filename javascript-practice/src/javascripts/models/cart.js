@@ -1,6 +1,6 @@
-import { DATA_SOURCES } from "../constants/states";
+import { DATA_SOURCES } from "../constants";
+import { getURLSearchParam } from "../utilities";
 import Storage from "../utilities/storageHelper";
-import { getURLSearchParam } from "../utilities/url";
 
 export default class CartModel {
 	constructor() {
@@ -23,10 +23,10 @@ export default class CartModel {
 	 */
 	addToCart(product) {
 		const productId = getURLSearchParam("id");
-		const index = this.products.findIndex((e) => e.id === productId);
-		if (index !== -1) {
-			this.products[index].quantity =
-				Number(this.products[index].quantity) + Number(product.quantity);
+		const productIndex = this.products.findIndex((event) => event.id === productId);
+		if (productIndex !== -1) {
+			this.products[productIndex].quantity =
+				Number(this.products[productIndex].quantity) + Number(product.quantity);
 			this.sync();
 			return true;
 		}

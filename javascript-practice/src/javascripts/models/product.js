@@ -1,4 +1,4 @@
-import APIService from "../services/service";
+import APIService from './../service/index';
 
 export default class ProductModel {
 	constructor() {

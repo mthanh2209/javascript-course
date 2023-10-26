@@ -1,6 +1,6 @@
 import { DETAIL_PAGE, PRODUCT_LISTING_PAGE } from "../constants/url";
-import { FILTER_TYPE } from './../constants/constants';
-import { FILTER_STRATEGIES } from './../utilities/utilities';
+import { FILTER_TYPE } from '../constants';
+import { FILTER_STRATEGIES } from '../utilities';
 
 class ProductView {
 	constructor() {

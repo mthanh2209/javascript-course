@@ -32,8 +32,8 @@ export default class DetailController extends HomeController {
 	 */
 	async handleAddToCart() {
 		this.detailView.addToCart(async (product) => {
-			const ok = await this.cartModel.addToCart(product)
-			if (ok) {
+			const isSuccess = await this.cartModel.addToCart(product)
+			if (isSuccess) {
 				const getCount = this.cartModel.getProductsCount();
 				this.detailView.updateCartNumber(getCount);
 			}
