@@ -13,3 +13,11 @@ export const DATA_SOURCES = {
 	PRODUCT: "product",
 	CART: "cart",
 };
+
+/**
+ * Filter types for product filtering.
+ */
+export const FILTER_TYPE = {
+	CATEGORY: "category",
+	PRICE: "price",
+};
