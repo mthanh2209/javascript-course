@@ -64,25 +64,9 @@
 	line-height: 150%;
 }
 
-.decrement,
-.increment {
-	color: var(--Border-Dark, #cac6da);
-	font-family: var(--primary-font);
-	line-height: normal;
-}
-
 .desc-quantity {
 	margin-top: 2rem;
 	margin-bottom: 1rem;
-}
-
-.quantity {
-	width: 1rem;
-	text-align: center;
-	border: none;
-	color: var(--dark-primary-color);
-	font-family: var(--primary-font);
-	line-height: normal;
 }
 
 .detail-btn {

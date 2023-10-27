@@ -86,7 +86,7 @@
 	}
 
 	.benefit-title {
-		font-size: 2rem;
+		font-size: var(--font-2xl);
 		line-height: 140%;
 	}
 
