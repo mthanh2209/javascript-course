@@ -19,10 +19,6 @@
 	display: none;
 }
 
-.stepper-desktop {
-	display: none;
-}
-
 .cart-table {
 	display: flex;
 	gap: 1.5rem;
@@ -38,7 +34,6 @@
 	display: flex;
 	flex-direction: row;
 	gap: 1.4rem;
-	margin-right: 13rem;
 }
 
 .body-desc {
@@ -133,7 +128,6 @@
 	}
 
 	.body-text {
-		margin-top: 0.8rem;
 		font-size: var(--font-lg);
 		line-height: 140%;
 	}
