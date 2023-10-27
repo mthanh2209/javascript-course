@@ -1,18 +1,16 @@
+import ProductModel from './../models/product';
+import CategoryModel from './../models/category';
+import CartModel from '../models/cart';
+import ProductView from './../views/product';
+import LayoutView from './../views/layout';
+
 export default class HomeController {
-	/**
-	 * Constructor of the Controller object.
-	 * @param {Object} productModel - The model for handling product data.
-	 * @param {Object} categoryModel - The model for handling category data.
-	 * @param {Object} cartModel - The model for handling cart data.
-	 * @param {Object} productView - The view for rendering product data and handling user interactions.
-	 * @param {Object} layoutView - The view for rendering the layout and handling layout-related interactions.
-	 */
-	constructor(productModel, categoryModel, cartModel, productView, layoutView) {
-		this.productModel = productModel;
-		this.categoryModel = categoryModel;
-		this.cartModel = cartModel;
-		this.productView = productView;
-		this.layoutView = layoutView;
+	constructor() {
+		this.productModel = new ProductModel();
+		this.categoryModel = new CategoryModel();
+		this.cartModel = new CartModel();
+		this.productView = new ProductView();
+		this.layoutView = new LayoutView();
 
 		this.init();
 	}
