@@ -1,3 +1,7 @@
+.shopping-cart {
+	margin-bottom: 2rem;
+}
+
 .cart-title {
 	margin-top: 2.25rem;
 	margin-bottom: 1.25rem;
@@ -12,6 +16,10 @@
 }
 
 .body-stepper {
+	display: none;
+}
+
+.stepper-desktop {
 	display: none;
 }
 
@@ -74,10 +82,12 @@
 
 	.table-body {
 		display: flex;
+		align-items: center;
+		justify-content: space-between;
 	}
 
 	.body-content {
-		margin: 0;
+		width: 60%;
 	}
 
 	.cart-title {
@@ -91,8 +101,8 @@
 	}
 
 	.cart-table th:nth-child(2) {
-		padding-left: 37rem;
-		padding-right: 20rem;
+		padding-left: 47rem;
+		padding-right: 10rem;
 	}
 
 	.header-text {
@@ -106,13 +116,10 @@
 
 	.body-total {
 		display: revert;
-		padding-top: 1rem;
-		padding-left: 15rem;
 	}
 
 	.body-stepper {
 		display: revert;
-		padding-left: 15rem;
 	}
 
 	.stepper-mobile {
@@ -132,7 +139,6 @@
 	}
 
 	.body-desc {
-		width: 60%;
 		margin-top: 0.5rem;
 	}
 

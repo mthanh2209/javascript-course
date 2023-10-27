@@ -6,12 +6,13 @@
 	padding: 1rem;
 }
 
-.decrement, .increment{
+.decrement,
+.increment {
 	background-color: var(--secondary-color);
 	border: none;
-	color:#CAC6DA;
+	color: #cac6da;
 	font-family: var(--primary-font);
-	font-size: 1rem;
+	font-size: var(--font-sm);
 	line-height: normal;
 	cursor: pointer;
 }
@@ -20,12 +21,13 @@
 	width: 1rem;
 	border: none;
 	color: var(--dark-primary-color);
-	font-size: 1rem;
+	font-size: var(--font-sm);
 	font-family: var(--primary-font);
 	line-height: normal;
 	text-align: center;
 }
 
-.decrement:hover, .increment:hover {
-	color:var(--dark-primary-color);
+.decrement:hover,
+.increment:hover {
+	color: var(--dark-primary-color);
 }

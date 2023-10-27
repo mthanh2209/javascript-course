@@ -52,9 +52,9 @@ class ProductTemplate {
 					<div class="desc-quantity">
 						<h5 class="desc-title">Quantity</h5>
 						<div class="desc-button">
-							<button class="btn decrement">-</button>
+							<button class="decrement">-</button>
 							<input type="number" class="quantity" value="1" readonly />
-							<button class="btn increment">+</button>
+							<button class="increment">+</button>
 						</div>
 						<div class="detail-btn">
 							<button class="btn primary-btn add-to-cart-btn">Add to cart</button>
