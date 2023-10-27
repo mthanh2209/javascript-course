@@ -1,4 +1,4 @@
-import { FILTER_TYPE } from "../constants/constants";
+import { FILTER_TYPE } from "../constants";
 
 /**
  * Build a URL by combining the API URL, path, and optional ID.

@@ -36,6 +36,14 @@ class LayoutView {
 	};
 
 	/**
+	 * Update the cart number in the header.
+	 */
+	updateCartNumber = (cartNumber) => {
+		const cartNumberEl = document.querySelector(".cart-number");
+		cartNumberEl.textContent = cartNumber;
+	};
+
+	/**
 	 * Add event listeners for various icons in the layout
 	 * such as search, close, and menu icons.
 	 */

@@ -1,10 +1,9 @@
 import ProductTemplate from "../template/product";
-import ProductView from "./product";
+import { getURLSearchParam } from "../utilities";
 
-class DetailView extends ProductView {
+class DetailView {
 	constructor() {
-		super()
-		this.detailSection = document.querySelector(".detail")
+		this.detailSection = document.querySelector(".detail");
 	}
 
 	/**
@@ -12,14 +11,15 @@ class DetailView extends ProductView {
 	 * @param {Object[]} detail - The product detail data to display.
 	 */
 	renderProductDetail(detail) {
-		const urlParams = new URLSearchParams(window.location.search);
-		const productId = parseInt(urlParams.get('id'));
+		const productId = getURLSearchParam("id");
 
 		if (!isNaN(productId)) {
-			const selectedProduct = detail.find((item) => item.id === productId);;
+			const selectedProduct = detail.find((item) => item.id === productId);
 
 			if (selectedProduct) {
-				const productDetailTemplate = ProductTemplate.renderProductDetail([selectedProduct]);
+				const productDetailTemplate = ProductTemplate.renderProductDetail([
+					selectedProduct,
+				]);
 				this.detailSection.innerHTML = productDetailTemplate;
 			}
 		}
@@ -37,7 +37,7 @@ class DetailView extends ProductView {
 				quantity: e.target.closest(".desc-quantity").querySelector(".quantity")
 					.value,
 			};
-			callback(product)
+			callback(product);
 		});
 	}
 
@@ -53,18 +53,18 @@ class DetailView extends ProductView {
 	/**
 	 * Setup event handlers for item increment and decrement buttons.
 	 */
-	setupItemevent() {
-		const plusBtns = document.querySelectorAll(".increment");
-		const minusBtns = document.querySelectorAll(".decrement");
+	setupItemEvent() {
+		const increment = document.querySelectorAll(".increment");
+		const decrement = document.querySelectorAll(".decrement");
 		const quantity = document.querySelectorAll(".quantity");
 
-		plusBtns.forEach((plusBtn, index) => {
+		increment.forEach((plusBtn, index) => {
 			plusBtn.addEventListener("click", () => {
 				quantity[index].value = parseFloat(quantity[index].value) + 1;
 			});
 		});
 
-		minusBtns.forEach((minusBtn, index) => {
+		decrement.forEach((minusBtn, index) => {
 			minusBtn.addEventListener("click", () => {
 				if (quantity[index].value > 1) {
 					quantity[index].value = parseFloat(quantity[index].value) - 1;

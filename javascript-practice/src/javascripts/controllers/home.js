@@ -1,24 +1,25 @@
+import ProductModel from './../models/product';
+import CategoryModel from './../models/category';
+import CartModel from '../models/cart';
+import ProductView from './../views/product';
+import LayoutView from './../views/layout';
+
 export default class HomeController {
-	/**
-		 * Constructor of the Controller object.
-		 * @param {Object} productModel - The model for handling product data.
-		 * @param {Object} categoryModel - The model for handling category data.
-		 * @param {Object} productView - The view for rendering product data and handling user interactions.
-		 * @param {Object} layoutView - The view for rendering the layout and handling layout-related interactions.
-		 */
-	constructor(productModel, categoryModel, productView, layoutView) {
-		this.productModel = productModel;
-		this.categoryModel = categoryModel;
-		this.productView = productView;
-		this.layoutView = layoutView;
+	constructor() {
+		this.productModel = new ProductModel();
+		this.categoryModel = new CategoryModel();
+		this.cartModel = new CartModel();
+		this.productView = new ProductView();
+		this.layoutView = new LayoutView();
 
 		this.init();
 	}
 
 	init = async () => {
-		await this.handleRenderCategory()
-		this.handleRenderProduct()
-		this.initFindProduct()
+		await this.handleRenderCategory();
+		this.handleRenderProduct();
+		this.initFindProduct();
+		this.handleCartNumber();
 
 		this.productView.addEventSwitchPage();
 		this.productView.addEventMoreProduct();
@@ -26,8 +27,7 @@ export default class HomeController {
 
 		this.layoutView.addEventCartPage();
 		this.layoutView.addEventForIcons();
-
-	}
+	};
 
 	/**
 	 * Get the category list from model
@@ -45,6 +45,11 @@ export default class HomeController {
 	async handleRenderProduct() {
 		const products = await this.productModel.getProductList();
 		this.productView.renderProduct(products);
+	}
+
+	handleCartNumber() {
+		const cartNumber = this.cartModel.getProductsCount();
+		this.layoutView.updateCartNumber(cartNumber);
 	}
 
 	/**

@@ -1,6 +1,6 @@
-import { DATA_SOURCES } from "../constants/states";
+import { DATA_SOURCES } from "../constants";
+import { getURLSearchParam } from "../utilities";
 import Storage from "../utilities/storageHelper";
-import { getURLSearchParam } from "../utilities/url";
 
 export default class CartModel {
 	constructor() {
@@ -8,9 +8,9 @@ export default class CartModel {
 	}
 
 	/**
-	 * Synchronize the cart data with the local storage.
+	 * Update the cart data in local storage to synchronize it with the current state.
 	 */
-	sync() {
+	updateLocalStorage() {
 		Storage.setData(DATA_SOURCES.CART, this.products);
 		this.products = Storage.getData(DATA_SOURCES.CART);
 	}
@@ -23,15 +23,19 @@ export default class CartModel {
 	 */
 	addToCart(product) {
 		const productId = getURLSearchParam("id");
-		const index = this.products.findIndex((e) => e.id === productId);
-		if (index !== -1) {
-			this.products[index].quantity =
-				Number(this.products[index].quantity) + Number(product.quantity);
-			this.sync();
+		const productIndex = this.products.findIndex(
+			(event) => event.id === productId,
+		);
+
+		if (productIndex !== -1) {
+			this.products[productIndex].quantity =
+				Number(this.products[productIndex].quantity) + Number(product.quantity);
+			this.updateLocalStorage();
 			return true;
 		}
+
 		this.products.push(product);
-		this.sync();
+		this.updateLocalStorage();
 		return true;
 	}
 
@@ -52,9 +56,9 @@ export default class CartModel {
 	}
 
 	/**
-	 * Reset the shopping cart, removing all products.
+	 * Clear the shopping cart, removing all products.
 	 */
-	reset() {
+	clearCart() {
 		this.products = [];
 		Storage.removeData(DATA_SOURCES.CART);
 	}
