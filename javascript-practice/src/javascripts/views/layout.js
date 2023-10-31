@@ -30,7 +30,6 @@ class LayoutView {
 	addEventCartPage = () => {
 		const cartIcon = document.querySelector(".cart-icon");
 		cartIcon.addEventListener("click", (e) => {
-			e.preventDefault();
 			window.location.href = SHOPPING_CART_PAGE;
 		});
 	};
