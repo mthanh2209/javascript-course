@@ -86,7 +86,6 @@ class ProductView {
 	addEventMoreProduct = () => {
 		if (this.loadMoreButton) {
 			this.loadMoreButton.addEventListener("click", async (e) => {
-				e.preventDefault();
 				const newProducts = this.products.slice(
 					this.displayedProducts,
 					this.displayedProducts + this.newProducts,
