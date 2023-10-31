@@ -74,19 +74,9 @@
 	justify-content: center;
 }
 
-@media (min-width: 1200px) {
-	.detail {
-		flex-direction: row;
-		gap: 6rem;
-	}
-
+@media (min-width: 768px) {
 	.detail-img {
-		width: 45rem;
-		height: 47rem;
-	}
-
-	.detail-content {
-		margin-top: 5.6rem;
+		height: 43rem;
 	}
 
 	.detail-title {
@@ -135,5 +125,21 @@
 
 	.desc-button {
 		padding: 0 11rem 0 2.4rem;
+	}
+}
+
+@media (min-width: 1200px) {
+	.detail {
+		flex-direction: row;
+		gap: 6rem;
+	}
+
+	.detail-img {
+		width: 45rem;
+		height: 47rem;
+	}
+
+	.detail-content {
+		margin-top: 5.6rem;
 	}
 }
