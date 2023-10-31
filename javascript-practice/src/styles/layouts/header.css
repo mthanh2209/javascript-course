@@ -95,7 +95,6 @@ header.open .menu-toggle {
 	gap: 12px;
 	padding: 1.4rem;
 	background-color: var(--light-grey);
-	transition: 0.5s ease-in-out;
 }
 
 header.open .cart-number {
