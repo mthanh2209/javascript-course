@@ -4,6 +4,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 }
 
 .products {
@@ -124,6 +125,13 @@
 	margin-top: 0.8rem;
 }
 
+@media (min-width: 768px) {
+	.products-img {
+		width: 19rem;
+		height: 23rem;
+	}
+}
+
 @media (min-width: 1200px) {
 	.product {
 		margin-top: 7rem;
@@ -131,11 +139,6 @@
 
 	.products {
 		margin-top: 1.5rem;
-	}
-
-	.product-button {
-		display: flex;
-		justify-content: center;
 	}
 
 	.banner-img {
@@ -163,11 +166,6 @@
 
 	.col-4 {
 		grid-template-columns: repeat(4, 1fr);
-	}
-
-	.products-img {
-		width: 19rem;
-		height: 23rem;
 	}
 
 	.products-main {

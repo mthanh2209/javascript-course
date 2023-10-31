@@ -35,31 +35,50 @@
 	height: 16rem;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
 	.beginning {
-		padding-top: 2.5rem;
 		flex-direction: row;
 		gap: 1rem;
 	}
 
 	.beginning-content {
-		padding: 3.2rem 4.2rem;
+		padding: 1.2rem 2rem;
 	}
 
 	.beginning-title {
 		padding-top: 0.6rem;
-		font-size: var(--font-2xl);
+		font-size: var(--font-xl);
 	}
 
 	.beginning-desc {
 		padding-top: 1rem;
-		padding-bottom: 13rem;
-		font-size: var(--font-md);
+		padding-bottom: 3rem;
+		font-size: var(--font-xs);
 		line-height: normal;
 	}
 
 	.beginning-btn {
 		padding: 1rem 2rem;
+	}
+
+	.beginning-img {
+		width: 20rem;
+		height: 17rem;
+	}
+}
+
+@media (min-width: 1200px) {
+	.beginning-content {
+		padding: 3.2rem 4.2rem;
+	}
+
+	.beginning-title {
+		font-size: var(--font-2xl);
+	}
+
+	.beginning-desc {
+		padding-bottom: 13rem;
+		font-size: var(--font-md);
 	}
 
 	.beginning-img {

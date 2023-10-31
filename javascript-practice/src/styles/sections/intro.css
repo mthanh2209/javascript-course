@@ -33,23 +33,35 @@
 	line-height: 150%;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
 	.intro {
 		margin-top: 5rem;
 	}
 
 	.intro-list {
-		flex-direction: row;
-		gap: 1.25rem;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
 	}
 
 	.intro-title {
-		text-align: center;
 		font-size: var(--font-xl);
 		line-height: 140%;
 	}
 
 	.intro-item {
 		padding: 2.75rem;
+	}
+}
+
+@media (min-width: 1200px) {
+	.intro-list {
+		display: flex;
+		flex-direction: row;
+		gap: 1.25rem;
+	}
+
+	.intro-title {
+		text-align: center;
 	}
 }
