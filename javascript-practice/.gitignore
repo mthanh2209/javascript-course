@@ -6,3 +6,5 @@ package-lock.json
 .parcel-cache
 dist
 .vercel
+
+.vercel
