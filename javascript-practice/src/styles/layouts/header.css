@@ -145,14 +145,15 @@ header.open .cart-icon {
 	}
 
 	.menu-toggle {
+		position: relative;
 		display: flex;
 		gap: 1rem;
 	}
 
 	.cart-number {
 		position: absolute;
-		top: 12px;
-		right: 55px;
+		bottom: 11px;
+		left: 16px;
 		display: block;
 		color: var(--dark-primary-color);
 		font-size: var(--font-xs);
