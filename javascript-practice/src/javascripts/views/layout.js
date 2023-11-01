@@ -108,8 +108,6 @@ class LayoutView {
 
 		if (searchBoxElement.classList.contains("active")) {
 			cartNumberElement.style.display = "none";
-		} else {
-			cartNumberElement.style.display = "block";
 		}
 	};
 }
