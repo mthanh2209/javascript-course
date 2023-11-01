@@ -65,6 +65,7 @@ class LayoutView {
 		const closeIconElement = document.querySelector(".close-icon");
 		const searchBoxElement = document.querySelector(".search-box");
 		const headerElement = document.querySelector("header");
+		const cartNumberElement = document.querySelector(".cart-number");
 
 		const iconElements = [
 			{
@@ -103,6 +104,12 @@ class LayoutView {
 			!iconElements[2].icon.contains(event.target)
 		) {
 			headerElement.classList.remove("open");
+		}
+
+		if (searchBoxElement.classList.contains("active")) {
+			cartNumberElement.style.display = "none";
+		} else {
+			cartNumberElement.style.display = "block";
 		}
 	};
 }

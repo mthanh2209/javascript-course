@@ -18,7 +18,7 @@
 }
 
 .quantity {
-	width: 1rem;
+	width: 30px;
 	border: none;
 	color: var(--dark-primary-color);
 	font-size: var(--font-sm);
