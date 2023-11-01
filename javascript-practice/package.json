@@ -9,17 +9,16 @@
 		"src/pages/shopping-cart.html"
 	],
 	"scripts": {
-		"server": "json-server --watch src/server/db.json",
 		"start": "parcel --no-cache",
-		"build": "parcel build --no-cache"
+		"build": "rm -rf build && rm -rf .parcel-cache && parcel build ./src/*.html --no-cache --no-source-maps --dist-dir dist"
 	},
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"parcel": "^2.9.3",
+		"parcel": "^2.10.1",
 		"prettier": "3.0.3"
 	},
 	"dependencies": {
-		"json-server": "^0.17.3"
+		"json-server": "^0.17.4"
 	}
 }
