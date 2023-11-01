@@ -26,7 +26,9 @@ class Header {
 		<div class="search-box">
 			<input class="search-input" type="text" placeholder="Search here ">
 		</div>
-		<h1 class="nav-text">Avion</h1>
+		<a class="nav-link" href="index.html">
+        <h1 class="nav-text">Avion</h1>
+    </a>
 		<div class="nav-menu">
 			<img class="menu-icon" src="${menuIcon}" alt="icon menu" />
 			<div class="menu-toggle">

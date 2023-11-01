@@ -6,7 +6,7 @@ import twitterLogo from "../../assets/icons/logo-twitter.svg";
 import pinterestLogo from "../../assets/icons/logo-pinterest.svg";
 
 class Footer {
-	constructor() {}
+	constructor() { }
 
 	/**
 	 * HTML template for rendering the footer.
@@ -26,11 +26,11 @@ class Footer {
 					<p class="title-link">Categories</p>
 					<ul class="list-link">
 						${data
-							.map(
-								(item, index) =>
-									`<li key="${index}" class="item-link">${item.name}</li>`,
-							)
-							.join(" ")}
+				.map(
+					(item, index) =>
+						`<li key="${index}" class="item-link">${item.name}</li>`,
+				)
+				.join(" ")}
 					</ul>
 				</section>
 
@@ -58,10 +58,10 @@ class Footer {
 			</nav>
 			<section class="footer-register">
 				<p class="title-register">Join our mailing list</p>
-				<form class="form-register">
+				<div class="form-register">
 					<input class="form-input" type="text" placeholder="your@email.com" />
 					<button class="btn secondary-btn form-button">Sign up</button>
-				</form>
+				</div>
 			</section>
 		</div>
 

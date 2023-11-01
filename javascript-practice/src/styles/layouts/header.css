@@ -3,6 +3,10 @@
 	width: 88%;
 }
 
+.nav-link {
+	text-decoration: none;
+}
+
 .top-nav {
 	margin-top: 1.25rem;
 	padding-bottom: 1.25rem;
