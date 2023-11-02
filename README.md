@@ -73,7 +73,27 @@ The app has 4 features:
 └── README.md
 ```
 
-## Getting started
+## Run server
+
+- Step 01: Move to folder which json-server in your computer:
+
+```bash
+cd json-server
+```
+
+- Step 02: Install json-server
+
+```bash
+npm install json-server
+```
+
+- Step 03: Run
+
+```bash
+npm start
+```
+
+## Run app
 
 - Step 01: Clone repository with HTTPS:
 
@@ -99,19 +119,7 @@ cd javascript-practice
 npm install
 ```
 
-- Step 05: Move to folder which json-server in your computer:
-
-```bash
-cd json-server
-```
-
-- Step 06: Run json-server
-
-```bash
-npm install json-server
-```
-
-- Step 07: Run
+- Step 05: Run
 
 ```bash
 npm start
