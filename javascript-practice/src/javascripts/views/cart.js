@@ -13,7 +13,7 @@ export default class CartView {
 	 * @param {Array} product - An array of product data.
 	 */
 	displayCart(cart, product) {
-		if (cart.length == 0) {
+		if (cart.length === 0) {
 			this.cartSection.innerHTML = `<h4>Your cart is empty.</h4>`;
 		} else {
 			const cartItemsHTML = cart
@@ -49,47 +49,34 @@ export default class CartView {
 	setupItemEvent() {
 		this.cartSection.addEventListener("click", (event) => {
 			if (event.target.classList.contains("increment")) {
-				this.handleIncrement(event.target);
-			} else if (event.target.classList.contains("decrement")) {
-				this.handleDecrement(event.target);
+				this.handleIncrementAndDecrement(event.target, true);
+			} if (event.target.classList.contains("decrement")) {
+				this.handleIncrementAndDecrement(event.target, false);
 			}
 		});
 	}
 
 	/**
-	 * Handle an increment action for an item in the cart.
-	 * @param {HTMLElement} incrementButton - The increment button element.
+	 * Handle an increment or decrement action for an item in the cart.
+	 * @param {HTMLElement} button - The increment or decrement button element.
+	 * @param {boolean} isIncrement - True if it's an increment action, false for decrement.
 	 */
-	handleIncrement(incrementButton) {
+	handleIncrementAndDecrement(button, isIncrement) {
 		// Find the associated quantity input and update its value
-		const quantityInput = incrementButton.parentElement.querySelector(".quantity");
-		quantityInput.value = parseFloat(quantityInput.value) + 1;
+		const quantityInput = button.parentElement.querySelector(".quantity");
+		let newValue;
 
-		// Update the total-per for this item
-		const itemRow = incrementButton.closest(".table-body");
-		const productPrice = parseFloat(
-			itemRow.querySelector(".body-per").textContent.replace("£", ""),
-		);
-		const newTotal = productPrice * parseFloat(quantityInput.value);
-		itemRow.querySelector(".total-per").textContent = `£${newTotal}`;
+		if (isIncrement) {
+			newValue = parseFloat(quantityInput.value) + 1;
+		} else {
+			newValue = parseFloat(quantityInput.value) - 1;
+		}
 
-		// Recalculate the subtotal and update the display
-		this.updateSubtotal();
-	}
-
-	/**
-	 * Handle a decrement action for an item in the cart.
-	 * @param {HTMLElement} decrementButton - The decrement button element.
-	 */
-	handleDecrement(decrementButton) {
-		// Find the associated quantity input and update its value
-		const quantityInput = decrementButton.parentElement.querySelector(".quantity");
-		const newValue = parseFloat(quantityInput.value) - 1;
 		if (newValue >= 1) {
 			quantityInput.value = newValue;
 
 			// Update the total-per for this item
-			const itemRow = decrementButton.closest(".table-body");
+			const itemRow = button.closest(".table-body");
 			const productPrice = parseFloat(
 				itemRow.querySelector(".body-per").textContent.replace("£", ""),
 			);
