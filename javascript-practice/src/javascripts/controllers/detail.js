@@ -1,6 +1,6 @@
-import HomeController from "./home";
+import ProductController from "./product";
 
-export default class DetailController extends HomeController {
+export default class DetailController extends ProductController {
 	constructor(detailView) {
 		super();
 		this.detailView = detailView;

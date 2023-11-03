@@ -113,9 +113,11 @@ class ProductView {
 	 */
 	addEventFindProduct = (findProduct) => {
 		const searchEL = document.querySelector(".search-icon");
-		searchEL.addEventListener("click", () =>
-			this.handleFindProduct(findProduct),
-		);
+		if (searchEL) {
+			searchEL.addEventListener("click", () =>
+				this.handleFindProduct(findProduct),
+			);
+		}
 	};
 
 	/**
@@ -124,11 +126,13 @@ class ProductView {
 	 */
 	addEventEnter = (findProduct) => {
 		const searchInput = document.querySelector(".search-input");
-		searchInput.addEventListener("keyup", (e) => {
-			if (e.key === "Enter") {
-				this.handleFindProduct(findProduct);
-			}
-		});
+		if (searchInput) {
+			searchInput.addEventListener("keyup", (e) => {
+				if (e.key === "Enter") {
+					this.handleFindProduct(findProduct);
+				}
+			});
+		}
 	};
 
 	/**
