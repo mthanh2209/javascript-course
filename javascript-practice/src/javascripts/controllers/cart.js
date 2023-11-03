@@ -19,7 +19,7 @@ export default class CartController extends HomeController {
 	 */
 	handleDisplayCart = async () => {
 		const product = await this.productModel.getProductList();
-		const cart = this.cartModel.getProduct(product);
+		const cart = this.cartModel.getProducts(product);
 		this.cartView.displayCart(cart, product);
 	};
 }

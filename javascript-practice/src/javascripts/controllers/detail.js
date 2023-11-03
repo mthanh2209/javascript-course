@@ -35,7 +35,7 @@ export default class DetailController extends HomeController {
 		this.detailView.addToCart((product) => {
 			const isSuccess = this.cartModel.addToCart(product);
 			if (isSuccess) {
-				const getCount = this.cartModel.getProductsCount();
+				const getCount = this.cartModel.getProductsInCart();
 				this.detailView.updateCartNumber(getCount);
 			}
 		});

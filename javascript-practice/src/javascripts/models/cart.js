@@ -43,7 +43,7 @@ export default class CartModel {
 	 * Get the products in the shopping cart.
 	 * @returns {Array} An array of products in the shopping cart.
 	 */
-	getProduct() {
+	getProducts() {
 		return this.products;
 	}
 
@@ -51,7 +51,7 @@ export default class CartModel {
 	 * Get the total count of products in the shopping cart.
 	 * @returns {number} The total count of products in the shopping cart.
 	 */
-	getProductsCount() {
+	getProductsInCart() {
 		return this.products.length;
 	}
 

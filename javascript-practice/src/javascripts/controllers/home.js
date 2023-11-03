@@ -48,7 +48,7 @@ export default class HomeController {
 	}
 
 	handleCartNumber() {
-		const cartNumber = this.cartModel.getProductsCount();
+		const cartNumber = this.cartModel.getProductsInCart();
 		this.layoutView.updateCartNumber(cartNumber);
 	}
 
