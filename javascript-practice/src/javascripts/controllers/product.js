@@ -1,6 +1,8 @@
 import LayoutController from "./layout";
 import ProductModel from './../models/product';
 import ProductView from './../views/product';
+import { STATE } from "../constants";
+import { ERROR_MESSAGE } from "../constants/messages";
 
 export default class ProductController extends LayoutController {
 	constructor() {
@@ -24,8 +26,12 @@ export default class ProductController extends LayoutController {
 	 * Then execute renderProduct method in view
 	 */
 	async handleRenderProduct() {
-		const products = await this.productModel.getProductList();
-		this.productView.renderProduct(products);
+		try {
+			const products = await this.productModel.getProductList();
+			this.productView.renderProduct(products);
+		} catch (error) {
+			this.toastNotificationView.showToastNotification(STATE.FAILED, ERROR_MESSAGE.LOAD_ERROR)
+		}
 	}
 	/**
 	 * Initialize functionality to find products.
@@ -42,6 +48,10 @@ export default class ProductController extends LayoutController {
 	 * @returns {Promise<Object[]>} A promise that resolves with the filtered products.
 	 */
 	findProduct = async (searchData) => {
-		return await this.productModel.findProduct(searchData);
+		try {
+			return await this.productModel.findProduct(searchData);
+		} catch (error) {
+			this.toastNotificationView.showToastNotification(STATE.FAILED, ERROR_MESSAGE.LOAD_ERROR)
+		}
 	};
 }

@@ -1,10 +1,11 @@
+import { STATE } from "../constants";
+import { ERROR_MESSAGE } from "../constants/messages";
 import ProductController from "./product";
 
 export default class DetailController extends ProductController {
 	constructor(detailView) {
 		super();
 		this.detailView = detailView;
-		this.toastNotificationView = toastNotificationView;
 
 		this.init();
 	}
@@ -19,8 +20,12 @@ export default class DetailController extends ProductController {
 	 * Render the product detail on the view.
 	 */
 	async handleRenderProductDetail() {
-		const detail = await this.productModel.getProductDetail();
-		this.detailView.renderProductDetail(detail);
+		try {
+			const detail = await this.productModel.getProductDetail();
+			this.detailView.renderProductDetail(detail);
+		} catch (error) {
+			this.toastNotificationView.showToastNotification(STATE.FAILED, ERROR_MESSAGE.LOAD_ERROR)
+		}
 	}
 
 	/**

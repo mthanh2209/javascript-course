@@ -1,3 +1,5 @@
+import { STATE } from "../constants";
+import { ERROR_MESSAGE } from "../constants/messages";
 import ProductController from "./product";
 
 export default class CartController extends ProductController {
@@ -17,8 +19,12 @@ export default class CartController extends ProductController {
 	 * Handle the display of the shopping cart by fetching product data and cart items.
 	 */
 	handleDisplayCart = async () => {
-		const product = await this.productModel.getProductList();
-		const cart = this.cartModel.getProduct(product);
-		this.cartView.displayCart(cart, product);
+		try {
+			const product = await this.productModel.getProductList();
+			const cart = this.cartModel.getProduct(product);
+			this.cartView.displayCart(cart, product);
+		} catch (error) {
+			this.toastNotificationView.showToastNotification(STATE.FAILED, ERROR_MESSAGE.LOAD_ERROR)
+		}
 	};
 }
