@@ -1,3 +1,5 @@
+import { STATE } from "../constants";
+import { ERROR_MESSAGE, SUCCESS_MESSAGE } from "../constants/messages";
 import HomeController from "./home";
 
 export default class DetailController extends HomeController {
@@ -6,10 +8,11 @@ export default class DetailController extends HomeController {
 	 * @param {CartModel} cartModel - The cart model to manage the shopping cart.
 	 * @param {DetailView} detailView - The detail view to display product details.
 	 */
-	constructor(cartModel, detailView) {
+	constructor(cartModel, detailView, toastNotificationView) {
 		super();
 		this.cartModel = cartModel;
 		this.detailView = detailView;
+		this.toastNotificationView = toastNotificationView;
 
 		this.init();
 	}
@@ -33,10 +36,16 @@ export default class DetailController extends HomeController {
 	 */
 	async handleAddToCart() {
 		this.detailView.addToCart(async (product) => {
-			const isSuccess = await this.cartModel.addToCart(product);
-			if (isSuccess) {
-				const getCount = this.cartModel.getProductsCount();
-				this.detailView.updateCartNumber(getCount);
+			try {
+				const isSuccess = await this.cartModel.addToCart(product);
+				if (isSuccess) {
+					const getCount = this.cartModel.getProductsCount();
+					this.detailView.updateCartNumber(getCount);
+
+					this.toastNotificationView.showToastNotification(STATE.SUCCESS, SUCCESS_MESSAGE.ADD_TO_CART)
+				}
+			} catch {
+				this.toastNotificationView.showToastNotification(STATE.FAILED, ERROR_MESSAGE.ADD_TO_CART)
 			}
 		});
 	}
