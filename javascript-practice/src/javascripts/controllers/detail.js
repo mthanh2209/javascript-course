@@ -4,6 +4,7 @@ export default class DetailController extends ProductController {
 	constructor(detailView) {
 		super();
 		this.detailView = detailView;
+		this.toastNotificationView = toastNotificationView;
 
 		this.init();
 	}
@@ -27,10 +28,16 @@ export default class DetailController extends ProductController {
 	 */
 	async handleAddToCart() {
 		this.detailView.addToCart(async (product) => {
-			const isSuccess = await this.cartModel.addToCart(product);
-			if (isSuccess) {
-				const getCount = this.cartModel.getProductsCount();
-				this.detailView.updateCartNumber(getCount);
+			try {
+				const isSuccess = await this.cartModel.addToCart(product);
+				if (isSuccess) {
+					const getCount = this.cartModel.getProductsCount();
+					this.detailView.updateCartNumber(getCount);
+
+					this.toastNotificationView.showToastNotification(STATE.SUCCESS, SUCCESS_MESSAGE.ADD_TO_CART)
+				}
+			} catch {
+				this.toastNotificationView.showToastNotification(STATE.FAILED, ERROR_MESSAGE.ADD_TO_CART)
 			}
 		});
 	}
