@@ -16,6 +16,22 @@ export default class CartModel {
 	}
 
 	/**
+	 * Update the quantity of a product in the shopping cart.
+	 * @param {string} productId - The ID of the product.
+	 * @param {number} oldQuantity - The previous quantity of the product.
+	 * @param {number} quantity - The new quantity of the product.
+	 */
+	updateProductQuantity = (productId, oldQuantity, quantity) => {
+		Storage.setData(DATA_SOURCES.CART, this.products.map(product => {
+			if (Number(product.id) === Number(productId)) {
+				product.quantity = product.quantity * 1 + quantity * 1 - oldQuantity * 1
+			}
+			return product
+		}));
+		this.products = Storage.getData(DATA_SOURCES.CART);
+	}
+
+	/**
 	 * Add a product to the shopping cart or update its quantity if it already exists.
 	 *
 	 * @param {Object} product - The product to add to the cart.
