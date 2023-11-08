@@ -5,7 +5,7 @@ import cartIcon from "../../assets/icons/shopping-cart.svg";
 import userIcon from "../../assets/icons/user-avatar.svg";
 
 class Header {
-	constructor() { }
+	constructor() {}
 
 	/**
 	 * HTML template for rendering the header.
@@ -27,7 +27,7 @@ class Header {
 			<input class="search-input" type="text" placeholder="Search here ">
 		</div>
 		<a class="nav-link" href="index.html">
-        <h1 class="nav-text">Avion</h1>
+        <h3 class="nav-text">Avion</h3>
     </a>
 		<div class="nav-menu">
 			<img class="menu-icon" src="${menuIcon}" alt="icon menu" />

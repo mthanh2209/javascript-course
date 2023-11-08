@@ -1,7 +1,7 @@
 h1 {
 	color: var(--dark-primary-color);
 	font-family: var(--secondary-font);
-	font-size: 36px;
+	font-size: var(--font-3xl);
 	font-style: normal;
 }
 

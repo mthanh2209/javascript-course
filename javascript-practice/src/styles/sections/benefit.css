@@ -18,9 +18,6 @@
 
 .benefit-title {
 	color: var(--secondary-color);
-	font-family: var(--secondary-font);
-	font-size: var(--font-xl);
-	line-height: 2.1rem;
 }
 
 .benefit-desc {
