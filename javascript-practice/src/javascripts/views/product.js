@@ -83,7 +83,7 @@ class ProductView {
 	/**
 	 * Add an event listener for loading more products.
 	 */
-	addEventMoreProduct = () => {
+	handleMoreProduct = () => {
 		if (this.loadMoreButton) {
 			this.loadMoreButton.addEventListener("click", async (e) => {
 				const newProducts = this.products.slice(
@@ -98,7 +98,7 @@ class ProductView {
 	/**
 	 * Add an event listener for switching to the product listing page.
 	 */
-	addEventSwitchPage = () => {
+	handleSwitchPage = () => {
 		this.viewCollectionButton.forEach((button) => {
 			button.addEventListener("click", () => {
 				window.location.href = PRODUCT_LISTING_PAGE;
@@ -111,7 +111,7 @@ class ProductView {
 	 *
 	 * @param {Function} findProduct - The function to find products based on search input.
 	 */
-	addEventFindProduct = (findProduct) => {
+	handleFindProduct = (findProduct) => {
 		const searchEL = document.querySelector(".search-icon");
 		if (searchEL) {
 			searchEL.addEventListener("click", () =>
@@ -124,7 +124,7 @@ class ProductView {
 	 * Add an event listener for the Enter key press in the search input field.
 	 * @param {Function} findProduct - The function to find products based on search input.
 	 */
-	addEventEnter = (findProduct) => {
+	handleEnter = (findProduct) => {
 		const searchInput = document.querySelector(".search-input");
 		if (searchInput) {
 			searchInput.addEventListener("keyup", (e) => {
@@ -138,7 +138,7 @@ class ProductView {
 	/**
 	 * Add event listeners for product filters.
 	 */
-	addEventFilters = () => {
+	handleFilters = () => {
 		const categoryFilters = document.querySelectorAll('input[name="product-type"]');
 		const priceFilters = document.querySelectorAll('input[name="price"]');
 
