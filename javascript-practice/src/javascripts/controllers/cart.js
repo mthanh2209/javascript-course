@@ -10,7 +10,7 @@ export default class CartController extends ProductController {
 
 	init = async () => {
 		await this.handleDisplayCart();
-		this.cartView.setupItemEvent();
+		this.cartView.setupItemEvent(this.cartModel.updateProductQuantity);
 	};
 
 	/**
