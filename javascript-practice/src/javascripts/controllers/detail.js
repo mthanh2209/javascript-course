@@ -1,3 +1,5 @@
+import { STATE } from "../constants";
+import { ERROR_MESSAGE } from "../constants/messages";
 import ProductController from "./product";
 
 export default class DetailController extends ProductController {
@@ -18,8 +20,12 @@ export default class DetailController extends ProductController {
 	 * Render the product detail on the view.
 	 */
 	async handleRenderProductDetail() {
-		const detail = await this.productModel.getProductDetail();
-		this.detailView.renderProductDetail(detail);
+		try {
+			const detail = await this.productModel.getProductDetail();
+			this.detailView.renderProductDetail(detail);
+		} catch (error) {
+			this.toastNotificationView.showToastNotification(STATE.FAILED, ERROR_MESSAGE.LOAD_ERROR)
+		}
 	}
 
 	/**
@@ -27,10 +33,16 @@ export default class DetailController extends ProductController {
 	 */
 	async handleAddToCart() {
 		this.detailView.addToCart(async (product) => {
-			const isSuccess = await this.cartModel.addToCart(product);
-			if (isSuccess) {
-				const getCount = this.cartModel.getProductsCount();
-				this.detailView.updateCartNumber(getCount);
+			try {
+				const isSuccess = await this.cartModel.addToCart(product);
+				if (isSuccess) {
+					const getCount = this.cartModel.getProductsCount();
+					this.detailView.updateCartNumber(getCount);
+
+					this.toastNotificationView.showToastNotification(STATE.SUCCESS, SUCCESS_MESSAGE.ADD_TO_CART)
+				}
+			} catch {
+				this.toastNotificationView.showToastNotification(STATE.FAILED, ERROR_MESSAGE.ADD_TO_CART)
 			}
 		});
 	}

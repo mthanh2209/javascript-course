@@ -1,12 +1,16 @@
 import CategoryModel from './../models/category';
 import LayoutView from './../views/layout';
 import CartModel from './../models/cart';
+import ToastNotificationView from './../views/toast';
+import { STATE } from '../constants';
+import { ERROR_MESSAGE } from '../constants/messages';
 
 export default class LayoutController {
 	constructor() {
 		this.categoryModel = new CategoryModel()
 		this.cartModel = new CartModel()
 		this.layoutView = new LayoutView()
+		this.toastNotificationView = new ToastNotificationView()
 
 		this.init()
 	}
@@ -23,8 +27,12 @@ export default class LayoutController {
 		 * Then execute renderLayout method in view
 		 */
 	async handleRenderCategory() {
-		const categories = await this.categoryModel.getCategoryList();
-		this.layoutView.renderLayout(categories);
+		try {
+			const categories = await this.categoryModel.getCategoryList();
+			this.layoutView.renderLayout(categories);
+		} catch (error) {
+			this.toastNotificationView.showToastNotification(STATE.FAILED, ERROR_MESSAGE.LOAD_ERROR)
+		}
 	}
 
 	handleCartNumber() {
