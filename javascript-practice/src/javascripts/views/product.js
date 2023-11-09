@@ -1,6 +1,7 @@
 import { DETAIL_PAGE, PRODUCT_LISTING_PAGE } from "../constants/url";
 import { FILTER_TYPE } from "../constants";
 import { FILTER_STRATEGIES } from "../utilities";
+import ProductTemplate from "../template/product";
 
 class ProductView {
   constructor() {
@@ -10,42 +11,6 @@ class ProductView {
     this.products = [];
     this.displayedProducts = 4;
     this.newProducts = 3;
-  }
-
-  /**
-   * Create the DOM structure for a product and append it to the product listing.
-   * @param {Object} product - The product object to create DOM elements for.
-   */
-  createProductDOM(product) {
-    const productItem = document.createElement("li");
-    const productImg = document.createElement("img");
-    const productTitle = document.createElement("h4");
-    const productPrice = document.createElement("p");
-    const productLink = document.createElement("a");
-
-    productItem.className = "products-item";
-    productItem.value = product.categoryId;
-    productItem.setAttribute("data-id", product.id);
-
-    productImg.className = "products-img";
-    productImg.src = product.image;
-    productImg.alt = product.title;
-
-    productTitle.textContent = `${product.title}`;
-
-    productPrice.classList.add("products-per");
-    productPrice.textContent = `£${product.price}`;
-
-    productLink.href = `${DETAIL_PAGE}?id=${product.id}`;
-    productLink.style.textDecoration = "none";
-
-    productItem.appendChild(productImg);
-    productItem.appendChild(productTitle);
-    productItem.appendChild(productPrice);
-
-    productLink.appendChild(productItem);
-
-    this.productsListing.appendChild(productLink);
   }
 
   /**
@@ -61,7 +26,7 @@ class ProductView {
         this.productsListing.innerHTML = "";
 
         this.products.slice(0, this.displayedProducts).forEach((product) => {
-          this.createProductDOM(product);
+          this.productsListing.innerHTML += ProductTemplate.renderProduct([product]);
         });
         return;
       }
@@ -72,7 +37,7 @@ class ProductView {
         this.productsListing.innerHTML = "";
 
         products.slice(0, this.displayedProducts).forEach((product) => {
-          this.createProductDOM(product);
+          this.productsListing.innerHTML += ProductTemplate.renderProduct([product]);
         });
       }
     }

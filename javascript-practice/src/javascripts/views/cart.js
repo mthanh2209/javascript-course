@@ -13,7 +13,7 @@ export default class CartView {
    * @param {Array} product - An array of product data.
    */
   displayCart(cart, product) {
-    if (cart.length == 0) {
+    if (cart.length === 0) {
       this.cartSection.innerHTML = `<h4>Your cart is empty.</h4>`;
     } else {
       const cartItemsHTML = cart
