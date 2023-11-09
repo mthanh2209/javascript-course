@@ -48,3 +48,13 @@ export const FILTER_STRATEGIES = {
 		return null;
 	},
 };
+
+/**
+	 * Delays execution asynchronously for the specified time.
+	 * @param {number} time - The time to delay in milliseconds.
+	 * @returns {Promise} A promise that resolves after the specified delay time.
+	 */
+export const toastDelay = (time) =>
+	new Promise((resolve) => {
+		setTimeout(() => resolve(), time);
+	});

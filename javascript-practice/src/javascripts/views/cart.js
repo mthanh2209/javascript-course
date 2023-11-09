@@ -45,25 +45,29 @@ export default class CartView {
 
 	/**
 	 * Set up event handlers for +/- buttons in the cart section.
+	 * @param {function} handler - The function to handle increment and decrement actions.
 	 */
-	setupItemEvent() {
+	setupItemEvent(updateQuantity) {
 		this.cartSection.addEventListener("click", (event) => {
 			if (event.target.classList.contains("increment")) {
-				this.handleIncrementAndDecrement(event.target, true);
+				this.handleIncrementAndDecrement(event.target, true, updateQuantity);
 			} if (event.target.classList.contains("decrement")) {
-				this.handleIncrementAndDecrement(event.target, false);
+				this.handleIncrementAndDecrement(event.target, false, updateQuantity);
 			}
 		});
 	}
 
 	/**
 	 * Handle an increment or decrement action for an item in the cart.
+	 *
 	 * @param {HTMLElement} button - The increment or decrement button element.
 	 * @param {boolean} isIncrement - True if it's an increment action, false for decrement.
+	 * @param {function} updateQuantity - The function to handle the increment or decrement action.
 	 */
-	handleIncrementAndDecrement(button, isIncrement) {
+	handleIncrementAndDecrement(button, isIncrement, updateQuantity) {
 		// Find the associated quantity input and update its value
 		const quantityInput = button.parentElement.querySelector(".quantity");
+		let oldquantity = quantityInput.value
 		let newValue;
 
 		if (isIncrement) {
@@ -73,6 +77,8 @@ export default class CartView {
 		}
 
 		if (newValue >= 1) {
+			const cartItemId = button.closest('.table-body').dataset.id
+			updateQuantity(cartItemId, oldquantity, newValue)
 			quantityInput.value = newValue;
 
 			// Update the total-per for this item
