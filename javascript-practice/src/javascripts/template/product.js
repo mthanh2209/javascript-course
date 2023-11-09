@@ -1,26 +1,26 @@
 class ProductTemplate {
-	constructor() { }
+  constructor() { }
 
-	/**
-	 * Render a product detail template based on the provided data.
-	 * @param {Array} data - An array of product detail data objects.
-	 * @param {number} id - The unique identifier of the product.
-	 * @param {string} title - The name of the product.
-	 * @param {number} price - The price of the product.
-	 * @param {string} description - A description of the product.
-	 * @param {number} categoryId - The category ID to which the product belongs.
-	 * @param {object} dimension - The dimensions of the product.
-	 * @param {string} dimension.height - The height of the product.
-	 * @param {string} dimension.width - The width of the product.
-	 * @param {string} dimension.depth - The depth of the product.
-	 * @param {string} image - The URL of the product's image.
-	 * @returns {string} - The HTML template representing the product detail.
-	 */
-	static renderProductDetail = (data) => {
-		return `
+  /**
+   * Render a product detail template based on the provided data.
+   * @param {Array} data - An array of product detail data objects.
+   * @param {number} id - The unique identifier of the product.
+   * @param {string} title - The name of the product.
+   * @param {number} price - The price of the product.
+   * @param {string} description - A description of the product.
+   * @param {number} categoryId - The category ID to which the product belongs.
+   * @param {object} dimension - The dimensions of the product.
+   * @param {string} dimension.height - The height of the product.
+   * @param {string} dimension.width - The width of the product.
+   * @param {string} dimension.depth - The depth of the product.
+   * @param {string} image - The URL of the product's image.
+   * @returns {string} - The HTML template representing the product detail.
+   */
+  static renderProductDetail = (data) => {
+    return `
 		${data
-				.map(
-					(item) => `
+        .map(
+          (item) => `
 		<img class="detail-img" src="${item.image}" alt="${item.title}"/>
 				<div class="container detail-content">
 					<h3 class="detail-title">${item.title}</h3>
@@ -61,9 +61,9 @@ class ProductTemplate {
 						</div>
 					</div>
 				</div>`,
-				)
-				.join(" ")}`;
-	};
+        )
+        .join(" ")}`;
+  };
 }
 
 export default ProductTemplate;

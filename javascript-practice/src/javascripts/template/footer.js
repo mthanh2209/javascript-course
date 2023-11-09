@@ -6,19 +6,19 @@ import twitterLogo from "../../assets/icons/logo-twitter.svg";
 import pinterestLogo from "../../assets/icons/logo-pinterest.svg";
 
 class Footer {
-	constructor() {}
+  constructor() { }
 
-	/**
-	 * HTML template for rendering the footer.
-	 * @param {Array} data - An array of category data to be used in the footer.
-	 *	{
-	 *		"id": 1 - id of category,
-	 *		"name": "Plant pots" - name of category
-	 *	}
-	 * @returns {string} HTML markup for the footer.
-	 */
-	static renderFooter = (data) => {
-		return `
+  /**
+   * HTML template for rendering the footer.
+   * @param {Array} data - An array of category data to be used in the footer.
+   *	{
+   *		"id": 1 - id of category,
+   *		"name": "Plant pots" - name of category
+   *	}
+   * @returns {string} HTML markup for the footer.
+   */
+  static renderFooter = (data) => {
+    return `
 		<div class="container">
 		<div class="footer-wrapper">
 			<nav class="footer-nav">
@@ -26,11 +26,11 @@ class Footer {
 					<h5 class="title-link">Categories</h5>
 					<ul class="list-link">
 						${data
-							.map(
-								(item, index) =>
-									`<li key="${index}" class="item-link">${item.name}</li>`,
-							)
-							.join(" ")}
+        .map(
+          (item, index) =>
+            `<li key="${index}" class="item-link">${item.name}</li>`,
+        )
+        .join(" ")}
 					</ul>
 				</section>
 
@@ -78,7 +78,7 @@ class Footer {
 		</nav>
 	</div>
     `;
-	};
+  };
 }
 
 export default Footer;

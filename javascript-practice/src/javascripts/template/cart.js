@@ -1,19 +1,19 @@
 class CartTemplate {
-	constructor() {}
+  constructor() { }
 
-	/**
-	 * Renders a cart item with the provided data.
-	 * @param {Object} data - The data for the cart item.
-	 * @param {Object} data.product - The product data.
-	 * @param {string} data.product.image - The image URL of the product.
-	 * @param {string} data.product.title - The title of the product.
-	 * @param {string} data.product.description - The description of the product.
-	 * @param {number} data.product.price - The price of the product.
-	 * @param {number} data.quantity - The quantity of the product in the cart.
-	 * @returns {string} - The HTML representation of the cart item.
-	 */
-	static renderCart = (data) => {
-		return `
+  /**
+   * Renders a cart item with the provided data.
+   * @param {Object} data - The data for the cart item.
+   * @param {Object} data.product - The product data.
+   * @param {string} data.product.image - The image URL of the product.
+   * @param {string} data.product.title - The title of the product.
+   * @param {string} data.product.description - The description of the product.
+   * @param {number} data.product.price - The price of the product.
+   * @param {number} data.quantity - The quantity of the product in the cart.
+   * @returns {string} - The HTML representation of the cart item.
+   */
+  static renderCart = (data) => {
+    return `
 		 <tr class="table-body">
 		<td class="body-content">
 			<img class="body-img" src=${data.product.image} alt=${data.product.title} />
@@ -42,7 +42,7 @@ class CartTemplate {
 		</td>
 		  </tr>
 				`;
-	};
+  };
 }
 
 export default CartTemplate;

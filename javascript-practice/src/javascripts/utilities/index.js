@@ -9,7 +9,7 @@ import { FILTER_TYPE } from "../constants";
  * @returns {string} The constructed URL.
  */
 export function buildUrl(apiUrl, path, id) {
-	return `${apiUrl}${path}${id ? `/${id}` : ""}`;
+  return `${apiUrl}${path}${id ? `/${id}` : ""}`;
 }
 
 /**
@@ -19,8 +19,8 @@ export function buildUrl(apiUrl, path, id) {
  * @returns {number} The parsed integer value of the search parameter or NaN if not found.
  */
 export function getURLSearchParam(key) {
-	const urlParams = new URLSearchParams(window.location.search);
-	return parseInt(urlParams.get(key));
+  const urlParams = new URLSearchParams(window.location.search);
+  return parseInt(urlParams.get(key));
 }
 
 /**
@@ -28,23 +28,23 @@ export function getURLSearchParam(key) {
  * @type {Object.<string, function>}
  */
 export const FILTER_STRATEGIES = {
-	[FILTER_TYPE.CATEGORY]: (target, products) => {
-		return products.filter((product) =>
-			target.value.includes(product.categoryId.toString()),
-		);
-	},
+  [FILTER_TYPE.CATEGORY]: (target, products) => {
+    return products.filter((product) =>
+      target.value.includes(product.categoryId.toString()),
+    );
+  },
 
-	[FILTER_TYPE.PRICE]: (target, products) => {
-		if (target) {
-			const text = target.nextSibling.textContent;
-			const [low, high] = text.split(/\D/).filter(Boolean); // "100 - 250" => ["100", "250"]
+  [FILTER_TYPE.PRICE]: (target, products) => {
+    if (target) {
+      const text = target.nextSibling.textContent;
+      const [low, high] = text.split(/\D/).filter(Boolean); // "100 - 250" => ["100", "250"]
 
-			return products.filter((product) => {
-				const price = product.price;
+      return products.filter((product) => {
+        const price = product.price;
 
-				return price >= low && (high ? price <= high : true);
-			});
-		}
-		return null;
-	},
+        return price >= low && (high ? price <= high : true);
+      });
+    }
+    return null;
+  },
 };
