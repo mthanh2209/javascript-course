@@ -1,14 +1,8 @@
-import HomeController from "./home";
+import ProductController from "./product";
 
-export default class DetailController extends HomeController {
-	/**
-	 * Create a new DetailController.
-	 * @param {CartModel} cartModel - The cart model to manage the shopping cart.
-	 * @param {DetailView} detailView - The detail view to display product details.
-	 */
-	constructor(cartModel, detailView) {
+export default class DetailController extends ProductController {
+	constructor(detailView) {
 		super();
-		this.cartModel = cartModel;
 		this.detailView = detailView;
 
 		this.init();

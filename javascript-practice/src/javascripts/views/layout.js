@@ -29,9 +29,11 @@ class LayoutView {
 	 */
 	handleCartPage = () => {
 		const cartIcon = document.querySelector(".cart-icon");
-		cartIcon.addEventListener("click", (e) => {
-			window.location.href = SHOPPING_CART_PAGE;
-		});
+		if (cartIcon) {
+			cartIcon.addEventListener("click", (e) => {
+				window.location.href = SHOPPING_CART_PAGE;
+			});
+		}
 	};
 
 	/**
@@ -39,7 +41,9 @@ class LayoutView {
 	 */
 	updateCartNumber = (cartNumber) => {
 		const cartNumberEl = document.querySelector(".cart-number");
-		cartNumberEl.textContent = cartNumber;
+		if (cartNumberEl) {
+			cartNumberEl.textContent = cartNumber;
+		}
 	};
 
 	/**
@@ -51,9 +55,11 @@ class LayoutView {
 		const closeIconElement = document.querySelector(".close-icon");
 		const menuIconElement = document.querySelector(".menu-icon");
 
-		searchIconElement.addEventListener("click", this.handleIconClick);
-		closeIconElement.addEventListener("click", this.handleIconClick);
-		menuIconElement.addEventListener("click", this.handleIconClick);
+		if (searchIconElement, closeIconElement, menuIconElement) {
+			searchIconElement.addEventListener("click", this.handleIconClick);
+			closeIconElement.addEventListener("click", this.handleIconClick);
+			menuIconElement.addEventListener("click", this.handleIconClick);
+		}
 	};
 
 	/**
@@ -110,7 +116,6 @@ class LayoutView {
 			cartNumberElement.style.display = "none";
 			menuToggleElement.style.display = "none"
 		} else {
-			cartNumberElement.style.display = "flex";
 			menuToggleElement.style.display = "flex"
 		}
 	};

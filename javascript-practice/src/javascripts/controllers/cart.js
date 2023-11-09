@@ -1,9 +1,8 @@
-import HomeController from "./home";
+import ProductController from "./product";
 
-export default class CartController extends HomeController {
-	constructor(cartModel, cartView) {
+export default class CartController extends ProductController {
+	constructor(cartView) {
 		super();
-		this.cartModel = cartModel;
 		this.cartView = cartView;
 
 		this.init();
