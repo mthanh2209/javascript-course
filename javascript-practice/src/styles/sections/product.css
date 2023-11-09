@@ -169,7 +169,7 @@
 		margin-bottom: 0.8rem;
 	}
 
-	.item-card input[type="radio"] {
+	.item-card input[type="checkbox"] {
 		appearance: none;
 		width: 1rem;
 		height: 1rem;
@@ -180,13 +180,13 @@
 		cursor: pointer;
 	}
 
-	.item-card input[type="radio"]::after {
+	.item-card input[type="checkbox"]::after {
 		content: url(../../assets/icons/checkmark.svg);
 		opacity: 0;
 		transition: opacity 0.2s ease;
 	}
 
-	.item-card input[type="radio"]:checked::after {
+	.item-card input[type="checkbox"]:checked::after {
 		opacity: 1;
 	}
 }

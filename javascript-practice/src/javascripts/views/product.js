@@ -83,7 +83,7 @@ class ProductView {
   /**
    * Add an event listener for loading more products.
    */
-  addEventMoreProduct = () => {
+  handleMoreProduct = () => {
     if (this.loadMoreButton) {
       this.loadMoreButton.addEventListener("click", async (e) => {
         const newProducts = this.products.slice(
@@ -92,13 +92,17 @@ class ProductView {
         );
         this.displayedProducts += this.newProducts;
         this.renderProduct(null, newProducts);
+
+        if (this.displayedProducts >= this.products.length) {
+          this.loadMoreButton.style.display = "none";
+        }
       });
     }
   };
   /**
    * Add an event listener for switching to the product listing page.
    */
-  addEventSwitchPage = () => {
+  handleSwitchPage = () => {
     this.viewCollectionButton.forEach((button) => {
       button.addEventListener("click", () => {
         window.location.href = PRODUCT_LISTING_PAGE;
@@ -111,32 +115,37 @@ class ProductView {
    *
    * @param {Function} findProduct - The function to find products based on search input.
    */
-  addEventFindProduct = (findProduct) => {
+  handleFindProduct = (findProduct) => {
     const searchEL = document.querySelector(".search-icon");
-    searchEL.addEventListener("click", () =>
-      this.handleFindProduct(findProduct),
-    );
+    if (searchEL) {
+      searchEL.addEventListener("click", () =>
+        this.handleFindProduct(findProduct),
+      );
+    }
   };
 
   /**
    * Add an event listener for the Enter key press in the search input field.
    * @param {Function} findProduct - The function to find products based on search input.
    */
-  addEventEnter = (findProduct) => {
+  handleEnter = (findProduct) => {
     const searchInput = document.querySelector(".search-input");
-    searchInput.addEventListener("keyup", (e) => {
-      if (e.key === "Enter") {
-        this.handleFindProduct(findProduct);
-      }
-    });
+    if (searchInput) {
+      searchInput.addEventListener("keyup", (e) => {
+        if (e.key === "Enter") {
+          this.handleFindProduct(findProduct);
+        }
+      });
+    }
   };
 
   /**
    * Add event listeners for product filters.
    */
-  addEventFilters = () => {
+  handleFilters = () => {
     const categoryFilters = document.querySelectorAll('input[name="product-type"]');
     const priceFilters = document.querySelectorAll('input[name="price"]');
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
     categoryFilters.forEach((filter) => {
       filter.addEventListener("change", this.initializeFilters(FILTER_TYPE.CATEGORY));
@@ -144,6 +153,18 @@ class ProductView {
 
     priceFilters.forEach((filter) => {
       filter.addEventListener("change", this.initializeFilters(FILTER_TYPE.PRICE));
+    });
+
+    checkboxes.forEach((checkbox) => {
+      checkbox.addEventListener("change", () => {
+        if (checkbox.checked) {
+          checkboxes.forEach((otherCheckbox) => {
+            if (otherCheckbox !== checkbox) {
+              otherCheckbox.checked = false;
+            }
+          });
+        }
+      });
     });
   };
 
@@ -180,17 +201,21 @@ class ProductView {
    */
   initializeFilters = (type) => {
     return (e) => {
-      const checked = e.target;
+      const checked = e.target.checked;
       let filteredProducts;
 
       if (!checked) {
         filteredProducts = this.products;
+        this.loadMoreButton.style.display = "block"
       } else {
         filteredProducts = FILTER_STRATEGIES[type](e.target, this.products);
-        this.renderProduct(filteredProducts, FILTER_TYPE);
+        this.loadMoreButton.style.display = "none"
       }
-    };
-  };
-}
+      this.renderProduct(filteredProducts, FILTER_TYPE);
+    }
+  }
+};
+
+
 
 export default ProductView;

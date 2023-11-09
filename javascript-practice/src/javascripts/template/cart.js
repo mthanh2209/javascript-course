@@ -14,7 +14,7 @@ class CartTemplate {
    */
   static renderCart = (data) => {
     return `
-		 <tr class="table-body">
+		 <tr class="table-body" data-id="${data.product.id}">
 		<td class="body-content">
 			<img class="body-img" src=${data.product.image} alt=${data.product.title} />
 			<div>
@@ -38,7 +38,7 @@ class CartTemplate {
 			</div>
 		</td>
 		<td class="body-total">
-			<span class="total-per">${data.product.price * (data.quantity ?? 1)}</span>
+			<span class="total-per">£${data.product.price * (data.quantity ?? 1)}</span>
 		</td>
 		  </tr>
 				`;

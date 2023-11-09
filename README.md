@@ -12,7 +12,7 @@
 
 ## Information
 
-- Time line: 2023/09/07 – 2023/09/21
+- Time line: 2023/09/07 – 2023/11/01
 - Editor: Visual Studio Code
 
 ## Requirement
@@ -39,17 +39,25 @@ The app has 4 features:
 ```
 .
 |
+├── json-server/
+│     └── .gitignore
+|     └── db.json
+|     └── package.json
+|     └── server.js
 ├── src/
 │   ├── assets/
 │   │   ├── fonts/
 │   │   ├── icons/
 │   │   └── images/
 │   ├── javascripts/
+│   │   ├── constants/
 │   │   ├── controllers/
 │   │   ├── models/
-│   │   ├── services/
+│   │   ├── pages/
+│   │   ├── service/
+│   │   ├── template/
+│   │   ├── utilities/
 │   │   ├── views/
-│   │   ├── app.js
 │   ├── pages/
 │   ├── styles/
 │   │   ├── base/
@@ -65,7 +73,27 @@ The app has 4 features:
 └── README.md
 ```
 
-## Getting started
+## Run server
+
+- Step 01: Move to folder which json-server in your computer:
+
+```bash
+cd json-server
+```
+
+- Step 02: Install json-server
+
+```bash
+npm install json-server
+```
+
+- Step 03: Run
+
+```bash
+npm start
+```
+
+## Run app
 
 - Step 01: Clone repository with HTTPS:
 
