@@ -92,6 +92,10 @@ class ProductView {
 				);
 				this.displayedProducts += this.newProducts;
 				this.renderProduct(null, newProducts);
+
+				if (this.displayedProducts >= this.products.length) {
+					this.loadMoreButton.style.display = "none";
+				}
 			});
 		}
 	};
@@ -141,6 +145,7 @@ class ProductView {
 	handleFilters = () => {
 		const categoryFilters = document.querySelectorAll('input[name="product-type"]');
 		const priceFilters = document.querySelectorAll('input[name="price"]');
+		const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
 		categoryFilters.forEach((filter) => {
 			filter.addEventListener("change", this.initializeFilters(FILTER_TYPE.CATEGORY));
@@ -148,6 +153,18 @@ class ProductView {
 
 		priceFilters.forEach((filter) => {
 			filter.addEventListener("change", this.initializeFilters(FILTER_TYPE.PRICE));
+		});
+
+		checkboxes.forEach((checkbox) => {
+			checkbox.addEventListener("change", () => {
+				if (checkbox.checked) {
+					checkboxes.forEach((otherCheckbox) => {
+						if (otherCheckbox !== checkbox) {
+							otherCheckbox.checked = false;
+						}
+					});
+				}
+			});
 		});
 	};
 
@@ -184,17 +201,21 @@ class ProductView {
 	 */
 	initializeFilters = (type) => {
 		return (e) => {
-			const checked = e.target;
+			const checked = e.target.checked;
 			let filteredProducts;
 
 			if (!checked) {
 				filteredProducts = this.products;
+				this.loadMoreButton.style.display = "block"
 			} else {
 				filteredProducts = FILTER_STRATEGIES[type](e.target, this.products);
-				this.renderProduct(filteredProducts, FILTER_TYPE);
+				this.loadMoreButton.style.display = "none"
 			}
-		};
-	};
-}
+			this.renderProduct(filteredProducts, FILTER_TYPE);
+		}
+	}
+};
+
+
 
 export default ProductView;
