@@ -5,19 +5,19 @@ import cartIcon from "../../assets/icons/shopping-cart.svg";
 import userIcon from "../../assets/icons/user-avatar.svg";
 
 class Header {
-	constructor() { }
+  constructor() { }
 
-	/**
-	 * HTML template for rendering the header.
-	 * @param {Array} data - An array of category data to be used in the header.
-	 *	{
-	 *		"id": 1 - id of category,
-	 *		"name": "Plant pots - name of category"
-	 *	}
-	 * @returns {string} HTML markup for the header.
-	 */
-	static renderHeader = (data) => {
-		return `
+  /**
+   * HTML template for rendering the header.
+   * @param {Array} data - An array of category data to be used in the header.
+   *	{
+   *		"id": 1 - id of category,
+   *		"name": "Plant pots - name of category"
+   *	}
+   * @returns {string} HTML markup for the header.
+   */
+  static renderHeader = (data) => {
+    return `
 		<div class="top-nav">
 		<div class="header-search">
 			<img class="search-icon" src="${searchIcon}" alt="icon search" />
@@ -27,7 +27,7 @@ class Header {
 			<input class="search-input" type="text" placeholder="Search here ">
 		</div>
 		<a class="nav-link" href="index.html">
-        <h1 class="nav-text">Avion</h1>
+        <h3 class="nav-text">Avion</h3>
     </a>
 		<div class="nav-menu">
 			<img class="menu-icon" src="${menuIcon}" alt="icon menu" />
@@ -41,15 +41,15 @@ class Header {
 	<nav>
 		<ul class="list-categories">
 			${data
-				.map(
-					(item, index) => `<li key="${index}">
+        .map(
+          (item, index) => `<li key="${index}">
 					<a class="item-categories" href="javascript:void(0)">${item.name}</a>
 				</li>`,
-				)
-				.join(" ")}
+        )
+        .join(" ")}
 		</ul>
 	</nav>`;
-	};
+  };
 }
 
 export default Header;

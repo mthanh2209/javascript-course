@@ -6,36 +6,36 @@ import twitterLogo from "../../assets/icons/logo-twitter.svg";
 import pinterestLogo from "../../assets/icons/logo-pinterest.svg";
 
 class Footer {
-	constructor() { }
+  constructor() { }
 
-	/**
-	 * HTML template for rendering the footer.
-	 * @param {Array} data - An array of category data to be used in the footer.
-	 *	{
-	 *		"id": 1 - id of category,
-	 *		"name": "Plant pots" - name of category
-	 *	}
-	 * @returns {string} HTML markup for the footer.
-	 */
-	static renderFooter = (data) => {
-		return `
+  /**
+   * HTML template for rendering the footer.
+   * @param {Array} data - An array of category data to be used in the footer.
+   *	{
+   *		"id": 1 - id of category,
+   *		"name": "Plant pots" - name of category
+   *	}
+   * @returns {string} HTML markup for the footer.
+   */
+  static renderFooter = (data) => {
+    return `
 		<div class="container">
 		<div class="footer-wrapper">
 			<nav class="footer-nav">
 				<section class="footer-link">
-					<p class="title-link">Categories</p>
+					<h5 class="title-link">Categories</h5>
 					<ul class="list-link">
 						${data
-				.map(
-					(item, index) =>
-						`<li key="${index}" class="item-link">${item.name}</li>`,
-				)
-				.join(" ")}
+        .map(
+          (item, index) =>
+            `<li key="${index}" class="item-link">${item.name}</li>`,
+        )
+        .join(" ")}
 					</ul>
 				</section>
 
 				<section class="footer-link">
-					<p class="title-link">Menu</p>
+					<h5 class="title-link">Menu</h5>
 					<ul class="list-link">
 						<li class="item-link">New arrivals</li>
 						<li class="item-link">Best sellers</li>
@@ -46,7 +46,7 @@ class Footer {
 				</section>
 
 				<section class="footer-link">
-					<p class="title-link">Our company</p>
+					<h5 class="title-link">Our company</h5>
 					<ul class="list-link">
 						<li class="item-link">About us</li>
 						<li class="item-link">Vacancies</li>
@@ -57,11 +57,11 @@ class Footer {
 				</section>
 			</nav>
 			<section class="footer-register">
-				<p class="title-register">Join our mailing list</p>
-				<div class="form-register">
+				<h5 class="title-register">Join our mailing list</h5>
+				<form class="form-register">
 					<input class="form-input" type="text" placeholder="your@email.com" />
-					<button class="btn secondary-btn form-button">Sign up</button>
-				</div>
+					<button class="btn secondary-btn form-button" disabled>Sign up</button>
+				</form>
 			</section>
 		</div>
 
@@ -78,7 +78,7 @@ class Footer {
 		</nav>
 	</div>
     `;
-	};
+  };
 }
 
 export default Footer;

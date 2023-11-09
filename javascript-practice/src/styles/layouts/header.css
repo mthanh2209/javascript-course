@@ -71,8 +71,6 @@
 
 .nav-text {
 	color: var(--logo-color);
-	font-family: var(--secondary-font);
-	font-size: var(--font-xl);
 	cursor: pointer;
 }
 
