@@ -21,12 +21,12 @@ export default class HomeController {
 		this.initFindProduct();
 		this.handleCartNumber();
 
-		this.productView.addEventSwitchPage();
-		this.productView.addEventMoreProduct();
-		this.productView.addEventFilters();
+		this.productView.handleSwitchPage();
+		this.productView.handleMoreProduct();
+		this.productView.handleFilters();
 
-		this.layoutView.addEventCartPage();
-		this.layoutView.addEventForIcons();
+		this.layoutView.handleCartPage();
+		this.layoutView.handleForIcons();
 	};
 
 	/**
@@ -56,8 +56,8 @@ export default class HomeController {
 	 * Initialize functionality to find products.
 	 */
 	initFindProduct = () => {
-		this.productView.addEventFindProduct(this.findProduct);
-		this.productView.addEventEnter(this.findProduct);
+		this.productView.handleFindProduct(this.findProduct);
+		this.productView.handleEnter(this.findProduct);
 	};
 
 	/**

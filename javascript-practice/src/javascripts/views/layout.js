@@ -27,7 +27,7 @@ class LayoutView {
 	/**
 	 * Add an event listener to the cart icon to navigate to the shopping cart page.
 	 */
-	addEventCartPage = () => {
+	handleCartPage = () => {
 		const cartIcon = document.querySelector(".cart-icon");
 		cartIcon.addEventListener("click", (e) => {
 			window.location.href = SHOPPING_CART_PAGE;
@@ -46,7 +46,7 @@ class LayoutView {
 	 * Add event listeners for various icons in the layout
 	 * such as search, close, and menu icons.
 	 */
-	addEventForIcons = () => {
+	handleForIcons = () => {
 		const searchIconElement = document.querySelector(".search-icon");
 		const closeIconElement = document.querySelector(".close-icon");
 		const menuIconElement = document.querySelector(".menu-icon");
