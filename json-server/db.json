@@ -1,178 +1,21 @@
 {
-	"category": [
-		{
-			"id": 1,
-			"name": "Plant pots"
-		},
-		{
-			"id": 2,
-			"name": "Ceramics"
-		},
-		{
-			"id": 3,
-			"name": "Tables"
-		},
-		{
-			"id": 4,
-			"name": "Chairs"
-		},
-		{
-			"id": 5,
-			"name": "Crockery"
-		},
-		{
-			"id": 6,
-			"name": "Tableware"
-		},
-		{
-			"id": 7,
-			"name": "Light fittings"
-		}
+	"tasks": [
+	  {
+		"taskName": "test",
+		"description": "ok",
+		"dueDate": "12/23/2023",
+		"createdDate": "12/13/2023",
+		"status": "done",
+		"id": 15
+	  },
+	  {
+		"taskName": "create task",
+		"description": "hihi",
+		"dueDate": "12/18/2023",
+		"createdDate": "12/15/2023",
+		"status": "inprogress",
+		"id": 16
+	  }
 	],
-
-	"products": [
-		{
-			"id": 1,
-			"title": "Rustic Vase Set",
-			"price": 155,
-			"description": "A ceramic is an inorganic non-metallic solid made up of either metal or non-metal compounds that have been shaped and then hardened by heating to high temperatures.",
-			"categoryId": 2,
-			"dimension": {
-				"height": "50cm",
-				"width": "10cm",
-				"depth": "2cm"
-			},
-			"image": "https://www.afloral.com/cdn/shop/products/Rustic-Concrete-Distressed-Vase.jpg?v=1689263906&width=1500"
-		},
-		{
-			"id": 2,
-			"title": "The Silky Vase",
-			"price": 125,
-			"description": "A ceramic is an inorganic non-metallic solid made up of either metal or non-metal compounds that have been shaped and then hardened by heating to high temperatures.",
-			"categoryId": 2,
-			"dimension": {
-				"height": "50cm",
-				"width": "10cm",
-				"depth": "2cm"
-			},
-			"image": "https://ae01.alicdn.com/kf/See09ba67f311454c9cbc2631d309d9ca4.jpg_640x640q90.jpg?width=790&height=1044&hash=1834"
-		},
-		{
-			"id": 3,
-			"title": "Graystone vase",
-			"price": 85,
-			"description": "A timeless ceramic vase with a tri color grey glaze.",
-			"categoryId": 2,
-			"dimension": {
-				"height": "50cm",
-				"width": "10cm",
-				"depth": "2cm"
-			},
-			"image": "https://tinyporcelainstore.com/cdn/shop/products/4_fecdadae-eca4-476c-8a1f-2b8c1068e45b.jpg?v=1598862341"
-		},
-		{
-			"id": 4,
-			"title": "Small vase",
-			"price": 250,
-			"description": "A ceramic is an inorganic non-metallic solid made up of either metal or non-metal compounds that have been shaped and then hardened by heating to high temperatures.",
-			"categoryId": 2,
-			"dimension": {
-				"height": "50cm",
-				"width": "10cm",
-				"depth": "2cm"
-			},
-			"image": "https://www.vivaterra.com/medias/sys_master/images/images/hfe/h7c/12887591419934/12887591419934.jpg"
-		},
-		{
-			"id": 5,
-			"title": "The Lucy Lamp",
-			"price": 399,
-			"description": "A lamp is a device that makes light and heat. Lamps usually work with electricity, using a lightbulb.",
-			"categoryId": 7,
-			"dimension": {
-				"height": "50cm",
-				"width": "10cm",
-				"depth": "2cm"
-			},
-			"image": "https://img.zcdn.com.au/lf/50/hash/38885/19820866/4/Cora+Table+Lamp.jpg"
-		},
-		{
-			"id": 6,
-			"title": "Multiple Lamps",
-			"price": 399,
-			"description": "A lamp is a device that makes light and heat. Lamps usually work with electricity, using a lightbulb.",
-			"categoryId": 7,
-			"dimension": {
-				"height": "50cm",
-				"width": "10cm",
-				"depth": "2cm"
-			},
-			"image": "https://assets.wfcdn.com/im/76764588/compr-r85/2281/228192938/anazagene-modern-accent-ceramic-table-lamp-for-bedroom-white-desk-decor-bedside-lamp-for-living-room.jpg"
-		},
-		{
-			"id": 7,
-			"title": "The Dandy chair",
-			"price": 250,
-			"description": "A timeless design, with premium materials features as one of our most popular and iconic pieces. The dandy chair is perfect for any stylish living space with beech legs and lambskin leather upholstery.",
-			"categoryId": 4,
-			"dimension": {
-				"height": "110cm",
-				"width": "75cm",
-				"depth": "50cm"
-			},
-			"image": "https://www.2modern.com/cdn/shop/products/by-lassen-the-tired-man-lounge-chair-with-footstool-view-add03_590x590.jpg?v=1629508031"
-		},
-		{
-			"id": 8,
-			"title": "The Dark chair",
-			"price": 250,
-			"description": "A timeless design, with premium materials features as one of our most popular and iconic pieces. The dandy chair is perfect for any stylish living space with beech legs and lambskin leather upholstery.",
-			"categoryId": 4,
-			"dimension": {
-				"height": "110cm",
-				"width": "75cm",
-				"depth": "50cm"
-			},
-			"image": "https://i.pinimg.com/564x/6d/e1/46/6de1468eaaf7b456b2c98556126b974b.jpg"
-		},
-		{
-			"id": 9,
-			"title": "The Yellow chair",
-			"price": 250,
-			"description": "A timeless design, with premium materials features as one of our most popular and iconic pieces. The dandy chair is perfect for any stylish living space with beech legs and lambskin leather upholstery.",
-			"categoryId": 4,
-			"dimension": {
-				"height": "110cm",
-				"width": "75cm",
-				"depth": "50cm"
-			},
-			"image": "https://floydhome.com/cdn/shop/products/PP_Outdoor_Chair_LifestyleCarouselMobile2.jpg?v=1670300424&width=900"
-		},
-		{
-			"id": 10,
-			"title": "Multiple chairs",
-			"price": 250,
-			"description": "A timeless design, with premium materials features as one of our most popular and iconic pieces. The dandy chair is perfect for any stylish living space with beech legs and lambskin leather upholstery.",
-			"categoryId": 4,
-			"dimension": {
-				"height": "110cm",
-				"width": "75cm",
-				"depth": "50cm"
-			},
-			"image": "https://images.unsplash.com/photo-1551298370-9d3d53740c72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8eWVsbG93JTIwY2hhaXJ8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
-		},
-		{
-			"id": 11,
-			"title": "Basic white vase",
-			"price": 85,
-			"description": "Beautiful and simple this is one for the classics.",
-			"categoryId": 1,
-			"dimension": {
-				"height": "10cm",
-				"width": "5cm",
-				"depth": "1cm"
-			},
-			"image": "https://bscgoods.co/cdn/shop/products/bf550755aa257bc7b2c5177cf847b05d637345f8e819aef7f86c5445d0393c3f_2000x.jpg?v=1642444197"
-		}
-	]
-}
+	"comments": []
+  }
